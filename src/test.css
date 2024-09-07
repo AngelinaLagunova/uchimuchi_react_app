@@ -1,0 +1,74 @@
+.test{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: lightgray;
+    border: thick solid rgba(79,209,197,.64);
+    margin: auto;
+    width:100%;
+    padding:1%;
+
+}
+
+.test img {
+    width:99%;
+    margin:20% 1%;
+}
+
+.form{
+    margin:5%;
+    text-align: center;
+    font-weight:bold;
+    font-size:xx-large;
+    height:20%;
+}
+
+input {
+    width:99%;
+    font-size:30px;
+}
+
+.green{
+    /* color:green; */
+    border: solid thin green;
+
+}
+
+.red{
+    border: solid thin red;
+}
+
+.green2{
+    /* color:green; */
+
+    background-color: green;
+}
+
+.red2{
+    background-color: red;
+}
+
+.hidden{
+    display: none;
+}
+
+.next{
+    width:50%;
+    padding:5%;
+}
+
+.next input{
+    /* margin: auto; */
+    display: grid;
+    margin-left:50%;
+}
+
+h1, header{
+    margin: 0px;
+}
+
+.test2{
+    margin-top:10%;
+    font-weight:bold;
+    font-size:xx-large;
+    text-align:center;
+}
