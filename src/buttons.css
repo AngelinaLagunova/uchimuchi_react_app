@@ -1,5 +1,5 @@
 .button {
-    min-width: 500px;
+    min-width: 450px;
     min-height: 60px;
     font-family:'Courier New', Courier, monospace;
     
@@ -23,7 +23,7 @@
     button::before {
     content: '';
     border-radius: 38px;
-    min-width: calc(500px + 12px);
+    min-width: calc(450px + 12px);
     min-height: calc(60px + 12px);
     border: 6px solid #b5f4e1;
     /* box-shadow: 0 0 60px rgba(0,255,203,.64); */

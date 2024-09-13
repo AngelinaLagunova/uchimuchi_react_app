@@ -7,10 +7,10 @@ const Chansha =() =>
     return(
         <>
             <div className="page">
-                <header> <img src="chansha.png"/>
+                <div className="locationHeader"> <img src="chansha.png"/>
                     <h1>Провинция Хунань 湖南 <br/> г. Чанша 长沙市</h1>
                 
-                </header>
+                </div>
                 <article>
                     <div className="info"> 
                         <p><b>Хунань</b> – провинция на юге Китая, расположеная к югу от крупного озера Дунтин (Дунтинху). Это обстоятельство и повлияло на название региона, которое на русский переводится как «Провинция к Югу от Озера»., расположенна в горной местности. На северо-востоке этого региона в городе Шаошань в 1893 года родился Мао Цзэдун. <br/> </p>
@@ -19,8 +19,8 @@ const Chansha =() =>
                     </div>
                     <div> 
                         <div className="sectionName">Категории новых слов</div>
-                        <div className="wrap"><a href="/chansha">
-                            <button className="button">Еда 中国菜</button></a></div>
+                        <div className="wrap"><a href="/ChanshaFood">
+                            <button className="button" width="500px">Еда 中国菜</button></a></div>
                         <div className="wrap"><a href="/chansha">
                             <button className="button">Достопримечательности 名胜古迹</button></a></div>
                         <div className="wrap"><a href="/chansha">

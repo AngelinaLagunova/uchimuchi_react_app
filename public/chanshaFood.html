@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Еда 中国菜</title>
+    <link rel="stylesheet" href="styles/template.css">
+    <link rel="stylesheet" href="styles/words.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+  </head>
+  <body>
+    <nav>
+      <div class="bar"><a href="map.html">&#9776</a></div>
+      <div class="menu"><a href="index.html">Главная</a><a href="lk.html">Войти</a>
+      </div>
+    </nav>
+    <div class="sidenav"><a href="index.html"><img src="img/home.png"/></a><a href="lk.html"><img src="img/lk.png"/></a><a href="map.html"><img src="img/mapicon.png"/></a><a href="chansha.html">Хунань 湖南</a><a href="chanshaFood.html">Еда 中国菜</a>
+    </div>
+    <div class="page">
+      <header>
+        <h1>Еда 中国菜</h1>
+      </header>
+      <div class="carousel" id="carousel">
+        <div class="arrowLeft hidden">
+          <input type="image" src="img/leftArrow.png" alt="" onClick="prev()">
+        </div>
+        <div class="spin hidden">
+          <input type="image" src="img/card.png" alt="Кнопка «input»" onClick="flesh()"/>
+          <div>
+            <div class="sound"><img src="img/sound.png"/></div>
+            <div class="char">臭豆腐</div>
+            <div class="phen">chòudòufu</div>
+            <div class="count">1/5</div>
+          </div>
+          <div class="hidden">
+            <div class="char">Вонючий тофу</div>
+            <div class="phen"> <img src="img/tofu.jpg"/></div>
+            <div class="count">1/5</div>
+          </div>
+        </div>
+        <div class="spin hidden">
+          <input type="image" src="img/card.png" alt="Кнопка «input»" onClick="flesh()"/>
+          <div>
+            <div class="sound"><img src="img/sound.png"/></div>
+            <div class="char">毛氏红烧肉</div>
+            <div class="phen">Máo shì hóngshāoròu</div>
+            <div class="count">2/5</div>
+          </div>
+          <div class="hidden">
+            <div class="char">Тушенное мясо по рецепту семьи Мао</div>
+            <div class="phen"> <img src="img/meat.jpg"/></div>
+            <div class="count">2/5</div>
+          </div>
+        </div>
+        <div class="spin hidden">
+          <input type="image" src="img/card.png" alt="Кнопка «input»" onClick="flesh()"/>
+          <div>
+            <div class="sound"><img src="img/sound.png"/></div>
+            <div class="char">东安子鸡</div>
+            <div class="phen">dōng’ān zǐjī</div>
+            <div class="count">3/5</div>
+          </div>
+          <div class="hidden">
+            <div class="char">Курица Дунъань</div>
+            <div class="phen"> <img src="img/chicken.jpg"/></div>
+            <div class="count">3/5</div>
+          </div>
+        </div>
+        <div class="spin hidden">
+          <input type="image" src="img/card.png" alt="Кнопка «input»" onClick="flesh()"/>
+          <div>
+            <div class="sound"><img src="img/sound.png"/></div>
+            <div class="char">湘西酸肉</div>
+            <div class="phen">xiāngxī suānròu</div>
+            <div class="count">4/5</div>
+          </div>
+          <div class="hidden">
+            <div class="char">Мясо в кислом соусе по-западнохунаньски</div>
+            <div class="phen"> <img src="img/meat2.jpg"/></div>
+            <div class="count">4/5</div>
+          </div>
+        </div>
+        <div class="spin hidden">
+          <input type="image" src="img/card.png" alt="Кнопка «input»" onClick="flesh()"/>
+          <div>
+            <div class="sound"><img src="img/sound.png"/></div>
+            <div class="char">剁椒鱼头</div>
+            <div class="phen">duòjiāo yútóu</div>
+            <div class="count">5/5</div>
+          </div>
+          <div class="hidden">
+            <div class="char">Рыбья голова в хлопьях красного перца</div>
+            <div class="phen"> <img src="img/fish.jpg"/></div>
+            <div class="count">5/5</div>
+          </div>
+        </div>
+        <div class="arrowRight">
+          <input type="image" src="img/rightArrow.png" alt="" onClick="next()">
+        </div>
+        <div class="arrowRight hidden"><a href="test.html"><img src="img/next.png"></a></div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="scripts/scroll.js"></script>
+  <script src="scripts/flesh.js"></script>
+</html>

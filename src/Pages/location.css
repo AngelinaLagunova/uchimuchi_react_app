@@ -1,8 +1,8 @@
-header img {
+.locationHeader img {
     width:80%;
 }
 
-header {
+.locationHeader {
     display:grid;
     width: 50vw;
     grid-template-columns: 1fr 6fr;
