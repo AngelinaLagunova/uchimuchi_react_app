@@ -14,6 +14,7 @@ const Card=(props)=>{
                 <div className="rusTrans">{props.food[Number(props.num)].trans}</div>
                 <div className="pictWord"> <img src={props.food[Number(props.num)].pict}/></div>
             </div>
+            <div></div>
             <div className="count">{Number(props.num)+1}/5</div> 
         </>
         )
@@ -29,6 +30,7 @@ const Card=(props)=>{
                 <div className="char">{props.food[Number(props.num)].char}</div>
                 <div className="phen">{props.food[Number(props.num)].phen}</div>
             </div>
+            <div></div>
             <div className="count">{Number(props.num)+1}/5</div>
         </>
 
@@ -83,12 +85,12 @@ const ChanshaFood =(props)=>{
                 <div className="words">
                     <h1>Еда 中国菜</h1>
                 </div>
-                <div>
+                <div className="wordsButton">
                     <a href="/chanshaFood">
                         <button className="button">Показать все</button>
                     </a>
                 </div>
-                <div>
+                <div className="wordsButton">
                     <a href="/chanshaFood">
                         <button className="button">Пройти тест</button>
                     </a>
@@ -99,7 +101,7 @@ const ChanshaFood =(props)=>{
                 <div onClick = {fleshCard} className="bigCard"> <Card food={props.food} num={numOfCard} flesh={sideOfCard}/> </div>
                 <div>
                     <div onClick={nextCard} className="arrowRight"><img src="arrowRight.png"/></div>
-                    <a id="testButton2" className="hidden" href="/chanshaFood">
+                    <a id="testButton2" className="hidden testButton" href="/chanshaFood">
                         <button className="button">Пройти тест</button>
                     </a>
                 </div>

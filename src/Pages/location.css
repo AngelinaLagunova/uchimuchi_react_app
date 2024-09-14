@@ -8,13 +8,13 @@
     grid-template-columns: 1fr 6fr;
     align-items: center;
     justify-content: center;
+    font-size:1vw;
+
 }
 
 .sectionName{
-    /* align-items: center;
-    justify-content: center; */
     text-align: center;
-    font-size: 40px;
+    font-size: 2.5vw;
     font-weight: bold;
 }
 
@@ -22,16 +22,55 @@ article {
     display:grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
+    margin-top:2vw;
 }
 
 .info {
     background:lightgrey;
-    padding: 1px 50px;
+    padding: 1vw 2vw;
     font-style: Courier, monospace;
     border-radius:20px;
+    font-size: 1.2vw;
 }
 
-.wrap {
-    display: flex;
-    margin-bottom: 0px;
+@media (max-width:600px)
+{
+    article
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+
+    }
+
+    .wrap .button
+    {
+        min-width: 72vw;
+        font-size: 3vw;
+
+    }
+    .wrap .button2
+    {
+        min-width: 72vw;
+        font-size: 5vw;
+    }
+    .info 
+    {
+        width: 70vw;
+        font-size: 3vw;
+        margin: 2vw auto;
+    }
+    .sectionName
+    {
+        font-size:6vw;
+    }
+    .locationHeader
+    {
+        width:70vw;
+        font-size:2.4vw;
+
+    }
 }
+
+
+

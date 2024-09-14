@@ -1,6 +1,4 @@
 
-
-
 .sound img{
     width:70%;
     margin-left:20%;
@@ -27,7 +25,7 @@
     margin-left: 40%;
     width:90%;
     transform: translate(-50%, -50%);
-    font-size: xxx-large;
+    font-size: 3vw;
     font-weight:bold;
     text-align: center;
 }
@@ -39,7 +37,7 @@
     text-align: center;
     width:70%;
     transform: translate(-50%, -50%);
-    font-size: xx-large;
+    font-size: 2vw;
     font-weight:bold;
 }
 
@@ -48,7 +46,7 @@
     margin-left: 40%;
     width:90%;
     transform: translate(-50%, -50%);
-    font-size: xx-large;
+    font-size: 2vw;
     font-weight:bold;
     text-align: center;
 }
@@ -70,16 +68,16 @@
 
 
 .arrowRight img {
-    margin-top:30%;
-    width:15%;
-    margin-left:15%;
+    margin-top:10vw;
+    width:5vw;
+    margin-left:5vw;
 
 }
 
 .arrowLeft img{
-    margin-top:60%;
-    width:30%;
-    margin-left:30%;
+    margin-top:10vw;
+    width:5vw;
+    margin-left:10vw;
 }
 
 
@@ -90,7 +88,7 @@
     margin-top: 35%;
     margin-left: 17%;
     transform: translate(-50%, -50%);
-    font-size: xxx-large;
+    font-size: 3vw;
     font-weight:bold;
 
 }
@@ -98,25 +96,47 @@
 
 h1, .words{
     margin: 0px;
+    font-size: 3vw;
 }
 
 div .bigCard{
     display:grid;
     grid-template-columns: 1fr 5fr;
-    width:450px;
-    height:450px;
+    width:29vw;
+    height:30vw;
     margin:auto;
     background-color: #fecee8;
-    border-radius:30px;
+    border-radius:10%;
 }
 
 div .wordPage{
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 20vw 29vw 29vw;
     grid-template-rows: 1fr 3fr;
-    grid-gap:10px;
+    grid-gap:1vw;
 }
 
-.wordpage .button{
+.wordsButton .button{
     margin-top:0px;
+    min-width: 29vw;
+    font-size: 2vw;
+    min-height: 5vw;
+
+}
+
+.testButton .button{
+    min-width: 29vw;
+    font-size: 2vw;
+    margin-top: 10vw;
+    min-height: 10vw;
+}
+
+@media (max-width:600px)
+{
+    .wordsButton, .testButton .button
+    {
+        min-width: 3vw;
+        font-size: 2.5vw;
+    }
+
 }

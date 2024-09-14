@@ -1,9 +1,9 @@
 .button {
-    min-width: 450px;
-    min-height: 60px;
+    min-width: 30vw;
+    /* height: 10%; */
     font-family:'Courier New', Courier, monospace;
     
-    font-size: 22px;
+    font-size:1.5vw;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     font-weight: 700;
@@ -11,28 +11,13 @@
     /* background: #b5f4e1; */
     background: linear-gradient(90deg, #b5f4e1 0%, #b5f4e1 100%);
     border: none;
-    border-radius: 25px;
+    border-radius: 1vw;
     /* box-shadow: 12px 12px 24px rgba(79,209,197,.64); */
     transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
     outline: none;
     position: relative;
-    padding: 10px;
-    }
-    
-    button::before {
-    content: '';
-    border-radius: 38px;
-    min-width: calc(450px + 12px);
-    min-height: calc(60px + 12px);
-    border: 6px solid #b5f4e1;
-    /* box-shadow: 0 0 60px rgba(0,255,203,.64); */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: all .3s ease-in-out 0s;
+    /* padding: 10px; */
     }
     
     .button:hover, .button:focus {
@@ -78,11 +63,11 @@
 
 
 .button2 {
-    min-width: 500px;
+    min-width: 30vw;
     min-height: 100px;
     font-family:'Courier New', Courier, monospace;
     
-    font-size: 22px;
+    font-size: 1.5vw;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     font-weight: 700;
@@ -96,21 +81,6 @@
     outline: none;
     position: relative;
     padding: 10px;
-    }
-        
-    .button2::before {
-    content: '';
-    border-radius: 30px;
-    min-width: calc(500px + 12px);
-    min-height: calc(100px + 12px);
-    border: 6px solid #fecee8;
-    /* box-shadow: 0 0 60px rgba(227, 145, 212, 0.64); */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: all .3s ease-in-out 0s;
     }
         
     .button2:hover, .button:focus {

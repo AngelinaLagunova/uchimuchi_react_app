@@ -1,25 +1,35 @@
 
 .wrap {
-/* height: 100%; */
-display: flex;
-align-items: center;
+display: grid;
 justify-content: center;
-margin: 3vw;
+margin: 3vw auto;
+margin-bottom: 0px;
+
 }
 
+.wrap .button{
+    min-height:4vw;
+
+}
 
 
 
 .mainHeader {
-    font-size:50px;
+    font-size:3vw;
     text-align:center;
     display:grid;
-    width:80vw;
     margin:1px auto;
 }
 
 
-div .main {
-    display:grid;
+@media (max-width:600px){
+
+    .mainHeader h1
+    {
+        font-size:6vw;
+    }
+    .wrap .button{
+        min-height:6vw;
+        font-size:5vw;
+    }
 }
-    
