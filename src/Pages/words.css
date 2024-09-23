@@ -1,3 +1,11 @@
+.zoom-effect {
+    transition: transform 0.5s;
+  }
+  
+.zoom-effect:hover {
+transform: scale(2);
+}
+
 
 .sound img{
     width:70%;
@@ -116,7 +124,7 @@ div .wordPage{
 
 }
 
-.testButton .button{
+.testButton .button{  
     min-width: 27vw;
     font-size: 2vw;
     margin-top: 10vw;

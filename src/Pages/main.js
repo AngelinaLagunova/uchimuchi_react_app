@@ -5,7 +5,7 @@ function Main() {
     <>
       <div className="page">
         <div className="mainHeader">
-          <h1>Учи Мучи</h1>
+          Учи Мучи
         </div>
         <div className="main">
           <div className="wrap"><a href="/map">

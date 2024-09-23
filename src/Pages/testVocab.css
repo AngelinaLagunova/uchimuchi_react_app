@@ -1,0 +1,55 @@
+.testVocabPage {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    margin-top:2vw;
+
+}
+
+.testVocab {
+    display: grid;
+}
+
+.testPict img {
+    width:20vw;
+    border: 1vw solid #b5f4e1;
+    border-radius: 2vw;
+}
+
+.testPict {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    font-size:3vw;
+    text-align: center;
+    font-weight: bold;
+    align-items: center;
+    width:60vw;
+    margin: auto;
+}
+
+.testVariants .checkTestSetting{
+    margin:0vw;
+    height:7vw;
+    font-size:2vw;
+}
+
+.testVariants{
+    margin:2vw;
+}
+
+.testVocabPage .button{
+    height: 3vw;
+    width:52vw;
+    margin: auto;
+}
+
+.arrowLeftTest img{
+    margin-top:20vw;
+    width:5vw;
+    margin-left:0vw;
+}
+
+.arrowRightTest img{
+    margin-top:20vw;
+    width:5vw;
+    margin-left:0vw;
+}

@@ -11,7 +11,7 @@ const Card = (props)=>{
     const MiniFlesh = (event) =>{
         let index =  Number(event.target.parentNode.id[8]);
 
-        if (fleshMini.indexOf(index)==-1){
+        if (fleshMini.indexOf(index)===-1){
             setFleshMini(fleshMini => [...fleshMini,index]);
         }
         else {
@@ -20,16 +20,8 @@ const Card = (props)=>{
 
     }
 
-    // генерация сразу всех мини-карт
-
-    const MiniCardsGeneration = props.food.map((item,index) =>
-        <div id={"miniCard" + index} onClick={MiniFlesh} className="miniCard" > 
-            <MiniCardFlesh item={item} id={"miniCard" + index}/>
-         </div>
-    )
-    
     const MiniCardFlesh = (props) =>{
-        if (fleshMini.indexOf(Number(props.id[8]))==-1){
+        if (fleshMini.indexOf(Number(props.id[8]))===-1){
             return(
                 <>
                 <div className="charMin" >{props.item.char}</div>
@@ -41,6 +33,15 @@ const Card = (props)=>{
             <div className="rusTransMin">{props.item.trans}</div>
         )
     }
+    // генерация сразу всех мини-карт
+
+    const MiniCardsGeneration = props.words.map((item,index) =>
+        <div id={"miniCard" + index} onClick={MiniFlesh} className="miniCard" key={index} > 
+            <MiniCardFlesh item={item} id={"miniCard" + index}/>
+         </div>
+    )
+    
+   
     
     const BigCardFlesh = (props) => {
 
@@ -48,14 +49,14 @@ const Card = (props)=>{
         return(
             <>  
             {/* сторона с иероглифами */}
-                <div className="translate"><img src="translate.png"/></div>
+                <div className="translate"><img src="translate.png" alt="translate_button"/></div>
                 <div>
-                    <div className="star"><img src="star.png"/></div>
-                    <div className="rusTrans">{props.food[Number(props.num)].trans}</div>
-                    <div className="pictWord"> <img src={props.food[Number(props.num)].pict}/></div>
+                    <div className="star"><img src="star.png" alt="add_to_list_button"/></div>
+                    <div className="rusTrans">{props.words[Number(props.num)].trans}</div>
+                    <div className="pictWord"> <img src={props.words[Number(props.num)].pict} className="zoom-effect" alt={props.num + "chansha_words_picture"}/></div>
                 </div>
                 <div></div>
-                <div className="count">{Number(props.num)+1}/{props.food.length}</div> 
+                <div className="count">{Number(props.num)+1}/{props.words.length}</div> 
             </>
             )
         }
@@ -63,16 +64,16 @@ const Card = (props)=>{
             <>
             {/* сторона с переводом */}
                 <div>
-                    <div className="translate"><img src="translate.png"/></div>
-                    <div className="sound"><img src="sound.png"/></div>
+                    <div className="translate"><img src="translate.png" alt="translate_button"/></div>
+                    <div className="sound"><img src="sound.png" alt="sound_button"/></div>
                 </div>
                 <div>
-                    <div className="star"><img src="star.png"/></div>
-                    <div className="char">{props.food[Number(props.num)].char}</div>
-                    <div className="phen">{props.food[Number(props.num)].phen}</div>
+                    <div className="star"><img src="star.png" alt="add_to_list_button"/></div>
+                    <div className="char">{props.words[Number(props.num)].char}</div>
+                    <div className="phen">{props.words[Number(props.num)].phen}</div>
                 </div>
                 <div></div>
-                <div className="count">{Number(props.num)+1}/{props.food.length}</div>
+                <div className="count">{Number(props.num)+1}/{props.words.length}</div>
             </>
     
         )
@@ -91,7 +92,7 @@ const Card = (props)=>{
 
     //перелистывание на следующую карточку
     const nextCard = (event) =>{
-        if (numOfCard < props.food.length - 1){
+        if (numOfCard < props.words.length - 1){
             setNum(numOfCard + 1);
             setFlesh(false);
         }
@@ -118,7 +119,7 @@ const Card = (props)=>{
             document.getElementsByClassName("arrowLeft")[0].classList.add("hidden");
         }
         // контроль появления правой стрелочки и исчезновения кнопки "пройти тест"
-        if (numOfCard == props.food.length - 1){
+        if (numOfCard === props.words.length - 1){
             document.getElementsByClassName("arrowRight")[0].classList.remove("hidden");
             document.getElementById("testButton2").classList.add("hidden");
         }
@@ -131,20 +132,20 @@ const Card = (props)=>{
             {/* BigCardGeneration */}
             <div>
                 <div onClick={prevCard} className="arrowLeft hidden">
-                    <img src="arrowLeft.png"/>
+                    <img src="arrowLeft.png" alt="arrow_left_button"/>
                 </div>
             </div>
 
             <div onClick = {fleshCard} className="bigCard"> 
-                <BigCardFlesh food={props.food} num={numOfCard} flesh={sideOfCard}/> 
+                <BigCardFlesh words={props.words} num={numOfCard} flesh={sideOfCard}/> 
             </div>
 
             <div>
                 <div onClick={nextCard} className="arrowRight">
-                    <img src="arrowRight.png"/>
+                    <img src="arrowRight.png" alt="arrow_right_button"/>
                 </div>
 
-                <a id="testButton2" className="hidden testButton" href="/chanshaFood">
+                <a id="testButton2" className="hidden testButton" href={props.links.test}>
                     <button className="button">Пройти тест</button>
                 </a>
             </div>
@@ -162,7 +163,7 @@ const Card = (props)=>{
 
 
 
-const ChanshaFood =(props)=>{
+const Vocabulary =(props)=>{
 
     // состояние кнопки смены страниц
     const [modeOfWatch, setMode] = React.useState("Учить");
@@ -188,14 +189,14 @@ const ChanshaFood =(props)=>{
 
 
                 <div className="wordsButton">
-                    <a href="/chanshaFood">
+                    <a href={props.links.test}>
                         <button className="button">Пройти тест</button>
                     </a>
                 </div>
 
                 {/* блок с карточками: все или по одной */}
 
-                <Card food={props.food} mode={modeOfWatch}/>
+                <Card words={props.words} mode={modeOfWatch} links={props.links}/>
                 
             </div>
         </div>
@@ -203,4 +204,4 @@ const ChanshaFood =(props)=>{
     )
 }
 
-export default ChanshaFood
+export default Vocabulary

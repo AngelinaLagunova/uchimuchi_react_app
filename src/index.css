@@ -104,3 +104,8 @@ nav a {
 img {
   margin: 0px auto;
 }
+
+.sidenav hr {
+    margin-top:3vw;
+    border: 0.3vw solid rgb(158, 156, 156);
+}
