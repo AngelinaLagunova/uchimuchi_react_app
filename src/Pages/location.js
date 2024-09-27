@@ -1,9 +1,35 @@
 import "./location.css";
+import React, { useEffect } from 'react';
 
 
 
 const Location =(props) =>
 {
+    useEffect(() => {
+        let sidenav = document.getElementsByClassName("sidenav")[0];
+    
+        for(let i=0; i<props.sdnv.length; i++){
+            let nav = document.createElement('a');
+            nav.href=props.sdnv[i].href;
+    
+            let innerA
+            if(i===0){
+            innerA = document.createElement("img");
+            innerA.src=props.sdnv[i].src;
+            innerA.alt="icon_picture";
+            }
+            else {
+                innerA = document.createElement("p");
+                innerA.innerHTML=props.sdnv[i].text;
+            }
+            nav.appendChild(innerA);
+    
+            sidenav.appendChild(nav) ;
+            console.log(sidenav);
+        }
+        
+        });
+
     return(
         <>
             <div className="page">
@@ -25,7 +51,7 @@ const Location =(props) =>
                             <button className="button">Достопримечательности 名胜古迹</button></a></div>
                         <div className="wrap"><a href={props.links.food}>
                             <button className="button">Еще одна категория</button></a></div>
-                        <div className="wrap"><a href={props.links.food}>
+                        <div className="wrap"><a href={props.links.grammar}>
                             <button className="button2">Грамматика</button></a></div>
                     </div>
                 </article>

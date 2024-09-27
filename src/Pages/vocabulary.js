@@ -1,5 +1,6 @@
 import './words.css';
-import React from 'react'; 
+// import React from 'react'; 
+import React, { useEffect } from 'react';
 
 
 
@@ -171,6 +172,31 @@ const Vocabulary =(props)=>{
     const SetMode = (event) =>{
         setMode (event.target.innerHTML === "Показать все" ? "Учить" : "Показать все")
     }
+
+    useEffect(() => {
+        let sidenav = document.getElementsByClassName("sidenav")[0];
+    
+        for(let i=0; i<props.sdnv.length; i++){
+            let nav = document.createElement('a');
+            nav.href=props.sdnv[i].href;
+    
+            let innerA
+            if(i===0){
+            innerA = document.createElement("img");
+            innerA.src=props.sdnv[i].src;
+            innerA.alt="icon_picture";
+            }
+            else {
+                innerA = document.createElement("p");
+                innerA.innerHTML=props.sdnv[i].text;
+            }
+            nav.appendChild(innerA);
+    
+            sidenav.appendChild(nav) ;
+            console.log(sidenav);
+        }
+        
+        });
 
     return(
         

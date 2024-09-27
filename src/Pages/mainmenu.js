@@ -1,6 +1,6 @@
-import './main.css';
+import './mainmenu.css';
 
-function Main() {
+function MainMenu() {
   return (
     <>
       <div className="page">
@@ -20,4 +20,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainMenu;

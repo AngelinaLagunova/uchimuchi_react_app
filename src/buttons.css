@@ -29,7 +29,7 @@
     content: '';
     width: 30px; height: 30px;
     border-radius: 100%;
-    border: 6px solid #b5f4e1;
+    /* border: 6px solid #b5f4e1; */
     position: absolute;
     z-index: -1;
     top: 50%;
@@ -118,3 +118,6 @@
             opacity: 0;
         }
     }
+
+
+  

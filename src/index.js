@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { useTransition, animated } from 'react-spring';
 import './index.css';
 import './buttons.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Lk from "./Pages/Lk.js";
-import Main from "./Pages/main.js";
+import MainMenu from "./Pages/mainmenu.js";
 import Map from "./Pages/map.js";
 import Location from "./Pages/location.js";
 import Vocabulary from "./Pages/vocabulary.js";
@@ -12,6 +13,7 @@ import TestSetting from "./Pages/testSetting.js"
 import VocabList from "./Pages/vocabList.js";
 import TestVocab from "./Pages/testVocab.js";
 import TestVocabWrite from "./Pages/testVocabWrite.js";
+import Grammar from "./Pages/grammar.js";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,6 +25,15 @@ const vocabFoodGuizhou = [{"char":"茅台酒", "phen":"máo tái jiǔ ", "trans"
 const vocabSightsChansha = [{"char":"张家界国家森林公园 ", "phen":"zhāng jiā jiè guó jiā sēn língōng yuán", "trans":"Чжанцзяцзе (природный парк)", "pict":"naturePark.png"}, {"char":"五一广场", "phen":"wǔ yī guǎng chǎng", "trans":"Площадь 'Уи'", "pict":"square.png"},{"char":"洞庭湖", "phen":"dòngtínghú", "trans":"Озеро Дунтинху", "pict":"lake.png"}, {"char":"风凰县", "phen":"fēng huáng xiàn", "trans":"Фенхуан - город Феникс (древний город)", "pict":"acientTown.png"}, {"char":"毛泽东故居", "phen":"máo zé dōng gù jū", "trans":"Дом-музей Мао ЦзеДуна", "pict":"musemMao.png"},{"char":"马王堆", "phen":"mǎ wáng duī", "trans":"Мавадуй", "pict":"Mavaduy.png"},{"char":"南方长城", "phen":"nán fāng cháng chéng", "trans":"Южная Великая стена", "pict":"wall.png"}];
 
 const vocabSightsGuizhou = [{"char":"黄果树瀑布 ", "phen":"huáng guǒ shù pù bù", "trans":"Водопады Хуангошу", "pict":"waterFall.png"}, {"char":"梵净山", "phen":"fàn jìng shān", "trans":"Фаньцзиншань, горы Фаньцзин", "pict":"mountains.png"},{"char":"毕节织金洞", "phen":"bì jié zhī jīn tóng", "trans":"Карстовые пещеры Чжицзинь в Бицзе", "pict":"cave.png"}, {"char":"西江苗寨", "phen":"xī jiāng miáo zhài", "trans":"Деревня Мяо на реке Сицзян", "pict":"village.png"}, {"char":"同仁大峡谷", "phen":"tóng rén dà xiá gǔ", "trans":"Гранд-Каньон Тунжэнь", "pict":"canyon.png"}];
+
+const vocabFoodTestChansha =[{"char":"臭豆腐", "phen":"chòudòufu","pict":"tofu.jpg", "var1":"Вонючий тофу", "var2":"Тушенное мясо по рецепту семьи Мао", "var3":"Курица Дунъань", "rightVar":"var1"}, {"char":"毛氏红烧肉", "phen":"Máo shì hóngshāoròu","pict":"meat.jpg", "var1":"Вонючий тофу", "var2":"Тушенное мясо по рецепту семьи Мао", "var3":"Курица Дунъань", "rightVar":"var2"}, {"char":"东安子鸡", "phen":"dōng’ān zǐjī","pict":"chicken.jpg", "var1":"Вонючий тофу", "var2":"Тушенное мясо по рецепту семьи Мао", "var3":"Курица Дунъань", "rightVar":"var3"}]
+
+const vocabFoodTestWriteChansha =[{"char":"Вонючий тофу", "phen":"","pict":"tofu.jpg", "trans":"臭豆腐", "trans2":"chòudòufu"}, {"char":"臭豆腐", "phen":"chòudòufu","pict":"tofu.jpg", "trans":"Вонючий тофу", "trans2":"Вонючий тофу"}, {"char":"毛氏红烧肉", "phen":"Máo shì hóngshāoròu","pict":"meat.jpg","trans":"Тушенное мясо по рецепту семьи Мао", "trans2":"Тушенное мясо по рецепту семьи Мао"}, {"char":"东安子鸡", "phen":"dōng’ān zǐjī","pict":"chicken.jpg","trans":"Курица Дунъань", "trans2":"Курица Дунъань"}]
+
+const ChanshaGrammarChar = [[{"char":"这个菜", "color":"white"},{"char":"是", "color":"grey"},{"char":"臭豆腐","color":"white"}], [{"char":"我", "color":"orange"},{"char":"喜欢", "color":"blue"},{"char":"剁椒鱼头","color":"green"}]];
+const ChanshaGrammarTrans = [["Это блюдо - вонючий тофу"],["Мне", "нравтся", "«рыбья голова в хлопьях красного перца»"]];
+const ChanshaGrammar = ["zhè gè cài shì chòudòufu","Wǒxǐhuan duòjiāoyútóu"];
+const ChanshaGrammarLinks = {"test":"/ChanshaGrammar"};
 
 const InfoChansha = () =>(
   <>
@@ -47,65 +58,78 @@ const nameGuandun = {"province": "Гуандун 广东", "city":" "};
 
  
 
-const ChanshaLinks ={"pictmap":"chansha.png", "food":"/ChanshaFood", "sights":"/ChanshaSights"}
+const ChanshaLinks ={"pictmap":"chansha.png", "food":"/ChanshaFood", "sights":"/ChanshaSights", "grammar":"/ChanshaGrammar"}
 const GuizhouLinks ={"pictmap":"guizhou.png", "food":"/GuizhouFood", "sights":"/GuizhouSights"}
 const GuandunLinks ={"pictmap":"guandun.png", "food":"/GuizhouFood", "sights":"/GuizhouSights"}
 
 const ChanshaFoodLinks ={"test":"/ChanshaFoodTestSetting"}
 const ChanshaFoodTestSettingLinks = {"testVocab":"ChanshaFoodTestVocab", "testVocabWrite":"ChanshaFoodTestVocabWrite"}
 
-function Sidebar() {
+const ChanshaTestLinks ={ "grammar":"/ChanshaGrammar", "testVocab":"ChanshaFoodTestSetting", "location":"/chansha"}
+
+const MapSidenav = [{"href":"/map", "src":"mapicon.png"}];
+const ChanshaSidenav = [].concat(MapSidenav, [{"href":"/chansha", "text":"Хунань"}]);
+const ChanshaFoodSidenav = [].concat(ChanshaSidenav,[{"href":"/ChanshaFood", "text":"Слова"}])
+const ChanshaSightsSidenav = [].concat(ChanshaSidenav,[{"href":"/ChanshaSights", "text":"Слова"}])
+const ChanshaGrammarSidenav = [].concat(ChanshaSidenav,[{"href":"/ChanshaGrammar", "text":"Грамматика"}])
+
+
+const GuizhouSidenav = [].concat(MapSidenav, [{"href":"/guizhou", "text":"Гуйчжоу"}]); 
+const GuizhouFoodSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouFood", "text":"Еда"}]);
+const GuizhouSightsSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouSights", "text":"Достопримечательности"}]);
+
+
+
+const GuandunSidenav = [].concat(MapSidenav,[{"href":"/guandun", "text":"Гуандун"}]);
+
+
+
+function Sidebar(props) {
 
     const listImg = ["home", "lk", "vocabList"];
-
-    //const [SideBarContent, setSideBar] = React.useState([]);
-
-    // const AddToBar = (event) =>{
-       
-    //       setSideBar(SideBarContent => [...SideBarContent,"mapicon"]);
-
-    // }
-    // const AddSideImages =SideBarContent.map((img, index) =>
-    //   <a href={"/"+img} key={index}><img key={index} src={img +".png"} alt="icon_picture"/></a>
-    // );
 
     const SideImages =listImg.map((img, index) =>
       <a href={"/"+img} key={index}><img key={index} src={img +".png"} alt="icon_picture"/></a>
     );
 
+    
+  const location = useLocation();
+
+  console.log(location);
     return(
       <>
       <div className="sidenav">
         {SideImages}
         <hr/>
       </div>
-      <Router>
+      
         <Routes>
-            <Route exact path="/home" element={<Main/>}/>
-            <Route exact path="/" element={<Main/>}/>
+            <Route exact path="/home" element={<MainMenu/>}/>
+            <Route exact path="/" element={<MainMenu/>}/>
             <Route exact path="/lk" element={<Lk/>}/>
             <Route exact path="/vocabList" element={<VocabList/>}/>
-            <Route exact path="/map" element={<Map />}/>
+            <Route exact path="/map" element={<Map sdnv={MapSidenav} />}/>
 
-            <Route exact path="/chansha" element={<Location name={nameChansha} info={InfoChansha()} links={ChanshaLinks}/>}/>
-            <Route exact path="/guizhou" element={<Location name={nameGuizhou} info={InfoGuizhou()} links={GuizhouLinks}/>}/>
-            <Route exact path="/guandun" element={<Location name={nameGuandun} info={InfoGuandun()} links={GuandunLinks}/>}/>
+            <Route exact path="/chansha" element={<Location name={nameChansha} info={InfoChansha()} links={ChanshaLinks} sdnv={ChanshaSidenav}/>}/>
+            <Route exact path="/guizhou" element={<Location name={nameGuizhou} info={InfoGuizhou()} links={GuizhouLinks} sdnv={GuizhouSidenav}/>}/>
+            <Route exact path="/guandun" element={<Location name={nameGuandun} info={InfoGuandun()} links={GuandunLinks} sdnv={GuandunSidenav}/>}/>
 
-            <Route exact path="/ChanshaFood" element={<Vocabulary words={vocabFoodChansha} links={ChanshaFoodLinks}/>}/>
-            <Route exact path="/ChanshaSights" element={<Vocabulary words={vocabSightsChansha} links={ChanshaFoodLinks}/>}/>
-            <Route exact path="/GuizhouFood" element={<Vocabulary words={vocabFoodGuizhou} links={ChanshaFoodLinks}/>}/>
-            <Route exact path="/GuizhouSights" element={<Vocabulary words={vocabSightsGuizhou} links={ChanshaFoodLinks}/>}/>
+            <Route exact path="/ChanshaFood" element={<Vocabulary words={vocabFoodChansha} links={ChanshaFoodLinks} sdnv={ChanshaFoodSidenav}/>}/>
+            <Route exact path="/ChanshaSights" element={<Vocabulary words={vocabSightsChansha} links={ChanshaFoodLinks} sdnv={ChanshaSightsSidenav}/>}/>
+            <Route exact path="/ChanshaGrammar" element={<Grammar char={ChanshaGrammarChar} phen={ChanshaGrammar} trans={ChanshaGrammarTrans} links={ChanshaGrammarLinks} sdnv={ChanshaGrammarSidenav}/>}/>
+
+            <Route exact path="/GuizhouFood" element={<Vocabulary words={vocabFoodGuizhou} links={ChanshaFoodLinks} sdnv={GuizhouFoodSidenav}/>}/>
+            <Route exact path="/GuizhouSights" element={<Vocabulary words={vocabSightsGuizhou} links={ChanshaFoodLinks} sdnv={GuizhouSightsSidenav}/>}/>
 
             <Route exact path="/ChanshaFoodTestSetting" element={<TestSetting links={ChanshaFoodTestSettingLinks}/>}/>
 
-            <Route exact path="/ChanshaFoodTestVocab" element={<TestVocab words={vocabFoodChansha}/>}/>
-            <Route exact path="/ChanshaFoodTestVocabWrite" element={<TestVocabWrite/>}/>
+            <Route exact path="/ChanshaFoodTestVocab" element={<TestVocab words={vocabFoodTestChansha} links={ChanshaTestLinks}/>}/>
+            <Route exact path="/ChanshaFoodTestVocabWrite" element={<TestVocabWrite words={vocabFoodTestWriteChansha} links={ChanshaTestLinks}/>}/>
 
 
 
 
         </Routes>
-      </Router>
     </>
     )  
   }
@@ -114,9 +138,10 @@ function Sidebar() {
 
 function Content() { 
   return(     
-    <>         
-    <Sidebar/>
-    </>     
+    <Router>
+    <Sidebar />
+
+    </Router>
   ) 
 } 
 
