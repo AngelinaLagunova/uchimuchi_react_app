@@ -13,6 +13,7 @@ const Grammar = (props) =>{
     useEffect(() => {
         let sidenav = document.getElementsByClassName("sidenav")[0];
     
+        if (sidenav.children.length < props.sdnv.length+4)
         for(let i=0; i<props.sdnv.length; i++){
             let nav = document.createElement('a');
             nav.href=props.sdnv[i].href;
@@ -34,6 +35,7 @@ const Grammar = (props) =>{
         }
         
         });
+        
     const [numOfGram, setTestNum] = React.useState(0);
 
     const Next =(event)=>{

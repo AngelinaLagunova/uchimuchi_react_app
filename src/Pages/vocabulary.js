@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 
 
 const Card = (props)=>{
+    
 
     // состояни и функция для контроля переворота мини-карт, хранится массив из индексов
     const [fleshMini, setFleshMini] = React.useState([]);
@@ -176,6 +177,7 @@ const Vocabulary =(props)=>{
     useEffect(() => {
         let sidenav = document.getElementsByClassName("sidenav")[0];
     
+        if (sidenav.children.length < props.sdnv.length+4)
         for(let i=0; i<props.sdnv.length; i++){
             let nav = document.createElement('a');
             nav.href=props.sdnv[i].href;

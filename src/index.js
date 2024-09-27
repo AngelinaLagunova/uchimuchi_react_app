@@ -1,4 +1,6 @@
 import React from 'react';
+// import React, { useEffect } from 'react';
+
 import ReactDOM from 'react-dom/client';
 import { useTransition, animated } from 'react-spring';
 import './index.css';
@@ -85,6 +87,7 @@ const GuandunSidenav = [].concat(MapSidenav,[{"href":"/guandun", "text":"Гуа�
 
 
 function Sidebar(props) {
+  
 
     const listImg = ["home", "lk", "vocabList"];
 
@@ -94,16 +97,33 @@ function Sidebar(props) {
 
     
   const location = useLocation();
+  const transitions = useTransition(location,{key:location => location.pathname,
+    
+      from:{
+        opacity:0,
+      },
+      enter:{
+        opacity:1,
 
-  console.log(location);
+      },
+      leave:{
+        opacity:0,
+
+      },
+    }
+  );
+
+  console.log(location.pathname);
     return(
       <>
       <div className="sidenav">
         {SideImages}
         <hr/>
       </div>
-      
-        <Routes>
+      {transitions((props, location)=>(
+        <animated.div style={props}>
+          {/* <div style={{position:'absolute',width:'100%'}}> */}
+        <Routes location={location}>
             <Route exact path="/home" element={<MainMenu/>}/>
             <Route exact path="/" element={<MainMenu/>}/>
             <Route exact path="/lk" element={<Lk/>}/>
@@ -130,6 +150,9 @@ function Sidebar(props) {
 
 
         </Routes>
+        {/* </div> */}
+        </animated.div>
+        ))}
     </>
     )  
   }
