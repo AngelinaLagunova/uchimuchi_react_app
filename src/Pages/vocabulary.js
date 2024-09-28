@@ -207,7 +207,7 @@ const Vocabulary =(props)=>{
             <div className="wordPage">
 
                 <div className="words">
-                    <h1>Еда 中国菜</h1>
+                    <h1>{props.links.title} <br/> {props.links.title2}</h1>
                 </div>
 
                 {/* кнопка смены страниц: Учиться или Посмотреть все */}

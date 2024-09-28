@@ -96,7 +96,8 @@ transform: scale(2);
 
 h1, .words{
     margin: 0px;
-    font-size: 3vw;
+    font-size: 2vw;
+    vertical-align:  center;
 }
 
 div .bigCard{
