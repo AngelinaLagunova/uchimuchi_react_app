@@ -103,6 +103,8 @@ nav a {
     margin-left: 10vw; /* Same as the width of the sidenav */
     padding: 0px 5vw;
     margin-top:30px;
+    position: absolute;
+    width:80vw;
 }
 
 img {

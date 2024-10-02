@@ -1,5 +1,7 @@
 import "./testVocab.css";
 import React from 'react';
+import { Link } from "react-router-dom";
+
 
 const TestVocab =(props) =>{
     
@@ -180,14 +182,14 @@ const TestVocab =(props) =>{
             </div>
 
             <div className = "results">
-                Вы набрали <Results/> баллов! <a href={props.links.testVocab}> Пройти еще раз? </a>
+                Вы набрали <Results/> баллов! <Link to={props.links.testVocab}> Пройти еще раз? </Link>
 
             </div>
             <div className="testResults">
-            <a href={props.links.grammar}><button className="button" >Перейти к изучению грамматики</button> </a>
+            <Link to={props.links.grammar}><button className="button" >Перейти к изучению грамматики</button> </Link>
             </div>
             <div className="testResults">
-            <a href={props.links.location}><button className="button" >Вернуться к категориям слов</button> </a>
+            <Link to={props.links.location}><button className="button" >Вернуться к категориям слов</button> </Link>
             </div>
             
 

@@ -1,6 +1,7 @@
 import './words.css';
-// import React from 'react'; 
-import React, { useEffect } from 'react';
+import React from 'react'; 
+import { Link } from "react-router-dom";
+
 
 
 
@@ -147,9 +148,9 @@ const Card = (props)=>{
                     <img src="arrowRight.png" alt="arrow_right_button"/>
                 </div>
 
-                <a id="testButton2" className="hidden testButton" href={props.links.test}>
+                <Link id="testButton2" className="hidden testButton" to={props.links.test}>
                     <button className="button">Пройти тест</button>
-                </a>
+                </Link>
             </div>
             </>
             
@@ -174,32 +175,6 @@ const Vocabulary =(props)=>{
         setMode (event.target.innerHTML === "Показать все" ? "Учить" : "Показать все")
     }
 
-    useEffect(() => {
-        let sidenav = document.getElementsByClassName("sidenav")[0];
-    
-        if (sidenav.children.length < props.sdnv.length+4)
-        for(let i=0; i<props.sdnv.length; i++){
-            let nav = document.createElement('a');
-            nav.href=props.sdnv[i].href;
-    
-            let innerA
-            if(i===0){
-            innerA = document.createElement("img");
-            innerA.src=props.sdnv[i].src;
-            innerA.alt="icon_picture";
-            }
-            else {
-                innerA = document.createElement("p");
-                innerA.innerHTML=props.sdnv[i].text;
-            }
-            nav.appendChild(innerA);
-    
-            sidenav.appendChild(nav) ;
-            console.log(sidenav);
-        }
-        
-        });
-
     return(
         
         <div className="page">
@@ -217,9 +192,9 @@ const Vocabulary =(props)=>{
 
 
                 <div className="wordsButton">
-                    <a href={props.links.test}>
+                    <Link to={props.links.test}>
                         <button className="button">Пройти тест</button>
-                    </a>
+                    </Link>
                 </div>
 
                 {/* блок с карточками: все или по одной */}

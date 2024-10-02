@@ -1,4 +1,5 @@
 import './mainmenu.css';
+import { Link } from "react-router-dom";
 
 function MainMenu() {
   return (
@@ -8,12 +9,12 @@ function MainMenu() {
           Учи Мучи
         </div>
         <div className="main">
-          <div className="wrap"><a href="/map">
-              <button className="button">Путешествие 旅行</button></a></div>
-          <div className="wrap"><a href="/">
-              <button className="button">Второй модуль</button></a></div>
-          <div className="wrap"><a href="/">
-              <button className="button">Третий модуль</button></a></div>
+          <div className="wrap"><Link to="/map">
+              <button className="button">Путешествие 旅行</button></Link></div>
+          <div className="wrap"><Link to="/">
+              <button className="button">Второй модуль</button></Link></div>
+          <div className="wrap"><Link href="/">
+              <button className="button">Третий модуль</button></Link></div>
         </div>
       </div>
   </>

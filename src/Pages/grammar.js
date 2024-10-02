@@ -1,8 +1,8 @@
 
 import "./grammar.css";
-// import React from "react";
-import React, { useEffect } from 'react';
+import React from "react";
 
+import { Link } from "react-router-dom";
 
 
 
@@ -10,31 +10,7 @@ import React, { useEffect } from 'react';
 
 const Grammar = (props) =>{
 
-    useEffect(() => {
-        let sidenav = document.getElementsByClassName("sidenav")[0];
-    
-        if (sidenav.children.length < props.sdnv.length+4)
-        for(let i=0; i<props.sdnv.length; i++){
-            let nav = document.createElement('a');
-            nav.href=props.sdnv[i].href;
-    
-            let innerA
-            if(i===0){
-            innerA = document.createElement("img");
-            innerA.src=props.sdnv[i].src;
-            innerA.alt="icon_picture";
-            }
-            else {
-                innerA = document.createElement("p");
-                innerA.innerHTML=props.sdnv[i].text;
-            }
-            nav.appendChild(innerA);
-    
-            sidenav.appendChild(nav) ;
-            console.log(sidenav);
-        }
-        
-        });
+   
         
     const [numOfGram, setTestNum] = React.useState(0);
 
@@ -88,9 +64,9 @@ const Grammar = (props) =>{
                 <h1>Грамматика</h1> 
                 <div></div>
                 <div className="wordsButton">
-                    <a href={props.links.test}>
+                    <Link to={props.links.test}>
                         <button className="button">Пройти тест</button>
-                    </a>
+                    </Link>
                 </div>
                 
             </div>
@@ -121,9 +97,9 @@ const Grammar = (props) =>{
                     <div onClick={Next} className="arrowRightTest">
                         <img src="arrowRight.png" alt="arrow_right_button"/>
                     </div>
-                    <a id="testButton" className="hidden grammTestButton" href={props.links.test}>
+                    <Link id="testButton" className="hidden grammTestButton" to={props.links.test}>
                         <button className="button">Пройти тест</button>
-                    </a>
+                    </Link>
                 </div>
 
             </div>
