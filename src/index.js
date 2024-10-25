@@ -40,10 +40,38 @@ const vocabFoodTestWriteChansha =[{"char":"Вонючий тофу", "phen":"","
 
 //грамматика
 //хунань
-const ChanshaGrammarChar = [[{"char":"这个菜", "color":"white"},{"char":"是", "color":"grey"},{"char":"臭豆腐","color":"white"}], [{"char":"我", "color":"orange"},{"char":"喜欢", "color":"blue"},{"char":"剁椒鱼头","color":"green"}]];
-const ChanshaGrammarTrans = [["Это блюдо - вонючий тофу"],["Мне", "нравтся", "«рыбья голова в хлопьях красного перца»"]];
-const ChanshaGrammar = ["zhè gè cài shì chòudòufu","Wǒxǐhuan duòjiāoyútóu"];
+const ChanshaGrammarChar = [[{"char":"这个菜", "color":"white"},{"char":"是", "color":"grey"},{"char":"臭豆腐","color":"white"}], 
+[{"char":"昨天", "color":"grey"},{"char":"他/她点了毛氏红烧肉", "color":"white"}], 
+[{"char":"那个饭馆", "color":"white"},{"char":"不", "color":"grey"},{"char":"做东安子鸡","color":"white"}],
+[{"char":"以前你", "color":"white"},{"char":"吃过", "color":"grey"},{"char":"湘西酸肉吗？","color":"white"}],
+[{"char":"我", "color":"white"},{"char":"喜欢", "color":"grey"},{"char":"剁椒鱼头","color":"white"}],
+[{"char":"今天我们参观马王堆", "color":"white"},{"char":"和", "color":"grey"},{"char":"毛泽东故居","color":"white"}],
+[{"char":"他", "color":"white"},{"char":"在", "color":"grey"},{"char":"张家界国家森林公园","color":"white"}],
+[{"char":"洞庭湖", "color":"white"},{"char":"离", "color":"grey"},{"char":"五一广场很近","color":"white"}],
+[{"char":"你更喜欢凤凰县", "color":"white"},{"char":"还是", "color":"grey"},{"char":"南方长城","color":"white"}]];
+
+const ChanshaGrammarTrans = [["Это блюдо - вонючий тофу."],["Вчера он/она заказал(а) тушенное мясо по рецепту семьи Мао."], ["Тот ресторан не готовит курицу Дунъань."], ["Раньше ты пробовал мясо в кисло-сладком соусе?"], ["Мне нравится рыбья голова в хлопьях красного перца."],["Сегодня мы посетим Мавадуй и Дом-музей Мао."], ["Он в природном лесном парке Чжанцзяцзе."], ['Озеро Дунтинху находится недалеко от площади "Уи".'], ["Тебе больше понравился город Феникс или Южная Великая стена?"]];
+
+const ChanshaGrammar = ["zhè gè cài shì chòudòufu.","zuótiān tā/tā diǎn le máoshì hóngshāoròu.", "nà ge fànguǎn bù zuò dōng ān zǐ jī.", "yǐqián nǐ chī guò xiāngxī suānròu mǎ?", "wǒ xǐhuan duòjiāo yútóu.", "jīn tiān wǒ men cān guān mǎ wáng duī hé máo zé dōng gù jū.", "tā zài zhāng jiā jiè guó jiā sēn lín gōng yuán.", "dòng tíng hú lí wǔ yī guǎng chǎng hěn jìn.", "nǐ gèng xǐ huan fēng huáng xiàn hái shi nán fāng cháng chéng?"];
+
 const ChanshaGrammarLinks = {"test":"/ChanshaGrammar"};
+
+const GuizhouGrammarChar = [[{"char":"他们", "color":"white"},{"char":"都", "color":"grey"},{"char":"买茅台酒","color":"white"}],
+[{"char":"丝娃娃", "color":"white"},{"char":"真", "color":"grey"},{"char":"好吃","color":"white"}],
+[{"char":"肠旺面", "color":"white"},{"char":"比", "color":"grey"},{"char":"怪噜炒饭辣","color":"white"}],
+[{"char":"酸汤鱼有", "color":"white"},{"char":"什么", "color":"grey"},{"char":"味儿?","color":"white"}],
+[{"char":"你看过黄果树瀑布", "color":"white"},{"char":"吗?", "color":"grey"}],
+[{"char":"我想", "color":"white"},{"char":"去", "color":"grey"},{"char":"梵净山","color":"white"}],
+[{"char":"毕节织金洞票是", "color":"white"},{"char":"多少", "color":"grey"},{"char":"钱?","color":"white"}],
+[{"char":"西江苗寨", "color":"white"},{"char":"怎么样?", "color":"grey"}],
+[{"char":"因为", "color":"grey"},{"char":"铜仁大峡谷很美丽", "color":"white"}, {"char":"所以", "color":"grey"},{"char":"游客非常多", "color":"white"}]
+];
+
+const GuizhouGrammarTrans = [["Они все купили Маотай."], ["Сивава очень вкусные."], ["Лапша со свиными кишками острее, чем Гуайлу."], ['Какой вкус у "Рыба в кислом супе"?'], ["Ты видел/смотрел на водопады Хуангошу?"], ["Я хочу пойти в Фаньцзиншань."], ["Сколько стоит билет в карстовые пещеры Чжицзинь в Бицзе?"], ["Как тебе деревня Мяо на реке Сицзян?"], ["Так как Гранд-Каньон Тунжэнь очень красивый, поэтому там очень много туристов."]];
+
+const GuizhouGrammar = ["tā men dōu mǎi máo tái jiǔ.","sī wá wá zhēn hào chī.", "cháng wàng miàn bǐ guài lū chǎo fàn là.", "suan tang yu you shen me wei er?", "nǐ kàn guò huáng guǒ shù pù bù ma?", "wǒ xiǎng qù fàn jìng shān.", "bì jié zhī jīn tóng piào shì duō shao qián?", "xī jiāng miáo zhài zěn me yàng?", "yīn wèi tóng rén dà xiá gǔ hěn měi lì suǒ yǐ yóu kè fēi cháng duō."];
+
+const GuizhouGrammarLinks = {"test":"/GuizhouGrammar"};
 
 
 //провинции
@@ -54,7 +82,7 @@ const nameGuandun = {"province": "Гуандун 广东", "city":" "};
 //ссылки провинций
 
 const ChanshaLinks ={"pictmap":"chansha.png", "food":"/ChanshaFood", "sights":"/ChanshaSights", "grammar":"/ChanshaGrammar"}
-const GuizhouLinks ={"pictmap":"guizhou.png", "food":"/GuizhouFood", "sights":"/GuizhouSights"}
+const GuizhouLinks ={"pictmap":"guizhou.png", "food":"/GuizhouFood", "sights":"/GuizhouSights", "grammar":"/GuizhouGrammar"}
 const GuandunLinks ={"pictmap":"guandun.png", "food":"/GuizhouFood", "sights":"/GuizhouSights"}
 
 //сылки на слова
@@ -84,11 +112,12 @@ const ChanshaGrammarSidenav = [].concat(ChanshaSidenav,[{"href":"/ChanshaGrammar
 const GuizhouSidenav = [].concat(MapSidenav, [{"href":"/guizhou", "text":"Гуйчжоу"}]); 
 const GuizhouFoodSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouFood", "text":"Слова"}]);
 const GuizhouSightsSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouSights", "text":"Слова"}]);
+const GuizhouGrammarSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouGrammar", "text":"Грамматика"}])
 
 //для гуандун
 const GuandunSidenav = [].concat(MapSidenav,[{"href":"/guandun", "text":"Гуандун"}]);
 
-const dynamicSidebar = {"/chansha":ChanshaSidenav, "/map":MapSidenav, "/ChanshaFood":ChanshaFoodSidenav,"/ChanshaSights":ChanshaSightsSidenav,"/ChanshaGrammar":ChanshaGrammarSidenav, "/guizhou":GuizhouSidenav, "/GuizhouFood":GuizhouFoodSidenav,"/GuizhouSights":GuizhouSightsSidenav,"/guandun":GuandunSidenav};
+const dynamicSidebar = {"/chansha":ChanshaSidenav, "/map":MapSidenav, "/ChanshaFood":ChanshaFoodSidenav,"/ChanshaSights":ChanshaSightsSidenav,"/ChanshaGrammar":ChanshaGrammarSidenav, "/guizhou":GuizhouSidenav, "/GuizhouFood":GuizhouFoodSidenav,"/GuizhouSights":GuizhouSightsSidenav, "/GuizhouGrammar":GuizhouGrammarSidenav, "/guandun":GuandunSidenav};
 
 //информация о провинциях
 const InfoChansha = () =>(
@@ -173,6 +202,7 @@ function Sidebar() {
             <Route exact path="/ChanshaFood" element={<Vocabulary words={vocabFoodChansha} links={ChanshaFoodLinks}/>}/>
             <Route exact path="/ChanshaSights" element={<Vocabulary words={vocabSightsChansha} links={ChanshaSightsLinks}/>}/>
             <Route exact path="/ChanshaGrammar" element={<Grammar char={ChanshaGrammarChar} phen={ChanshaGrammar} trans={ChanshaGrammarTrans} links={ChanshaGrammarLinks}/>}/>
+            <Route exact path="/GuizhouGrammar" element={<Grammar char={GuizhouGrammarChar} phen={GuizhouGrammar} trans={GuizhouGrammarTrans} links={GuizhouGrammarLinks}/>}/>
 
 
             <Route exact path="/GuizhouFood" element={<Vocabulary words={vocabFoodGuizhou} links={GuizhouFoodLinks}/>}/>
