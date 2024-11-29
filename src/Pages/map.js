@@ -17,15 +17,18 @@ function Map(props) {
             </div>
                 <map name="image-map">
                     <Link to="/chansha">
-                        <area target="" alt="" title="Провинция Хунань 湖南 г. Чанша 长沙市"  coords="576,513,654,596" shape="rect"/>
+                        <area target="" alt="" title={props.list.chansha.province + props.list.chansha.city} coords="576,513,654,596" shape="rect"/>
                     </Link>
                     <Link to="/guizhou">
-                        <area target="" alt="" title="Провинция Гуйчжоу 贵州"  coords="568,600,491,540" shape="rect"/>
+                        <area target="" alt="" title={props.list.guizhou.province + props.list.guizhou.city}  coords="568,600,491,540" shape="rect"/>
                     </Link>
                     <Link to="/guandun">
-                        <area target="" alt="" title="Провинция Гуйчжоу 贵州"  coords="592,675,631,603,655,589,668,602,709,599,720,623,595,698" shape="poly"/>
+                        <area target="" alt="" title={props.list.guandun.province + props.list.guandun.city}  coords="592,675,631,603,655,589,668,602,709,599,720,623,595,698" shape="poly"/>
                     </Link>
                 </map>
+                {/* <div>
+                    <img src='image.gif' />
+                </div> */}
         </div>
         {/* </div> */}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

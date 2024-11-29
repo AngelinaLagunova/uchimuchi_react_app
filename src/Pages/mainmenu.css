@@ -1,5 +1,5 @@
 
-.wrap {
+.wrap, .wrap2 {
 display: grid;
 justify-content: center;
 margin: 3vw auto;
@@ -11,6 +11,11 @@ margin-bottom: 0px;
     min-height:4vw;
 
 }
+
+.wrap2 .button{
+    min-height:8vw;
+}
+
 
 
 

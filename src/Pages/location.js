@@ -22,14 +22,14 @@ const Location =(props) =>
                     </div>
                     <div> 
                         <div className="sectionName">Категории новых слов</div>
-                        <div className="wrap"><Link to={props.links.food}>
-                            <button className="button" width="500px">Еда 中国菜</button></Link></div>
-                        <div className="wrap"><Link to={props.links.sights}>
+                        <div className="wrap2"><Link to={props.links.food}>
+                            <button className="button" width="500px">Блюда 有名的美食</button></Link></div>
+                        <div className="wrap2"><Link to={props.links.sights}>
                             <button className="button">Достопримечательности 名胜古迹</button></Link></div>
-                        <div className="wrap"><Link to={props.links.food}>
+                        <div className="wrap2"><Link to={props.links.food}>
                             <button className="button">Еще одна категория</button></Link></div>
-                        <div className="wrap"><Link to={props.links.grammar}>
-                            <button className="button2">Грамматика</button></Link></div>
+                        {/* <div className="wrap"><Link to={props.links.grammar}>
+                            <button className="button2">Грамматика</button></Link></div> */}
                     </div>
                 </article>
             </div>

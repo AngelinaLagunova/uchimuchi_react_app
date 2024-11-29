@@ -2,15 +2,11 @@
 import "./grammar.css";
 import React from "react";
 
-import { Link } from "react-router-dom";
-
-
-
+// import { Link } from "react-router-dom";
 
 
 const Grammar = (props) =>{
 
-   
         
     const [numOfGram, setTestNum] = React.useState(0);
 
@@ -18,21 +14,17 @@ const Grammar = (props) =>{
 
         if (numOfGram < props.phen.length - 1){
             setTestNum(numOfGram + 1);
-
         }
         else {
             document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
-            document.getElementById("testButton").classList.remove("hidden");
-
+            // document.getElementById("testButton").classList.remove("hidden");
         }
 
-        
     }
 
     const Prev =(event)=>{
         if (numOfGram > 0) {
             setTestNum((numOfGram - 1));
-
         }
         else {
             document.getElementsByClassName("arrowLeftTest")[0].classList.add("hidden");
@@ -40,7 +32,7 @@ const Grammar = (props) =>{
         }
         if (numOfGram === props.phen.length - 1){
             document.getElementsByClassName("arrowRightTest")[0].classList.remove("hidden");
-            document.getElementById("testButton").classList.add("hidden");
+            // document.getElementById("testButton").classList.add("hidden");
         }
 
     }
@@ -60,17 +52,17 @@ const Grammar = (props) =>{
 
     return(
         <div className="page">
-            <div className="GrammarHeader">
-                <h1>Грамматика</h1> 
-                <div></div>
-                <div className="wordsButton">
-                    <Link to={props.links.test}>
+            {/* <div className="GrammarHeader"> */}
+                <h1>Грамматика {props.links.title}</h1> 
+                {/* <div></div> */}
+                {/* <div className="wordsButton"> */}
+                    {/* <Link to={props.links.test}>
                         <button className="button">Пройти тест</button>
-                    </Link>
-                </div>
+                    </Link> */}
+                {/* </div> */}
                 
-            </div>
-            <div className="testVocabPage">
+            {/* </div> */}
+            <div className="grammarPage">
                 <div>
                     <div onClick={Prev} className={numOfGram===0 ? "arrowLeftTest hidden" : "arrowLeftTest"}>
                         <img src="arrowLeft.png" alt="arrow_left_button"/>
@@ -87,19 +79,18 @@ const Grammar = (props) =>{
                     <div className="grammarTrans">
                         {TransSet}
                     </div>
-                    <div className="grammarNum">
+    
+                </div>
+                <div className="grammarNum">
                         {(numOfGram+1)+ "/" + props.phen.length}
                     </div>
-                    
-                    
-                </div>
                 <div>
                     <div onClick={Next} className="arrowRightTest">
                         <img src="arrowRight.png" alt="arrow_right_button"/>
                     </div>
-                    <Link id="testButton" className="hidden grammTestButton" to={props.links.test}>
+                    {/* <Link id="testButton" className="hidden grammTestButton" to={props.links.test}>
                         <button className="button">Пройти тест</button>
-                    </Link>
+                    </Link> */}
                 </div>
 
             </div>

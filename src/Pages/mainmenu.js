@@ -5,16 +5,16 @@ function MainMenu() {
   return (
     <>
       <div className="page">
-        <div className="mainHeader">
-          Учи Мучи
+        <div className="mainHeader" text->
+          <small><small><small>Тематические блоки</small></small></small>
         </div>
         <div className="main">
           <div className="wrap"><Link to="/map">
-              <button className="button">Путешествие 旅行</button></Link></div>
-          <div className="wrap"><Link to="/">
-              <button className="button">Второй модуль</button></Link></div>
-          <div className="wrap"><Link href="/">
-              <button className="button">Третий модуль</button></Link></div>
+              <button className="button2">Путешествие 旅行</button></Link></div>
+          <div className="wrap"><Link to="/main">
+              <button className="button2">Второй модуль</button></Link></div>
+          <div className="wrap"><Link href="/main">
+              <button className="button2">Третий модуль</button></Link></div>
         </div>
       </div>
   </>

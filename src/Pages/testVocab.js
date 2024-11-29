@@ -162,7 +162,7 @@ const TestVocab =(props) =>{
                     <div onClick={Next} className="arrowRightTest">
                         <img src="arrowRight.png" alt="arrow_right_button"/>
                     </div>
-                    <div className="grammTestButton hidden" id="endTest">
+                    <div className="grammar2TestButton hidden" id="endTest">
                         <button className="button" onClick={EndTest}>Завершить тест</button> 
                     </div>
                 </div>
@@ -182,7 +182,7 @@ const TestVocab =(props) =>{
             </div>
 
             <div className = "results">
-                Вы набрали <Results/> баллов! <Link to={props.links.testVocab}> Пройти еще раз? </Link>
+                Вы набрали <Results/> баллов! <Link to={props.links.testVocab}> <span onClick = "window.location.reload()" > Пройти еще раз? </span> </Link>
 
             </div>
             <div className="testResults">
