@@ -10,12 +10,17 @@ const BaseVocab = (props) => {
 
     const openModal = (event) => {
         setModalIsOpen(true);
-        if (!isNaN(event.target.id[4])){
-            setIndex(event.target.id[4]);
-        }
-        else if (!isNaN(event.target.parentNode.id[4])){
-            setIndex(event.target.parentNode.id[4]);
-        }
+        let str_index = String(event.target.id);
+        setIndex(Number(str_index.substring(4)));
+        
+        // if (!isNaN(event.target.id[0])){
+        //     console.log(event.target.id);
+        //     setIndex(event.target.id.substring(4));
+        // }
+        // else if (!isNaN(event.target.parentNode.id[0])){
+        //     console.log(event.target.parentNode.id[0]);
+        //     setIndex(event.target.parentNode.id[4]);
+        // }
     };
 
     const closeModal = () => {
@@ -23,39 +28,40 @@ const BaseVocab = (props) => {
     };
 
     const gifSet = (num) =>  props.gifs[num].map((item, index) =>
-        <img src={item} className="zoom-effect2" alt="animation_of_hieroglyph"/>
+        <img src={item} key={index} alt="animation_of_hieroglyph"/>
     ) 
 
     const modalContent = (
         <div>
           <div className="closeModal" onClick={closeModal}></div>
-          <dev>
+          <div>
             <div className="ModalCardImg">
                 <img src="sound.png" alt="sound"/>
+                <p title="Пиньинь" className="ModalCardText">{props.list[index].phen}</p>
+                <img src="star2.png" alt="star"/>
+            </div>
+            {/* <div className="ModalCardImg"> */}
                 <div className="Gifs">
                     {gifSet(index)}
                 </div>
-                <img src="star2.png" alt="star"/>
-            </div>
-            <div className="ModalCardText">
-                <p>Слово: <b><big>{props.list[index].char}</big></b></p>
-                <p>Пиньинь: {props.list[index].phen}</p>
-                <p>Перевод: {props.list[index].trans}</p>
-            </div>
+                {/* <p>Слово: <b><big>{props.list[index].char}</big></b></p>
+                
+                <p>Перевод: {props.list[index].trans}</p> */}
+            {/* </div> */}
           
-          </dev>
+          </div>
           {/* <button onClick={closeModal}>Закрыть</button> */}
         </div>
       );
 
-    const list = props.list.map((item, index) => <p id={"word" + index} key={"word" + index} onClick={openModal} className="base_vocab_list"> <span key={"char" + index}>{item.char}</span> <span key={"phen" + index}>{item.phen}</span> - <span key={"trans" + index}>{item.trans}</span> <button className="clictBaseWord" onClick={openModal} key="click">подробнее</button></p>);
+    const list = props.list.map((item, index) => <p key={"word" + index} className="base_vocab_list"> <span key={"char" + index}>{item.char}</span> <span key={"phen" + index}>{item.phen}</span> - <span key={"trans" + index}>{item.trans}</span> <button className="clictBaseWord" onClick={openModal} id={"word" + index} key="click">подробнее</button></p>);
 
 
     return (
         <div className="page">
             <h1>Базовый словарь 基础词 jīchǔ cí</h1>
             <div>
-                <Modal className = "Modal" isOpen={modalIsOpen} onRequestClose={closeModal}>
+                <Modal className = "Modal" isOpen={modalIsOpen} ariaHideApp={false} onRequestClose={closeModal}>
                 {modalContent}
                 </Modal>
             </div>

@@ -3,8 +3,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
-
-
 const Card = (props)=>{
     
 
@@ -12,7 +10,8 @@ const Card = (props)=>{
     const [fleshMini, setFleshMini] = React.useState([]);
 
     const MiniFlesh = (event) =>{
-        let index =  Number(event.target.parentNode.id[8]);
+        let str_index = String(event.target.parentNode.id);
+        let index =  Number(str_index.substring(8));
 
         if (fleshMini.indexOf(index)===-1){
             setFleshMini(fleshMini => [...fleshMini,index]);
@@ -52,9 +51,11 @@ const Card = (props)=>{
         return(
             <>  
             {/* сторона с иероглифами */}
+            <div className="cardHeader">
                 <div className="translate"><img src="translate.png" alt="translate_button"/></div>
+                <div className="star"><img src="star.png" alt="add_to_list_button"/></div>
+            </div>
                 <div>
-                    <div className="star"><img src="star.png" alt="add_to_list_button"/></div>
                     <div className="rusTrans">{props.words[Number(props.num)].trans}</div>
                     <div className="pictWord"> <img src={props.words[Number(props.num)].pict} className="zoom-effect" alt={props.num + "chansha_words_picture"}/></div>
                 </div>
@@ -66,15 +67,13 @@ const Card = (props)=>{
         return(
             <>
             {/* сторона с переводом */}
-                <div>
+                <div className="cardHeader">
                     <div className="translate"><img src="translate.png" alt="translate_button"/></div>
-                    <div className="sound"><img src="sound.png" alt="sound_button"/></div>
-                </div>
-                <div>
                     <div className="star"><img src="star.png" alt="add_to_list_button"/></div>
-                    <div className="char">{props.words[Number(props.num)].char}</div>
-                    <div className="phen">{props.words[Number(props.num)].phen}</div>
                 </div>
+                <div className="char">{props.words[Number(props.num)].char}</div>
+                <div className="sound"><img src="sound.png" alt="sound_button"/></div>
+                <div className="rusTrans">{props.words[Number(props.num)].phen}</div>
                 <div></div>
                 <div className="count">{Number(props.num)+1}/{props.words.length}</div>
             </>

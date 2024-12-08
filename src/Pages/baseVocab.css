@@ -8,7 +8,9 @@
 }
 
 .Gifs{
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1vw auto;
 }
 
 .clictBaseWord{
@@ -35,6 +37,7 @@
     outline: none;
     /* text-align: center; */
     font-size: 2vw;
+    overflow-y: auto;
 }
 
 
@@ -75,12 +78,24 @@
     margin:0%;
 }
 
-.ModalCardImg img {
-    width: 50%;
+.Gifs>img {
+    width: 60%;
+    margin-top: 1vw;
 }
 
 .ModalCardText{
-    padding: 3vw;
+    text-align: center;
+    /* padding-left: 3vw; */
+}
+
+/* .ModalCardPict{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1vw auto;
+} */
+
+.ModalCardPict img{
+    width:40%;
 }
 
 .zoom-effect2 {
