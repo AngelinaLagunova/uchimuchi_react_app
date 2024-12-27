@@ -1,25 +1,13 @@
-.area{
-    margin: auto;
-    background-color: aquamarine;
-    width: 20vw;
-    height: 20vw;
-}
-
-.dropped-widget{
-    width: 20vw;
-    background-color: pink;
-}
-
 .TestDrag{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     font-size:2vw;
 }
 
 .Drop{
     display: grid;
     /* grid-template-rows: 1fr; */
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 
 }
 
@@ -69,6 +57,8 @@
 }
 
 .GameFrame {
-    width: 70vw;
+    width: 80vw;
     margin: 4vw 0vw;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
 }
