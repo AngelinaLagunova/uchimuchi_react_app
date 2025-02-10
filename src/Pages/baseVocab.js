@@ -11,6 +11,7 @@ const BaseVocab = (props) => {
     const [selectedWord, setSelectedWord] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [numOfGif, setNum] = React.useState(0);
+    const [searchQuery, setSearchQuery] = useState('');
 
 
     useEffect(() => {
@@ -120,19 +121,40 @@ const BaseVocab = (props) => {
       );
 
     
+    const handleSearchChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
+
+    const filteredWords = words.filter(word => {
+        const lowerCaseQuery = searchQuery.toLowerCase();
+        return (
+            word.char.toLowerCase().includes(lowerCaseQuery) ||
+            word.phen.toLowerCase().includes(lowerCaseQuery) ||
+            word.trans.toLowerCase().includes(lowerCaseQuery)
+        );
+    });
+
+    const list = filteredWords.map(word => (<p key={"word" + word.id} className="base_vocab_list" onClick={() => openModel(word)}> <span key={"char" + word.id}>{word.char}</span> <span key={"phen" + word.id}>{word.phen}</span> - <span key={"trans" + word.id}>{word.trans}</span> <button className="clictBaseWord" onClick={() => openModel(word)} id={"word" + word.id} key="click">подробнее</button></p>))
 
 
 
-
-    const list = words.map(word => (<p key={"word" + word.id} className="base_vocab_list" onClick={() => openModel(word)}> <span key={"char" + word.id}>{word.char}</span> <span key={"phen" + word.id}>{word.phen}</span> - <span key={"trans" + word.id}>{word.trans}</span> <button className="clictBaseWord" onClick={() => openModel(word)} id={"word" + word.id} key="click">подробнее</button></p>))
 
     return (
         <div className="page">
             <h1>Базовый словарь 基础词 jīchǔ cí</h1>
 
+            <input
+                type="text"
+                placeholder="Поиск по словам..."
+                value={searchQuery}
+                onChange={handleSearchChange}
+            />
+
             <div>
                 <Modal className = "Modal" isOpen={modalIsOpen} ariaHideApp={false} onRequestClose={closeModal}>
                 {modalContent}
+                
                 </Modal>
             </div>
 
