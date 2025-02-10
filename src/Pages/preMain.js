@@ -13,7 +13,7 @@ function PreMain() {
               <button className="button">Игры</button></Link></div>
               
           <div className="wrap"><Link to="/main">
-              <button className="button">Темы</button></Link></div>
+              <button className="button">Лексика</button></Link></div>
 
           <div className="wrap"><Link to="/preGrammar">
               <button className="button">Грамматика</button></Link></div>

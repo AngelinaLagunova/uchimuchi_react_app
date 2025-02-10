@@ -1,5 +1,5 @@
 .base_vocab_list{
-    font-size:2vw;
+    font-size:2.5vw;
     font-weight: 600;
     padding: 1vw;
     background-color: #fcecf5;
@@ -45,7 +45,7 @@
 	margin-top: 3%;
 	width: 24px;
 	height: 24px;
-	opacity: 0.2;
+	opacity: 0.5;
 	cursor: pointer;
     transition: opacity ease 0.5s;
     
@@ -76,23 +76,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin:0%;
+    padding:0%;
+    font-weight: bold;
+    font-size: 5vw;
+    text-align: center;
 }
 
 .Gifs>img {
+
     width: 60%;
     margin-top: 1vw;
 }
 
-.ModalCardText{
-    text-align: center;
-    /* padding-left: 3vw; */
-}
 
-/* .ModalCardPict{
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 1vw auto;
-} */
+
 
 .ModalCardPict img{
     width:40%;

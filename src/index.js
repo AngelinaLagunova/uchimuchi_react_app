@@ -30,9 +30,6 @@ const game1Props = [[["那个饭馆","不","做东安子鸡"],"那个饭馆不�
 [["昨天","他她点了", "毛氏","红烧肉"], "昨天他她点了毛氏红烧肉", "Вчера он/она заказал(а) тушенное мясо по рецепту семьи Мао."], 
 ]
 
-
-const BaseVocabList = [{"char": "他", "phen": "tā", "trans": "он, его"}, {"char": "她", "phen": "tā", "trans": "она, её"}, {"char": "它", "phen": "tā", "trans": "оно"}, {"char": "他们", "phen": "tāmen", "trans": "они, их"}, {"char": "你", "phen": "nǐ", "trans": "ты"}, {"char": "您", "phen": "nín", "trans": "Вы, Ваш (вежливое обращение к одному лицу)"}, {"char": "你们", "phen": "nǐmen", "trans": "вы (множество лиц)"}, {"char": "我", "phen": "wǒ", "trans": "я"}, {"char": "我们", "phen": "wǒmen", "trans": "мы"}, {"char": "昨天", "phen": "zuótiān", "trans": "вчера"}, {"char": "今天", "phen": "jīntiān", "trans": "сегодня, нынче"}, {"char": "明天", "phen": "míngtiān", "trans": "завтра"}, {"char": "后天", "phen": "hòutiān", "trans": "послезавтра"}, {"char": "前天", "phen": "qiántiān", "trans": "позавчера"}, {"char": "去年", "phen": "qùnián", "trans": "прошлый год; в прошлом году"}, {"char": "新年", "phen": "xīnnián", "trans": "Новый год"}, {"char": "上年", "phen": "shàngnián", "trans": "прошлый год, в прошлом году"}, {"char": "点(菜)", "phen": "diǎn", "trans": "заказывать"}, {"char": "做", "phen": "zuò", "trans": "делать, изготавливать"}, {"char": "吃", "phen": "chī", "trans": "кушать"}, {"char": "买", "phen": "mǎi", "trans": "купить, покупать"}, {"char": "看", "phen": "kān", "trans": "смотреть (за кем-либо/чем-либо), любоваться чем-либо; читать"}, {"char": "想", "phen": "xiǎng", "trans": "думать, мыслить, намереваться, хотеть, ожидать, мечтать; тосковать, скучать; вспоминать"}, {"char": "菜", "phen": "cài", "trans": "овощи, зелень; блюдо"}, {"char": "票", "phen": "piào", "trans": "билет"}, {"char": "钱", "phen": "qián", "trans": "деньги, монетка"}, {"char": "辣", "phen": "là", "trans": "острый (вкус)"}, {"char": "甜", "phen": "tián", "trans": "сладкий (вкус)"}, {"char": "酸", "phen": "suān", "trans": "кислый (вкус); прокиснуть"}, {"char": "苦", "phen": "kǔ", "trans": "горький, горечь (вкус); тяжёлый, горький, горе"}, {"char": "饭馆", "phen": "fànguǎn", "trans": "кафе, столовая, ресторан"}, {"char": "喜欢", "phen": "xǐhuan", "trans": "нравиться"}, {"char": "好吃", "phen": "hǎochī, hàochī", "trans": "hǎochī вкусный, приятный на вкус; hàochī быть обжорой, любить поесть"}, {"char": "旅行", "phen": "lǚxíng", "trans": "путешествовать; путешествие, поездка"}, {"char": "中国", "phen": "zhōngguó", "trans": "Китай"}]
-
 const BaseGifs = [["gif1.gif"], ["gif2.gif"], ["gif3.gif"], ["gif1.gif", "gif4.gif"], ["gif5.gif"], ["gif6.gif"],["gif5.gif", "gif4.gif"], ["gif7.gif"], ["gif7.gif", "gif4.gif"], ["gif8.gif", "gif9.gif"], ["gif10.gif", "gif9.gif"], ["gif11.gif", "gif9.gif"], ["gif12.gif", "gif9.gif"], ["gif13.gif", "gif9.gif"], ["gif14.gif", "gif15.gif"], ["gif16.gif", "gif15.gif"], ["gif17.gif", "gif15.gif"], ["gif18.gif", "gif19.gif"], ["gif20.gif"], ["gif21.gif"], ["gif22.gif"], ["gif23.gif"], ["gif24.gif"], ["gif25.gif"], ["gif26.gif"], ["gif27.gif"], ["gif28.gif"], ["gif29.gif"], ["gif30.gif"], ["gif31.gif"], ["gif32.gif", "gif33.gif"], ["gif34.gif", "gif35.gif"], ["gif36.gif", "gif37.gif"], ["gif38.gif", "gif39.gif"], ["gif40.gif", "gif41.gif"]]
 //слова 
 
@@ -143,7 +140,7 @@ const GuandunSightsTestLinks ={ "grammar":"/ChanshaGrammar", "testVocab":"/Guand
 
 //ссылки для сайдбара
 //для тематического блока
-const ThemesSidnav = [{"href":"/main", "text":"Темы"}];
+const ThemesSidnav = [{"href":"/main", "text":"Лексика"}];
 const BaseVocabSidnav = [{"href":"/baseVocab", "text":"Базовый словарь"}];
 const PreGrammarSidnav = [{"href":"/preGrammar", "text":"Грамматика"}];
 
@@ -251,7 +248,7 @@ function Sidebar() {
             <Route exact path="/lk" element={<Lk/>}/>
             <Route exact path="/vocabList" element={<VocabList/>}/>
             <Route exact path="/map" element={<Map list={namesForMap}/>}/>
-            <Route exact path="/baseVocab" element={<BaseVocab list={BaseVocabList} gifs={BaseGifs}/>}/>
+            <Route exact path="/baseVocab" element={<BaseVocab gifs={BaseGifs}/>}/>
             <Route exact path="/preGrammar" element={<PreGrammar/>}/>
             <Route exact path="/game1" element={<Game1 list={game1Props}/>}/>
 
