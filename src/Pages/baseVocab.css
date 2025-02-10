@@ -124,3 +124,12 @@ margin-left: 5vw; */
     opacity: 0.5;
 }
 
+.SearchField{
+    border: solid medium grey;
+    outline: none;
+}
+
+.SearchField:focus{
+    border: solid medium black;
+
+}

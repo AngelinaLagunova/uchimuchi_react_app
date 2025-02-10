@@ -145,6 +145,7 @@ const BaseVocab = (props) => {
             <h1>Базовый словарь 基础词 jīchǔ cí</h1>
 
             <input
+                className="SearchField"
                 type="text"
                 placeholder="Поиск по словам..."
                 value={searchQuery}
