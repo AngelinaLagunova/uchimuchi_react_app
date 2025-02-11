@@ -10,7 +10,7 @@ const BaseVocab = (props) => {
     const [error, setError] = useState(null);
     const [selectedWord, setSelectedWord] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [numOfGif, setNum] = React.useState(0);
+    const [numOfGif, setNum] = useState(0);
     const [searchQuery, setSearchQuery] = useState('');
 
 

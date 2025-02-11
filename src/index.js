@@ -195,9 +195,11 @@ function Sidebar() {
   
 
     const listImg = ["home", "lk", "vocabList"];
+    const listImgHints = ["Главная", "Личный кабинет", "Словарь"];
+
 
     const SideImages =listImg.map((img, index) =>
-      <Link to={"/"+img} key={index}><img key={index} src={img +".png"} alt="icon_picture"/></Link>
+      <Link to={"/"+img} key={index}><img key={index} src={img +".png"} title={listImgHints[index]} alt="icon_picture"/></Link>
     );
 
     const SideDynanic = () => {
