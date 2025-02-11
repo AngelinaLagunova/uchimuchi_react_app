@@ -63,18 +63,18 @@
 
 .testVocabPage .button{
     height: 3vw;
-    width:52vw;
+    width:100%;
     margin: auto;
 }
 
 .arrowLeftTest img{
-    margin-top:20vw;
+    margin-top:15vw;
     width:6vw;
     margin-left:0vw;
 }
 
 .arrowRightTest img{
-    margin-top:20vw;
+    margin-top:15vw;
     width:6vw;
     margin-left:0vw;
 }
@@ -86,6 +86,7 @@
 .wrongAnswer .button{
     background: linear-gradient(90deg, red 0%, red 100%);
 }
+
 
 .results {
     font-size: 3vw;

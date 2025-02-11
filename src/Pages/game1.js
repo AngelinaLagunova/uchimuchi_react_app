@@ -19,7 +19,7 @@ const DropZone = ({ onDrop }) => {
     }));
 
     return (
-        <div ref={drop} className="DropZone" style={{border: `1px dashed ${isOver ? 'green' : 'black'}`}}>
+        <div ref={drop} className="DropZone" id="DropZone" style={{border: `1px dashed ${isOver ? 'green' : 'black'}`}}>
             Перетаскивайте <br/>
             блоки сюда
         </div>
@@ -35,7 +35,7 @@ const DragItem = ({ name }) => {
             const item = monitor.getItem();
             if (item) {
                 // Выводим элемент в консоль во время перетаскивания
-                console.log('Currently dragging:', item);
+                // console.log('Currently dragging:', item);
             }
             return {
                 isDragging: monitor.isDragging(),
@@ -55,10 +55,23 @@ const Game1 = (props) => {
     const [droppedItems, setDroppedItems] = React.useState([]);
 
     const handleDrop = (item) => {
-        console.log(item);
+        // console.log(item);
+
         setDroppedItems((prevItems) => {
+            if (prevItems.some((droppedItem) => droppedItem.name === item.name)) {
+                // console.log('Этот элемент уже был добавлен:', item);
+                let DropZone = document.getElementById("DropZone");
+                DropZone.classList.add("wrongDrop");
+                DropZone.innerHTML = "Элемент уже добавлен"
+                return prevItems;
+            }
+
+            let DropZone = document.getElementById("DropZone");
+            DropZone.classList.remove("wrongDrop");
+            DropZone.innerHTML = "Перетаскивайте блоки сюда"
+    
             const newItems = [...prevItems, item];
-            console.log(newItems);  // Это будет выводить обновленный массив
+            // console.log(newItems);
             return newItems;
         });
     };
@@ -67,7 +80,7 @@ const Game1 = (props) => {
         const updatedItems = [...droppedItems];
         updatedItems.splice(index, 1);
         setDroppedItems(updatedItems);
-        console.log(updatedItems);
+        // console.log(updatedItems);
     };
 
     const [numOfTest, setTestNum] = React.useState(0);
@@ -76,12 +89,20 @@ const Game1 = (props) => {
 
         if (numOfTest < props.list.length - 1){
             setDroppedItems([]);
+            let DropZone = document.getElementById("DropZone");
+            DropZone.classList.remove("wrongDrop");
+            DropZone.innerHTML = "Перетаскивайте блоки сюда"
             setTestNum(numOfTest + 1);
+            document.getElementById("submitButton").classList.remove("wrongAnswer");
+            document.getElementById("submitButton").classList.remove("rightAnswer");
         }
         else {
             document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
+            document.getElementById("button").innerHTML = "Завершить тест";
 
         }
+        document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
+        document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
         
 
         
@@ -91,6 +112,11 @@ const Game1 = (props) => {
         if (numOfTest > 0) {
             setTestNum((numOfTest - 1));
             setDroppedItems([]);
+            let DropZone = document.getElementById("DropZone");
+            DropZone.classList.remove("wrongDrop");
+            DropZone.innerHTML = "Перетаскивайте блоки сюда"
+            document.getElementById("submitButton").classList.remove("wrongAnswer");
+            document.getElementById("submitButton").classList.remove("rightAnswer");
 
         }
         else {
@@ -100,32 +126,54 @@ const Game1 = (props) => {
         if (numOfTest === props.list.length - 1){
             document.getElementsByClassName("arrowRightTest")[0].classList.remove("hidden");
         }
+        document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
+        document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
+        document.getElementById("button").innerHTML = "Ответить";
 
 
     }
 
-    useEffect(() => {
-        console.log('Current level index (num):', numOfTest);
-        console.log('Current list items:', props.list[numOfTest][0]);
-    }, [numOfTest]); 
+    // useEffect(() => {
+    //     console.log('Current level index (num):', numOfTest);
+    //     console.log('Current list items:', props.list[numOfTest][0]);
+    // }, [numOfTest]); 
 
     useEffect(() => {
-        setDroppedItems([]); // При каждом обновлении уровня очищаем droppedItems
-    }, [numOfTest]); 
+        setDroppedItems([]);
+    }, [numOfTest]);
+
+    const checkResult = () =>{
+        let sent = "";
+        for(let i=0; i<droppedItems.length; i++){
+            sent += droppedItems[i].name;
+        }
+        if(sent === props.list[numOfTest][1]){
+            console.log("pass");
+            document.getElementById("submitButton").classList.add("rightAnswer");
+            document.getElementById("submitButton").classList.remove("wrongAnswer");
+            document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
+            document.getElementsByClassName("page")[0].classList.add("rightAnswerBg");
+
+        }
+        else{
+            document.getElementById("submitButton").classList.add("wrongAnswer");
+            document.getElementsByClassName("page")[0].classList.add("wrongAnswerBg");
+            console.log("not pass");
+            console.log(sent);
+            console.log(props.list[numOfTest][1]);
+
+        }
+    }
 
     const GameField = (num) => {
-        
-
         return(
-            
                 <div className="GameFrame">
-
                     <div>
                         <div onClick={Prev} className={Number(num)===0 ? "arrowLeftTest hidden" : "arrowLeftTest"}>
                             <img src="arrowLeft.png" alt="arrow_left_button"/>
                         </div>
                     </div>
-                    <div>
+                    <div className="Game1MainField">
 
                         <h1>"{props.list[num][2]}"</h1>
 
@@ -163,11 +211,15 @@ const Game1 = (props) => {
                             <img src="arrowRight.png" alt="arrow_right_button"/>
                         </div>
                     </div>
+                    <div></div>
+                    <div id="submitButton" className="game1SubmitButton">
+                        <button className="button" id="button" onClick={checkResult}>Ответить</button> 
+                    </div>
+                    <div></div>
 
                 </div>
         )
     }
-
 
     return (
         <div className="page">
@@ -177,9 +229,7 @@ const Game1 = (props) => {
 
             <DndProvider  backend={HTML5Backend}>
                 {GameField(numOfTest)}      
-
             </DndProvider>
-            {/* <h2>Пока в стадии разработки</h2> */}
             
         </div>
     );
