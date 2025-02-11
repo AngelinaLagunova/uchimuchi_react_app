@@ -5,6 +5,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import { useDrag } from 'react-dnd';
 import { useDrop } from 'react-dnd';
+import { Link } from "react-router-dom";
 
 
 
@@ -53,6 +54,8 @@ const DragItem = ({ name }) => {
 
 const Game1 = (props) => {
     const [droppedItems, setDroppedItems] = React.useState([]);
+    const [ testState, setTestState ] = React.useState(true);
+    const [ answers, setAnsw ] = React.useState([]);
 
     const handleDrop = (item) => {
         // console.log(item);
@@ -98,7 +101,9 @@ const Game1 = (props) => {
         }
         else {
             document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
-            document.getElementById("button").innerHTML = "Завершить тест";
+            document.getElementById("submitButton").classList.add("hidden");
+            document.getElementById("endButton").classList.remove("hidden");
+
 
         }
         document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
@@ -128,7 +133,8 @@ const Game1 = (props) => {
         }
         document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
         document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
-        document.getElementById("button").innerHTML = "Ответить";
+        document.getElementById("submitButton").classList.remove("hidden");
+        document.getElementById("endButton").classList.add("hidden");
 
 
     }
@@ -154,6 +160,14 @@ const Game1 = (props) => {
             document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
             document.getElementsByClassName("page")[0].classList.add("rightAnswerBg");
 
+            if (!(numOfTest in answers)) {
+                answers.push({
+                    id:numOfTest,
+                    answ: "r",
+                })
+                setAnsw(answers);
+            }
+            console.log(answers);
         }
         else{
             document.getElementById("submitButton").classList.add("wrongAnswer");
@@ -162,7 +176,19 @@ const Game1 = (props) => {
             console.log(sent);
             console.log(props.list[numOfTest][1]);
 
+            if (!(numOfTest in answers)) {
+                answers.push({
+                    id:numOfTest,
+                    answ: "w",
+                })
+                setAnsw(answers);
+            }
+
         }
+    }
+
+    const EndTest = (event) =>{
+        setTestState(false)
     }
 
     const GameField = (num) => {
@@ -213,7 +239,10 @@ const Game1 = (props) => {
                     </div>
                     <div></div>
                     <div id="submitButton" className="game1SubmitButton">
-                        <button className="button" id="button" onClick={checkResult}>Ответить</button> 
+                        <button className="button" onClick={checkResult}>Ответить</button> 
+                    </div>
+                    <div id="endButton" className="game1SubmitButton hidden">
+                        <button className="button" onClick={EndTest}>Завершить</button> 
                     </div>
                     <div></div>
 
@@ -221,18 +250,51 @@ const Game1 = (props) => {
         )
     }
 
+    if (testState){
+        return (
+            <div className="page">
+                <h1>
+                    Игры
+                </h1>
+
+                <DndProvider  backend={HTML5Backend}>
+                    {GameField(numOfTest)}      
+                </DndProvider>
+                
+            </div>
+        );
+    }
+
+    const Results = () =>{
+        let r=0;
+        for(let i=0; i<answers.length; i++){
+            if (answers[i].answ==="r") r++;
+        }
+        return r +"/"+ answers.length
+    }   
+
     return (
         <div className="page">
-            <h1>
-                Игры
-            </h1>
+            <h1>Игра "Составьте предложение"</h1>
 
-            <DndProvider  backend={HTML5Backend}>
-                {GameField(numOfTest)}      
-            </DndProvider>
+            <div className="endOfTest">
+                Вы прошли игру "Составьте предложение"
+            </div>
+
+            <div className = "results">
+                Вы набрали <Results/> баллов! <Link to="/game1"> <span onClick = "window.location.reload()" > Пройти еще раз? </span> </Link>
+
+            </div>
+            {/* <div className="testResults">
+            <Link to={props.links.grammar}><button className="button" >Перейти к изучению грамматики</button> </Link>
+            </div>
+            <div className="testResults">
+            <Link to={props.links.location}><button className="button" >Вернуться к категориям слов</button> </Link>
+            </div> */}
             
+
         </div>
-    );
+    )
 };
 
 export default Game1;
