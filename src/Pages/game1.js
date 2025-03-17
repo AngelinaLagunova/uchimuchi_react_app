@@ -268,7 +268,7 @@ const Game1 = (props) => {
         return (
             <div className="page">
                 <h1>
-                    Игра "Составьте предложение"
+                    Игра "Составь предложения"
                 </h1>
 
                 <DndProvider  backend={HTML5Backend}>
@@ -289,10 +289,10 @@ const Game1 = (props) => {
 
     return (
         <div className="page">
-            <h1>Игра "Составьте предложение"</h1>
+            <h1>Игра "Составь предложение"</h1>
 
             <div className="endOfTest">
-                <small><small>Вы прошли игру "Составьте предложение"</small></small>
+                <small><small>Вы прошли игру "Составь предложения"</small></small>
             </div>
 
             <div className = "results">

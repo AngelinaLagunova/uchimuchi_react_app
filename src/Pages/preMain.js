@@ -9,7 +9,7 @@ function PreMain() {
           Учи Мучи
         </div>
         <div className="main">
-          <div className="wrap"><Link to="/game1">
+          <div className="wrap"><Link to="/gamesMenu">
               <button className="button">Игры</button></Link></div>
               
           <div className="wrap"><Link to="/main">

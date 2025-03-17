@@ -20,6 +20,8 @@ import Grammar from "./Pages/grammar.js";
 import BaseVocab from "./Pages/baseVocab.js";
 import PreGrammar from "./Pages/preGramma.js";
 import Game1 from "./Pages/game1.js";
+import Game2 from "./Pages/game2.js";
+import GamesMenu from "./Pages/gamesMenu.js";
 
 
 
@@ -143,7 +145,7 @@ const GuandunSightsTestLinks ={ "grammar":"/ChanshaGrammar", "testVocab":"/Guand
 const ThemesSidnav = [{"href":"/main", "text":"Лексика"}];
 const BaseVocabSidnav = [{"href":"/baseVocab", "text":"Базовый словарь"}];
 const PreGrammarSidnav = [{"href":"/preGrammar", "text":"Грамматика"}];
-
+const GamesMenuSidnav = [{"href":"/gamesMenu", "text":"Игры"}];
 
 
 //для карты
@@ -166,7 +168,7 @@ const GuandunSidenav = [].concat(MapSidenav,[{"href":"/guandun", "text":"Гуа�
 const GuandunFoodSidenav = [].concat(GuandunSidenav,[{"href":"/GuandunFood", "text":"Слова"}]);
 const GuandunSightsSidenav = [].concat(GuandunSidenav,[{"href":"/GuandunSights", "text":"Слова"}]);
 
-const dynamicSidebar = {"/chansha":ChanshaSidenav, "/map":MapSidenav, "/ChanshaFood":ChanshaFoodSidenav,"/ChanshaSights":ChanshaSightsSidenav,"/ChanshaGrammar":ChanshaGrammarSidenav, "/guizhou":GuizhouSidenav, "/GuizhouFood":GuizhouFoodSidenav,"/GuizhouSights":GuizhouSightsSidenav, "/GuizhouGrammar":GuizhouGrammarSidenav, "/guandun":GuandunSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/GuandunFood":GuandunFoodSidenav, "/GuandunSights":GuandunSightsSidenav};
+const dynamicSidebar = {"/chansha":ChanshaSidenav, "/map":MapSidenav, "/ChanshaFood":ChanshaFoodSidenav,"/ChanshaSights":ChanshaSightsSidenav,"/ChanshaGrammar":ChanshaGrammarSidenav, "/guizhou":GuizhouSidenav, "/GuizhouFood":GuizhouFoodSidenav,"/GuizhouSights":GuizhouSightsSidenav, "/GuizhouGrammar":GuizhouGrammarSidenav, "/guandun":GuandunSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/GuandunFood":GuandunFoodSidenav, "/GuandunSights":GuandunSightsSidenav, "/gamesMenu":GamesMenuSidnav};
 
 //информация о провинциях
 const InfoChansha = () =>(
@@ -252,7 +254,10 @@ function Sidebar() {
             <Route exact path="/map" element={<Map list={namesForMap}/>}/>
             <Route exact path="/baseVocab" element={<BaseVocab gifs={BaseGifs}/>}/>
             <Route exact path="/preGrammar" element={<PreGrammar/>}/>
+            <Route exact path="/gamesMenu" element={<GamesMenu/>}/>
             <Route exact path="/game1" element={<Game1 list={game1Props}/>}/>
+            <Route exact path="/game2" element={<Game2 list={game1Props}/>}/>
+
 
             <Route exact path="/chansha" element={<Location name={nameChansha} info={InfoChansha()} links={ChanshaLinks}/>}/>
             <Route exact path="/guizhou" element={<Location name={nameGuizhou} info={InfoGuizhou()} links={GuizhouLinks}/>}/>
