@@ -38,8 +38,6 @@ const BaseVocab = (props) => {
         setModalIsOpen(true);
     }
 
-
-
     const closeModal = () => {
         setModalIsOpen(false);
         setNum(0);
@@ -47,13 +45,16 @@ const BaseVocab = (props) => {
 
     //перелистывание на следующую карточку
     const nextGif = (event) =>{
-        if (numOfGif < props.gifs[selectedWord?.id - 1].length - 1){
+        console.log(numOfGif);
+        if (numOfGif < props.gifs[selectedWord?.id - 1].length - 2){
             setNum(numOfGif + 1);
         }
         //контроль исчезновения правой стрелочки появления кнопки "пройти тест"
-        else {
+        else if(numOfGif === props.gifs[selectedWord?.id - 1].length - 2) {
+            setNum(numOfGif + 1);
             document.getElementsByClassName("miniarrowRight")[0].classList.add("hidden");
         }
+
         //контроль появления левой стрелочки
         if (numOfGif > -1) {
             document.getElementsByClassName("miniarrowLeft")[0].classList.remove("hidden");

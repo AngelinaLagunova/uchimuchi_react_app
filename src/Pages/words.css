@@ -16,7 +16,7 @@
 
 .star img{
     /* display: grid; */
-    width:25%;
+    width:3vw;
     margin-left:80%;
     /* margin-top: 4%; */
 
@@ -44,7 +44,7 @@
 }
 
 .sound img{
-    width:70%;
+    width:4vw;
 }
 
 .sound{
@@ -102,7 +102,7 @@
 }
 
 
-h1, .words{
+.words h1{
     margin: 0px;
     font-size: 2vw;
     vertical-align:  center;
@@ -183,6 +183,12 @@ div .miniCard{
     {
         min-width: 3vw;
         font-size: 2.5vw;
+    }
+
+    
+    .words h1
+    {
+        font-size:5vw;
     }
 
 }

@@ -12,10 +12,11 @@ const Grammar = (props) =>{
 
     const Next =(event)=>{
 
-        if (numOfGram < props.phen.length - 1){
+        if (numOfGram < props.phen.length - 2){
             setTestNum(numOfGram + 1);
         }
-        else {
+        else if (numOfGram === props.phen.length - 2){
+            setTestNum(numOfGram + 1);
             document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
             // document.getElementById("testButton").classList.remove("hidden");
         }

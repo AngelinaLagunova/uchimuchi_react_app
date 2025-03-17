@@ -56,6 +56,7 @@ const Game1 = (props) => {
     const [droppedItems, setDroppedItems] = React.useState([]);
     const [ testState, setTestState ] = React.useState(true);
     const [ answers, setAnsw ] = React.useState([]);
+    const [rightAnswer, setRightAnswer] = React.useState(false);
 
     const handleDrop = (item) => {
         // console.log(item);
@@ -89,7 +90,7 @@ const Game1 = (props) => {
     const [numOfTest, setTestNum] = React.useState(0);
 
     const Next =(event)=>{
-
+        console.log(numOfTest);
         if (numOfTest < props.list.length - 1){
             setDroppedItems([]);
             let DropZone = document.getElementById("DropZone");
@@ -99,16 +100,19 @@ const Game1 = (props) => {
             document.getElementById("submitButton").classList.remove("wrongAnswer");
             document.getElementById("submitButton").classList.remove("rightAnswer");
         }
+        else if(numOfTest === props.list.length) {
+            // document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
+            console.log("hi");
+            setTestNum(numOfTest + 1);
+        }
         else {
-            document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
-            document.getElementById("submitButton").classList.add("hidden");
-            document.getElementById("endButton").classList.remove("hidden");
-
-
+            setTestState(false)
+            document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
+            document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
         }
         document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
         document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
-        
+        setRightAnswer(false);
 
         
     }
@@ -133,8 +137,9 @@ const Game1 = (props) => {
         }
         document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
         document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
-        document.getElementById("submitButton").classList.remove("hidden");
-        document.getElementById("endButton").classList.add("hidden");
+        // document.getElementById("submitButton").classList.remove("hidden");
+        // document.getElementById("endButton").classList.add("hidden");
+        setRightAnswer(false);
 
 
     }
@@ -159,6 +164,13 @@ const Game1 = (props) => {
             document.getElementById("submitButton").classList.remove("wrongAnswer");
             document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
             document.getElementsByClassName("page")[0].classList.add("rightAnswerBg");
+            // let drops = document.getElementsByClassName("DropElement");
+            // for(let i=0; i<drops.length; i++){
+            //     drops[i].classList.add("DropElementAfter");
+            //     drops[i].classList.add("DropElementAfter");
+    
+            // }
+            setRightAnswer(true);
 
             if (!(numOfTest in answers)) {
                 answers.push({
@@ -175,6 +187,7 @@ const Game1 = (props) => {
             console.log("not pass");
             console.log(sent);
             console.log(props.list[numOfTest][1]);
+            setRightAnswer(false);
 
             if (!(numOfTest in answers)) {
                 answers.push({
@@ -185,11 +198,12 @@ const Game1 = (props) => {
             }
 
         }
+
     }
 
-    const EndTest = (event) =>{
-        setTestState(false)
-    }
+    // const EndTest = (event) =>{
+    //     setTestState(false)
+    // }
 
     const GameField = (num) => {
         return(
@@ -217,7 +231,7 @@ const Game1 = (props) => {
                                 <DropZone onDrop={handleDrop} />
 
                                 {droppedItems.map((i, index) => (
-                                    <div className="DropElement"
+                                    <div className={rightAnswer ? "DropElementAfter" : "DropElement"}
                                         key={i.name}>
                                         <p style={{margin:'0px'}}>{i.name}</p>
                                         <button className="clictDeleteBlock" onClick={
@@ -241,9 +255,9 @@ const Game1 = (props) => {
                     <div id="submitButton" className="game1SubmitButton">
                         <button className="button" onClick={checkResult}>Ответить</button> 
                     </div>
-                    <div id="endButton" className="game1SubmitButton hidden">
-                        <button className="button" onClick={EndTest}>Завершить</button> 
-                    </div>
+                    {/* <div id="endButton" className="game1SubmitButton hidden">
+                        <button className="button2" onClick={EndTest}>Завершить</button> 
+                    </div> */}
                     <div></div>
 
                 </div>
@@ -254,7 +268,7 @@ const Game1 = (props) => {
         return (
             <div className="page">
                 <h1>
-                    Игры
+                    Игра "Составьте предложение"
                 </h1>
 
                 <DndProvider  backend={HTML5Backend}>
@@ -270,7 +284,7 @@ const Game1 = (props) => {
         for(let i=0; i<answers.length; i++){
             if (answers[i].answ==="r") r++;
         }
-        return r +"/"+ answers.length
+        return r +"/"+ props.list.length;
     }   
 
     return (
@@ -278,7 +292,7 @@ const Game1 = (props) => {
             <h1>Игра "Составьте предложение"</h1>
 
             <div className="endOfTest">
-                Вы прошли игру "Составьте предложение"
+                <small><small>Вы прошли игру "Составьте предложение"</small></small>
             </div>
 
             <div className = "results">

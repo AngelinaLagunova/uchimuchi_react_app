@@ -20,17 +20,21 @@
 
 article {
     display:grid;
-    width: 100%;
-    grid-template-columns: 1.3fr 1fr;
+    width: 98%;
+    grid-template-columns: 1fr 1fr;
     margin-top:2vw;
+    /* border: 0.5vw solid lightgray; */
+    padding: 1.5vw;
+    border-radius:1vw;
+
 }
 
 .info {
-    background:rgb(255, 255, 255);
-    padding: 1vw 2vw;
+    /* background:rgb(255, 255, 255); */
+    /* padding: 2vw 2vw; */
     font-style: Helvetica;
-    border-radius:20px;
-    font-size: 1.4vw;
+    /* border-radius:20px; */
+    font-size: 1.6vw;
 }
 
 @media (max-width:600px)
@@ -42,14 +46,17 @@ article {
 
 
     }
+    .locationHeader h1{
+        font-size: 4vw;
+    }
 
-    .wrap .button
+    .wrap2 .button
     {
-        min-width: 72vw;
+        min-width: 70vw;
         font-size: 3vw;
 
     }
-    .wrap .button2
+    .wrap2 .button2
     {
         min-width: 72vw;
         font-size: 5vw;
