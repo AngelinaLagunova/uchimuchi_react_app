@@ -1,6 +1,6 @@
 .GameFrame2{
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 0.5fr 5fr 1fr;
 }
 
 .DropListGame2 {
@@ -8,7 +8,7 @@
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 30vw;
+    width: 35vw;
     grid-gap: 1vw;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .wordsColumnGame2{
-    font-size: 2vw;
+    font-size: 3vw;
     display: grid;
     grid-template-columns: 1fr;
 
@@ -60,7 +60,7 @@
 
 .game2SubmitButton > .button{
     height: 5vw;
-    width: 30vw;
+    width: 35vw;
    
 }
 

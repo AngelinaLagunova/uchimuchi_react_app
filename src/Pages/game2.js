@@ -2,7 +2,7 @@ import './game2.css';
 import React, { useState, useEffect } from 'react';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 // Тип для перетаскиваемого элемента
@@ -12,18 +12,18 @@ const ItemType = 'WORD';
 
 
 const words = [
-    { id: 1, russian: 'книга', chinese: '书' },
-    { id: 2, russian: 'стол', chinese: '桌子' },
-    { id: 3, russian: 'окно', chinese: '窗户' },
-    { id: 4, russian: 'дверь', chinese: '门' },
-    { id: 5, russian: 'книга2', chinese: '书2' },
-    { id: 6, russian: 'стол2', chinese: '桌子2' },
-    { id: 7, russian: 'окно2', chinese: '窗户2' },
-    { id: 8, russian: 'дверь2', chinese: '门2' },
-    { id: 9, russian: 'книга3', chinese: '书3' },
-    { id: 10, russian: 'стол3', chinese: '桌子3' },
-    { id: 11, russian: 'окно3', chinese: '窗户3' },
-    { id: 12, russian: 'дверь3', chinese: '门3' },
+    { id: 1, russian: 'оно', chinese: '它' },
+    { id: 2, russian: 'завтра', chinese: '明天' },
+    { id: 3, russian: 'кушать', chinese: '吃' },
+    { id: 4, russian: 'купить', chinese: '买' },
+    { id: 5, russian: '菜', chinese: 'овощи' },
+    { id: 6, russian: '票', chinese: 'билет' },
+    { id: 7, russian: '钱', chinese: 'деньги' },
+    { id: 8, russian: '中国', chinese: 'Китай' },
+    { id: 9, russian: '喜欢', chinese: 'нравиться' },
+    { id: 10, russian: 'острый', chinese: '辣' },
+    { id: 11, russian: '点(菜)', chinese: 'заказывать' },
+    { id: 12, russian: 'я', chinese: '我' },
   ];
   
   const DraggableWord = ({ word }) => {
@@ -44,7 +44,7 @@ const words = [
     );
   };
   
-  const DropArea = ({ russianWord, onDrop, droppedWords, setDroppedWords, checkResult }) => {
+  const DropArea = ({ russianWord, onDrop, droppedWords, setDroppedWords, checkResult, checkPressed}) => {
     const [{ isOver }, drop] = useDrop(() => ({
       accept: ItemType,
       drop: (item) => {
@@ -63,11 +63,12 @@ const words = [
     const isCorrect = checkResult[russianWord];
 
   
-    let backgroundColor = isCorrect === true 
-        ? 'lightgreen' 
-        : isCorrect === false 
-        ? 'lightcoral'
+    let backgroundColor = checkPressed === true
+        ? isCorrect === true
+            ? 'lightgreen'
+            : 'lightcoral'
         : isOver ? 'lightyellow' : 'transparent';
+    
 
     const handleRemove = (chineseWord) => {
         setDroppedWords((prev) => ({
@@ -107,12 +108,18 @@ const words = [
 
 // Основной компонент игры
 const Game2 = () => {
-
+    const [droppedWords, setDroppedWords] = useState({});
+    const [checkResult, setCheckResult] = useState({});
+    const [checkPressed, setCheckPressed] = useState(false);
     const [numOfTest, setTestNum] = React.useState(0);
+    const [testState, setTestState ] = React.useState(true);
+    const [dropItems, setDropItems] = React.useState(words.slice(0, 4).sort(() => Math.random() - 0.5))
 
     const Next =(event)=>{
         console.log(numOfTest);
         if (numOfTest <words.length/4 - 1){
+            setCheckPressed(false);
+            setDropItems(words.slice((numOfTest + 1)*4, (numOfTest + 2)*4).sort(() => Math.random() - 0.5));
             // setDroppedItems([]);
             // let DropZone = document.getElementById("DropZone");
             // DropZone.classList.remove("wrongDrop");
@@ -124,10 +131,12 @@ const Game2 = () => {
         else if(numOfTest === words.length/4) {
             // document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
             console.log("hi");
+            setDropItems(words.slice((numOfTest + 1)*4, (numOfTest + 2)*4).sort(() => Math.random() - 0.5));
             setTestNum(numOfTest + 1);
+            setCheckPressed(false);
         }
         else {
-            // setTestState(false)
+            setTestState(false)
             // document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
             // document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
             console.log("nehi");
@@ -142,21 +151,27 @@ const Game2 = () => {
     
     const Prev =(event)=>{
         if (numOfTest > 0) {
+            setDropItems(words.slice((numOfTest - 1)*4, (numOfTest)*4).sort(() => Math.random() - 0.5));
+
             setTestNum((numOfTest - 1));
+            
             // setDroppedItems([]);
             // let DropZone = document.getElementById("DropZone");
             // DropZone.classList.remove("wrongDrop");
             // DropZone.innerHTML = "Перетаскивайте блоки сюда"
             // document.getElementById("submitButton").classList.remove("wrongAnswer");
             // document.getElementById("submitButton").classList.remove("rightAnswer");
+            setCheckPressed(false);
 
         }
         else {
             document.getElementsByClassName("arrowLeftTest")[0].classList.add("hidden");
+            setCheckPressed(false);
 
         }
         if (numOfTest === words.length - 1){
             document.getElementsByClassName("arrowRightTest")[0].classList.remove("hidden");
+            
         }
         // document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
         // document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
@@ -166,8 +181,7 @@ const Game2 = () => {
 
     }
 
-    const [droppedWords, setDroppedWords] = useState({});
-    const [checkResult, setCheckResult] = useState({});
+
   
     const handleDrop = (item, russianWord) => {
         // Проверяем, существует ли ключ для russianWord
@@ -197,9 +211,15 @@ const Game2 = () => {
         results[word.russian] = lastDroppedWord === word.chinese ? true : false;
       });
       setCheckResult(results);
+    //   console.log(results);
+      setCheckPressed(true);
+
     };
 
+
     const GameField = (num) => {
+        // const randomWords = words.slice(num * 4, (num + 1) * 4).sort(() => Math.random() - 0.5);
+
         return(
             <div className="GameFrame2">
                 <div>
@@ -208,7 +228,7 @@ const Game2 = () => {
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', width: '30vw', margin: 'auto' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', width: '35vw', margin: 'auto' }}>
                     <div style={{ flex: 1 }}>
                         <h3 style={{fontSize:"2vw"}}>Слово</h3>
                          <div className="wordsColumnGame2">
@@ -230,6 +250,7 @@ const Game2 = () => {
                             droppedWords={droppedWords[word.russian] || []}
                             setDroppedWords={setDroppedWords}
                             checkResult={checkResult}
+                            checkPressed={checkPressed}
                             />
                         ))}
                         </div>
@@ -248,8 +269,8 @@ const Game2 = () => {
                     {/* <h3>Перетащите слово в соответствующее место</h3> */}
                     <br/>
                     <div className="DropListGame2">
-                    {words.slice(num*4, (num + 1)*4).map((word) => (
-                    <DraggableWord key={word.id} word={word}/>
+                    {dropItems.map((word) => (
+                        <DraggableWord key={word.id} word={word} />
                     ))}
                     </div>
                 </div>
@@ -264,15 +285,43 @@ const Game2 = () => {
             </div>
         )
     }
+
+
+    if (testState){
+        return (
+            <div className="page">
+                <h1>
+                    Игра "Найди перевод слова"
+                </h1>
+
+                <DndProvider  backend={HTML5Backend}>
+                    {GameField(numOfTest)}      
+                </DndProvider>
+                
+            </div>
+        );
+    }
+
+    const Results = () =>{
+        let r = Object.values(checkResult).filter(value => value === true).length;
+        return r +"/"+ words.length;
+    }  
   
 
   return (
     <div className="page">
-            <h1>Игра "Найди перевод слова"</h1>
-            <DndProvider backend={HTML5Backend}>
-                {GameField(numOfTest)}  
-            </DndProvider>
-    </div>
+            <h1>Игра ""Найди перевод слова"</h1>
+
+            <div className="endOfTest">
+                <small><small>Вы прошли игру ""Найди перевод слова"</small></small>
+            </div>
+
+            <div className = "results">
+                Вы набрали <Results/> баллов! <Link to="/game2"> <span onClick = "window.location.reload()" > Пройти еще раз? </span> </Link>
+
+            </div>
+
+        </div>
   );
 };
 
