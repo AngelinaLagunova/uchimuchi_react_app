@@ -109,7 +109,7 @@ const GuizhouGrammarLinks = {"test":"/GuizhouGrammar"};
 //провинции
 const nameChansha = {"province": "Провинция Хунань 湖南 ", "city":"г. Чанша 长沙市"};
 const nameGuizhou = {"province": "Провинция Гуйчжоу 贵州 ", "city":"г. Гуйян 贵阳"};
-const nameGuandun = {"province": "Гуандун 广东 ", "city":"г. Гуанчжоу 广州"};
+const nameGuandun = {"province": "Провинция Гуандун 广东 ", "city":"г. Гуанчжоу 广州"};
 
 const namesForMap = {'chansha': nameChansha, 'guizhou': nameGuizhou, 'guandun': nameGuandun};
 //ссылки провинций
