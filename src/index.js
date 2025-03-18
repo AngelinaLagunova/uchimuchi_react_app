@@ -49,6 +49,10 @@ const vocabFoodGuandun = [{"char":"广东烧腊", "phen":"guǎngdōng shāo là"
 
 const vocabSightsGuandun = [{"char":"海上古堡 ", "phen":"hǎishàng gǔbǎo", "trans":"Старинный замок в море", "pict":"guandunSights1.png"}, {"char":"逢简水乡", "phen":"féng jiǎn shuǐxiāng", "trans":"Деревня Фэнцзянь", "pict":"guandunSights2.png"},{"char":"深圳虹桥公园", "phen":"shēnzhèn hóngqiáo gōngyuán", "trans":"Парк «Красный мост» в Шэньчжэне", "pict":"guandunSights3.png"}, {"char":"千年瑶寨", "phen":"qiānnián yáo zhài", "trans":"Тысячелетняя деревня ЯоЧжай", "pict":"guandunSights4.png"}, {"char":"鼎湖山", "phen":"Dǐnghúshān", "trans":"Динхушань", "pict":"guandunSights5.png"}];
 
+const vocabFoodGuansi = [{"char":"桂林米粉", "phen":"guìlín mǐfěn", "trans":"рисовая лапша по-гуйлински", "pict":"guansiFood1.png"}, {"char":"柳州螺蛳粉", "phen":"liǔzhōu luósīfěn", "trans":"улиточная лапша Лючжоу", "pict":"guansiFood2.png"},{"char":"横县鱼生", "phen":"héngxiàn yúshēng", "trans":"ломтики сырой рыбы из уезда Хэн", "pict":"guansiFood3.png"}, {"char":"梧州龟苓膏", "phen":"wúzhōu guīlínggāo", "trans":"черепаховое желе из Учжоу", "pict":"guansiFood4.png"}, {"char":"北海沙蟹汁", "phen":"běihǎi shāxiè zhī", "trans":"соус из песчаного краба Бэйхай", "pict":"guansiFood5.png"}];
+
+const vocabSightsGuansi = [{"char":"阳朔 ", "phen":"Yángshuò", "trans":"Яншо", "pict":"guansiSights1.png"}, {"char":"乐业天坑群", "phen":"Lèyè tiān kēng qún", "trans":"группа пещер Тянькэн в районе Лей", "pict":"guansiSights2.png"},{"char":"德天瀑布", "phen":"détiān pùbù", "trans":"водопад Дэтянь", "pict":"guansiSights3.png"}, {"char":"黄姚古镇", "phen":"Huáng yáo gǔzhèn", "trans":"Древний город Хуаняо", "pict":"guansiSights4.png"}, {"char":"北海银滩", "phen":"Běihǎi yín tān", "trans":"Берег Бэйхай", "pict":"guansiSights5.png"}];
+
 
 //тесты
 //хунань
@@ -110,13 +114,17 @@ const GuizhouGrammarLinks = {"test":"/GuizhouGrammar"};
 const nameChansha = {"province": "Провинция Хунань 湖南 ", "city":"г. Чанша 长沙市"};
 const nameGuizhou = {"province": "Провинция Гуйчжоу 贵州 ", "city":"г. Гуйян 贵阳"};
 const nameGuandun = {"province": "Провинция Гуандун 广东 ", "city":"г. Гуанчжоу 广州"};
+const nameGuansi = {"province": "Гуанси-Чжуанский автономный район ", "city":"广西壮族自治区"};
 
-const namesForMap = {'chansha': nameChansha, 'guizhou': nameGuizhou, 'guandun': nameGuandun};
+
+const namesForMap = {'chansha': nameChansha, 'guizhou': nameGuizhou, 'guandun': nameGuandun, 'guansi':nameGuansi};
 //ссылки провинций
 
 const ChanshaLinks ={"pictmap":"chansha.png", "food":"/ChanshaFood", "sights":"/ChanshaSights"}
 const GuizhouLinks ={"pictmap":"guizhou.png", "food":"/GuizhouFood", "sights":"/GuizhouSights"}
 const GuandunLinks ={"pictmap":"guandun.png", "food":"/GuandunFood", "sights":"/GuandunSights"}
+const GuansiLinks ={"pictmap":"guandun.png", "food":"/GuansiFood", "sights":"/GuansiSights"}
+
 
 //сылки на слова
 //хунань
@@ -168,7 +176,11 @@ const GuandunSidenav = [].concat(MapSidenav,[{"href":"/guandun", "text":"Гуа�
 const GuandunFoodSidenav = [].concat(GuandunSidenav,[{"href":"/GuandunFood", "text":"Слова"}]);
 const GuandunSightsSidenav = [].concat(GuandunSidenav,[{"href":"/GuandunSights", "text":"Слова"}]);
 
-const dynamicSidebar = {"/chansha":ChanshaSidenav, "/map":MapSidenav, "/ChanshaFood":ChanshaFoodSidenav,"/ChanshaSights":ChanshaSightsSidenav,"/ChanshaGrammar":ChanshaGrammarSidenav, "/guizhou":GuizhouSidenav, "/GuizhouFood":GuizhouFoodSidenav,"/GuizhouSights":GuizhouSightsSidenav, "/GuizhouGrammar":GuizhouGrammarSidenav, "/guandun":GuandunSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/GuandunFood":GuandunFoodSidenav, "/GuandunSights":GuandunSightsSidenav, "/gamesMenu":GamesMenuSidnav};
+const GuansiSidenav = [].concat(MapSidenav,[{"href":"/guansi", "text":"ГЧАР"}]);
+const GuansiFoodSidenav = [].concat(GuandunSidenav,[{"href":"/GuansiFood", "text":"Слова"}]);
+const GuansiSightsSidenav = [].concat(GuandunSidenav,[{"href":"/GuansiSights", "text":"Слова"}]);
+
+const dynamicSidebar = {"/chansha":ChanshaSidenav, "/map":MapSidenav, "/ChanshaFood":ChanshaFoodSidenav,"/ChanshaSights":ChanshaSightsSidenav,"/ChanshaGrammar":ChanshaGrammarSidenav, "/guizhou":GuizhouSidenav, "/GuizhouFood":GuizhouFoodSidenav,"/GuizhouSights":GuizhouSightsSidenav, "/GuizhouGrammar":GuizhouGrammarSidenav, "/guandun":GuandunSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/GuandunFood":GuandunFoodSidenav, "/GuandunSights":GuandunSightsSidenav, "/gamesMenu":GamesMenuSidnav, "/guansi": GuansiSidenav,"/GuansiFood":GuansiFoodSidenav, "/GuansiSights":GuansiSightsSidenav };
 
 //информация о провинциях
 const InfoChansha = () =>(
@@ -189,6 +201,20 @@ const InfoGuandun = () =>(
       <div><b>Гуандун</b> — это прибрежный регион на юге Китая, традиционно известный на Западе как Кантон, всегда занимал стратегически важное положение из-за доступа к Южно-Китайскому морю и близости к Гонконгу и Макао. Это одна из самых экономически развитых и плотно населённых провинций в Китае, и она играет важную роль как в национальной, так и в международной торговле.</div>
       
       <p><b>Гуанчжоу</b> — столица и крупнейший город провинции Гуандун, который стал первым открытым китайским портом для европейцев. Гуанчжоу является крупным транспортным узлом, важным промышленным и коммерческим центром, где хорошо развиты автомобильная промышленность, электроника, нефтехимия, фармацевтическая, пищевая и текстильная промышленности. Кроме того, город знаменит торговыми выставками, включая Кантонскую ярмарку — одну из крупнейших и старейших международных торговых выставок в мире.</p>
+
+  </>
+)
+
+const InfoGuansi = () =>(
+  <>
+      <div><b>Гуанси-Чжуанский автономный район (ГЧАР)</b> расположен на юге Китая и относится к бассейну реки Чжуцзян, где преобладает субтропический муссонный климат. Его северная граница обозначена горным хребтом Улиншань, имеющим пять важных горных проходов, служащих историческими путями с севера на юг страны. </div>
+      
+      <p>Несмотря на расположение в приморском регионе, ГЧАР является экономически наиболее отсталым, что обусловлено рядом факторов. Во-первых, его географическое положение далеко от основных экономических центров Китая, а гористый рельеф затрудняет транспортную доступность. Во-вторых, регион относительно поздно начал хозяйственное освоение. В-третьих, здесь наблюдаются низкие уровни урбанизации, жизни населения и качества трудовых ресурсов по сравнению с другими регионами страны. Экономика ГЧАР в основном специализируется на сельском хозяйстве (выращивание сахарного тростника и тропических фруктов), добыче полезных ископаемых и лесозаготовке, при этом лесов на территории автономного района немного. 
+      Несмотря на экономические трудности, в ГЧАР расположены несколько важных промышленных, энергетических и туристских объектов, что создает потенциал для будущего развития. 
+      Гуанси также является многонациональным регионом, что обогащает его культурное разнообразие.</p>
+      <p>
+      <b>Наньнин 南宁</b>- Административный центр и крупнейший город. располагается в южной части ГЧАР, в 160 километрах от границы с Вьетнамом. 
+      Символ города (цветок) — китайская роза, и (дерево) – миндаль. Оба растения широко распространены и используются для озеленения города.</p>
 
   </>
 )
@@ -262,6 +288,8 @@ function Sidebar() {
             <Route exact path="/chansha" element={<Location name={nameChansha} info={InfoChansha()} links={ChanshaLinks}/>}/>
             <Route exact path="/guizhou" element={<Location name={nameGuizhou} info={InfoGuizhou()} links={GuizhouLinks}/>}/>
             <Route exact path="/guandun" element={<Location name={nameGuandun} info={InfoGuandun()} links={GuandunLinks}/>}/>
+            <Route exact path="/guansi" element={<Location name={nameGuansi} info={InfoGuansi()} links={GuansiLinks}/>}/>
+
 
 
             <Route exact path="/ChanshaFood" element={<Vocabulary words={vocabFoodChansha} links={ChanshaFoodLinks}/>}/>
@@ -274,6 +302,9 @@ function Sidebar() {
 
             <Route exact path="/GuizhouFood" element={<Vocabulary words={vocabFoodGuizhou} links={GuizhouFoodLinks}/>}/>
             <Route exact path="/GuizhouSights" element={<Vocabulary words={vocabSightsGuizhou} links={GuizhouSightsLinks}/>}/>
+
+            <Route exact path="/GuansiFood" element={<Vocabulary words={vocabFoodGuansi} links={GuizhouFoodLinks}/>}/>
+            <Route exact path="/GuansiSights" element={<Vocabulary words={vocabSightsGuansi} links={GuizhouSightsLinks}/>}/>
 
 
             {/* <Route exact path="/ChanshaFoodTestSetting" element={<TestSetting links={ChanshaFoodTestSettingLinks}/>}/> */}

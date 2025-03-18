@@ -25,6 +25,9 @@ function Map(props) {
                     <Link to="/guandun">
                         <area target="" alt="" title={props.list.guandun.province + props.list.guandun.city}  coords="592,675,631,603,655,589,668,602,709,599,720,623,595,698" shape="poly"/>
                     </Link>
+                    <Link to="/guansi">
+                        <area target="" alt="" title={props.list.guansi.province + props.list.guansi.city}  coords="514,617,599,581,534,600,569,594,512,645,535,661,556,671,584,669,608,650,619,629,625,613,611,601" shape="poly"/>
+                    </Link>
                 </map>
                 {/* <div>
                     <img src='image.gif' />
