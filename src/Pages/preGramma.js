@@ -8,7 +8,7 @@ function PreGrammar() {
           <small><small>Грамматика</small></small>
         </div>
         <div className="main">
-          <div className="wrap"><Link to="/ChanshaGrammar">
+          <div className="wrap"><Link to="/grammar">
               <button className="button">Модуль Путешественник</button></Link></div>
               
           <div className="wrap"><Link to="/preGrammar">

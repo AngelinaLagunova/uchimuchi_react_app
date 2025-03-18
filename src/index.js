@@ -68,11 +68,15 @@ const vocabFoodTestGuandun =[{"char":"广东烧腊", "phen":"guǎngdōng shāo l
 
 const vocabSightsTestGuandun =[{"char":"海上古堡", "phen":"hǎishàng gǔbǎo","pict":"guandunSights1.png", "var1":"Деревня Фэнцзянь", "var2":"Старинный замок в море", "var3":"Парк «Красный мост» в Шэньчжэне", "rightVar":"var2"}, {"char":"千年瑶寨", "phen":"qiānnián yáo zhài","pict":"guandunSights4.png", "var1":"Динхушань", "var2":"Тысячелетняя деревня ЯоЧжай", "var3":"Деревня Фэнцзянь", "rightVar":"var2"}, {"char":"鼎湖山", "phen":"Dǐnghúshān","pict":"guandunSights5.png", "var1":"Старинный замок в море", "var2":"Тысячелетняя деревня ЯоЧжай", "var3":"Динхушань", "rightVar":"var3"}]
 
+const vocabFoodTestGuansi =[{"char":"柳州螺蛳粉", "phen":"liǔzhōu luósīfěn","pict":"guansiFood2.png", "var1":"улиточная лапша Лючжоу", "var2":"Рыба в кислом супе", "var3":"рисовая лапша по-гуйлински", "rightVar":"var1"}, {"char":"梧州龟苓膏", "phen":"wúzhōu guīlínggāo","pict":"guansiFood4.png", "var1":"соус из песчаного краба Бэйхай", "var2":"ломтики сырой рыбы из уезда Хэн", "var3":"черепаховое желе из Учжоу", "rightVar":"var3"}, {"char":"横县鱼生", "phen":"héngxiàn yúshēng","pict":"guansiFood3.png", "var1":"ломтики сырой рыбы из уезда Хэн", "var2":"рисовая лапша по-гуйлински", "var3":"Жареный рис Гуайлу", "rightVar":"var1"}]
+
+const vocabSightsTestGuansi =[{"char":"阳朔", "phen":"Yángshuò","pict":"guansiSights1.png", "var1":"Деревня Фэнцзянь", "var2":"Яншо", "var3":"группа пещер Тянькэн в районе Лей", "rightVar":"var2"}, {"char":"黄姚古镇", "phen":"Huáng yáo gǔzhèn","pict":"guansiSights4.png", "var1":"Динхушань", "var2":"Древний город Хуаняо", "var3":"водопад Дэтянь","rightVar":"var2"}, {"char":"德天瀑布", "phen":"détiān pùbù","pict":"guansiSights3.png", "var1":"Старинный замок в море", "var2":"Тысячелетняя деревня ЯоЧжай", "var3":"водопад Дэтянь", "rightVar":"var3"}]
+
 // const vocabFoodTestWriteChansha =[{"char":"Вонючий тофу", "phen":"","pict":"tofu.jpg", "trans":"臭豆腐", "trans2":"chòudòufu"}, {"char":"臭豆腐", "phen":"chòudòufu","pict":"tofu.jpg", "trans":"Вонючий тофу", "trans2":"Вонючий тофу"}, {"char":"毛氏红烧肉", "phen":"Máo shì hóngshāoròu","pict":"meat.jpg","trans":"Тушенное мясо по рецепту семьи Мао", "trans2":"Тушенное мясо по рецепту семьи Мао"}, {"char":"东安子鸡", "phen":"dōng’ān zǐjī","pict":"chicken.jpg","trans":"Курица Дунъань", "trans2":"Курица Дунъань"}]
 
 //грамматика
 //хунань
-const ChanshaGrammarChar = [[{"char":"这个菜", "color":"white"},{"char":"是", "color":"grey"},{"char":"臭豆腐","color":"white"}], 
+const grammarChar = [[{"char":"这个菜", "color":"white"},{"char":"是", "color":"grey"},{"char":"臭豆腐","color":"white"}], 
 [{"char":"昨天", "color":"grey"},{"char":"他/她点了毛氏红烧肉", "color":"white"}], 
 [{"char":"那个饭馆", "color":"white"},{"char":"不", "color":"grey"},{"char":"做东安子鸡","color":"white"}],
 [{"char":"以前你", "color":"white"},{"char":"吃过", "color":"grey"},{"char":"湘西酸肉吗？","color":"white"}],
@@ -86,28 +90,28 @@ const ChanshaGrammarChar = [[{"char":"这个菜", "color":"white"},{"char":"是"
 [{"char":"毕节织金洞票是", "color":"white"},{"char":"多少", "color":"grey"},{"char":"钱?","color":"white"}],
 [{"char":"你的中国旅行", "color":"white"},{"char":"怎么样?", "color":"grey"}]];
 
-const ChanshaGrammarTrans = [["Это блюдо - вонючий тофу."],["Вчера он/она заказал(а) тушенное мясо по рецепту семьи Мао."], ["Тот ресторан не готовит курицу Дунъань."], ["Раньше ты пробовал мясо в кисло-сладком соусе?"], ["Мне нравится рыбья голова в хлопьях красного перца."],["Они все купили Маотай."], ["Сивава очень вкусные."], ['Лапша со свиными кишками острее, чем Гуайлу.'], ["Ты купил какие сувениры?"], ["Ты видел водопады Хуангошу?"], ["Я хочу пойти в горы Фаньцзиншань."], ["Сколько стоит билет в карстовые пещеры Чжицзинь в Бицзе?"], ["Как прошла твоя поездка в Китай?"]];
+const grammarTrans = [["Это блюдо - вонючий тофу."],["Вчера он/она заказал(а) тушенное мясо по рецепту семьи Мао."], ["Тот ресторан не готовит курицу Дунъань."], ["Раньше ты пробовал мясо в кисло-сладком соусе?"], ["Мне нравится рыбья голова в хлопьях красного перца."],["Они все купили Маотай."], ["Сивава очень вкусные."], ['Лапша со свиными кишками острее, чем Гуайлу.'], ["Ты купил какие сувениры?"], ["Ты видел водопады Хуангошу?"], ["Я хочу пойти в горы Фаньцзиншань."], ["Сколько стоит билет в карстовые пещеры Чжицзинь в Бицзе?"], ["Как прошла твоя поездка в Китай?"]];
 
-const ChanshaGrammar = ["zhè gè cài shì chòudòufu.","zuótiān tā/tā diǎn le máoshì hóngshāoròu.", "nà ge fànguǎn bù zuò dōng ān zǐ jī.", "yǐqián nǐ chī guò xiāngxī suānròu mǎ?", "wǒ xǐhuan duòjiāo yútóu.", "tā men dōu mǎi máo tái jiǔ.", "sī wá wá zhēn hào chī.", "cháng wàng miàn bǐ guài lū chǎo fàn là.", "nǐ mǎi le shénme jìniànpǐn?", "nǐ kàn guò huáng guǒ shù pù bù ma?", "wǒ xiǎng qù fàn jìng shān", "bì jié zhī jīn tóng piào shì duō shao qián?", "nǐ de zhōngguó lǚxíng zěnmeyàng?"];
+const grammar = ["zhè gè cài shì chòudòufu.","zuótiān tā/tā diǎn le máoshì hóngshāoròu.", "nà ge fànguǎn bù zuò dōng ān zǐ jī.", "yǐqián nǐ chī guò xiāngxī suānròu mǎ?", "wǒ xǐhuan duòjiāo yútóu.", "tā men dōu mǎi máo tái jiǔ.", "sī wá wá zhēn hào chī.", "cháng wàng miàn bǐ guài lū chǎo fàn là.", "nǐ mǎi le shénme jìniànpǐn?", "nǐ kàn guò huáng guǒ shù pù bù ma?", "wǒ xiǎng qù fàn jìng shān", "bì jié zhī jīn tóng piào shì duō shao qián?", "nǐ de zhōngguó lǚxíng zěnmeyàng?"];
 
-const ChanshaGrammarLinks = {"test":"/ChanshaGrammar", "title": "Путешественник"};
+const grammarLinks = {"test":"/grammar", "title": "Путешественник"};
 
-const GuizhouGrammarChar = [[{"char":"他们", "color":"white"},{"char":"都", "color":"grey"},{"char":"买茅台酒","color":"white"}],
-[{"char":"丝娃娃", "color":"white"},{"char":"真", "color":"grey"},{"char":"好吃","color":"white"}],
-[{"char":"肠旺面", "color":"white"},{"char":"比", "color":"grey"},{"char":"怪噜炒饭辣","color":"white"}],
-[{"char":"酸汤鱼有", "color":"white"},{"char":"什么", "color":"grey"},{"char":"味儿?","color":"white"}],
-[{"char":"你看过黄果树瀑布", "color":"white"},{"char":"吗?", "color":"grey"}],
-[{"char":"我想", "color":"white"},{"char":"去", "color":"grey"},{"char":"梵净山","color":"white"}],
-[{"char":"毕节织金洞票是", "color":"white"},{"char":"多少", "color":"grey"},{"char":"钱?","color":"white"}],
-[{"char":"西江苗寨", "color":"white"},{"char":"怎么样?", "color":"grey"}],
-[{"char":"因为", "color":"grey"},{"char":"铜仁大峡谷很美丽", "color":"white"}, {"char":"所以", "color":"grey"},{"char":"游客非常多", "color":"white"}]
-];
+// const GuizhouGrammarChar = [[{"char":"他们", "color":"white"},{"char":"都", "color":"grey"},{"char":"买茅台酒","color":"white"}],
+// [{"char":"丝娃娃", "color":"white"},{"char":"真", "color":"grey"},{"char":"好吃","color":"white"}],
+// [{"char":"肠旺面", "color":"white"},{"char":"比", "color":"grey"},{"char":"怪噜炒饭辣","color":"white"}],
+// [{"char":"酸汤鱼有", "color":"white"},{"char":"什么", "color":"grey"},{"char":"味儿?","color":"white"}],
+// [{"char":"你看过黄果树瀑布", "color":"white"},{"char":"吗?", "color":"grey"}],
+// [{"char":"我想", "color":"white"},{"char":"去", "color":"grey"},{"char":"梵净山","color":"white"}],
+// [{"char":"毕节织金洞票是", "color":"white"},{"char":"多少", "color":"grey"},{"char":"钱?","color":"white"}],
+// [{"char":"西江苗寨", "color":"white"},{"char":"怎么样?", "color":"grey"}],
+// [{"char":"因为", "color":"grey"},{"char":"铜仁大峡谷很美丽", "color":"white"}, {"char":"所以", "color":"grey"},{"char":"游客非常多", "color":"white"}]
+// ];
 
-const GuizhouGrammarTrans = [["Они все купили Маотай."], ["Сивава очень вкусные."], ["Лапша со свиными кишками острее, чем Гуайлу."], ['Какой вкус у "Рыба в кислом супе"?'], ["Ты видел/смотрел на водопады Хуангошу?"], ["Я хочу пойти в Фаньцзиншань."], ["Сколько стоит билет в карстовые пещеры Чжицзинь в Бицзе?"], ["Как тебе деревня Мяо на реке Сицзян?"], ["Так как Гранд-Каньон Тунжэнь очень красивый, поэтому там очень много туристов."]];
+// const GuizhouGrammarTrans = [["Они все купили Маотай."], ["Сивава очень вкусные."], ["Лапша со свиными кишками острее, чем Гуайлу."], ['Какой вкус у "Рыба в кислом супе"?'], ["Ты видел/смотрел на водопады Хуангошу?"], ["Я хочу пойти в Фаньцзиншань."], ["Сколько стоит билет в карстовые пещеры Чжицзинь в Бицзе?"], ["Как тебе деревня Мяо на реке Сицзян?"], ["Так как Гранд-Каньон Тунжэнь очень красивый, поэтому там очень много туристов."]];
 
-const GuizhouGrammar = ["tā men dōu mǎi máo tái jiǔ.","sī wá wá zhēn hào chī.", "cháng wàng miàn bǐ guài lū chǎo fàn là.", "suan tang yu you shen me wei er?", "nǐ kàn guò huáng guǒ shù pù bù ma?", "wǒ xiǎng qù fàn jìng shān.", "bì jié zhī jīn tóng piào shì duō shao qián?", "xī jiāng miáo zhài zěn me yàng?", "yīn wèi tóng rén dà xiá gǔ hěn měi lì suǒ yǐ yóu kè fēi cháng duō."];
+// const GuizhouGrammar = ["tā men dōu mǎi máo tái jiǔ.","sī wá wá zhēn hào chī.", "cháng wàng miàn bǐ guài lū chǎo fàn là.", "suan tang yu you shen me wei er?", "nǐ kàn guò huáng guǒ shù pù bù ma?", "wǒ xiǎng qù fàn jìng shān.", "bì jié zhī jīn tóng piào shì duō shao qián?", "xī jiāng miáo zhài zěn me yàng?", "yīn wèi tóng rén dà xiá gǔ hěn měi lì suǒ yǐ yóu kè fēi cháng duō."];
 
-const GuizhouGrammarLinks = {"test":"/GuizhouGrammar"};
+// const GuizhouGrammarLinks = {"test":"/GuizhouGrammar"};
 
 
 //провинции
@@ -123,7 +127,7 @@ const namesForMap = {'chansha': nameChansha, 'guizhou': nameGuizhou, 'guandun': 
 const ChanshaLinks ={"pictmap":"chansha.png", "food":"/ChanshaFood", "sights":"/ChanshaSights"}
 const GuizhouLinks ={"pictmap":"guizhou.png", "food":"/GuizhouFood", "sights":"/GuizhouSights"}
 const GuandunLinks ={"pictmap":"guandun.png", "food":"/GuandunFood", "sights":"/GuandunSights"}
-const GuansiLinks ={"pictmap":"guandun.png", "food":"/GuansiFood", "sights":"/GuansiSights"}
+const GuansiLinks ={"pictmap":"guansi.png", "food":"/GuansiFood", "sights":"/GuansiSights"}
 
 
 //сылки на слова
@@ -137,16 +141,20 @@ const GuizhouSightsLinks ={"test":"/GuizhouSightsTest", "title":"Достопр�
 const GuandunFoodLinks ={"test":"/GuandunFoodTest", "title":"Блюда 有名的美食", "title2":""}
 const GuandunSightsLinks ={"test":"/GuandunSightsTest", "title":"Достопримечательности 名胜地方", "title2":""}
 
+const GuansiFoodLinks ={"test":"/GuansiFoodTest", "title":"Блюда 有名的美食", "title2":""}
+const GuansiSightsLinks ={"test":"/GuansiSightsTest", "title":"Достопримечательности 名胜地方", "title2":""}
+
 //ссылки тестов и настройки тестов
 //хунань
 // const ChanshaFoodTestSettingLinks = {"testVocab":"/ChanshaFoodTestVocab", "testVocabWrite":"/ChanshaFoodTestVocabWrite"}
-const ChanshaFoodTestLinks ={ "grammar":"/ChanshaGrammar", "testVocab":"/ChanshaFoodTest", "location":"/chansha"}
-const ChanshaSightsTestLinks ={ "grammar":"/ChanshaGrammar", "testVocab":"/ChanshaSightsTest", "location":"/chansha"}
-const GuizhouFoodTestLinks ={ "grammar":"/ChanshaGrammar", "testVocab":"/GuizhouFoodTest", "location":"/guizhou"}
-const GuizhouSightsTestLinks ={ "grammar":"/ChanshaGrammar", "testVocab":"/GuizhouSightsTest", "location":"/guizhou"}
-const GuandunFoodTestLinks ={ "grammar":"/ChanshaGrammar", "testVocab":"/GuandunFoodTest", "location":"/guandun"}
-const GuandunSightsTestLinks ={ "grammar":"/ChanshaGrammar", "testVocab":"/GuandunSightsTest", "location":"/guandun"}
-
+const ChanshaFoodTestLinks ={ "grammar":"/grammar", "testVocab":"/ChanshaFoodTest", "location":"/chansha"}
+const ChanshaSightsTestLinks ={ "grammar":"/grammar", "testVocab":"/ChanshaSightsTest", "location":"/chansha"}
+const GuizhouFoodTestLinks ={ "grammar":"/grammar", "testVocab":"/GuizhouFoodTest", "location":"/guizhou"}
+const GuizhouSightsTestLinks ={ "grammar":"/grammar", "testVocab":"/GuizhouSightsTest", "location":"/guizhou"}
+const GuandunFoodTestLinks ={ "grammar":"/grammar", "testVocab":"/GuandunFoodTest", "location":"/guandun"}
+const GuandunSightsTestLinks ={ "grammar":"/grammar", "testVocab":"/GuandunSightsTest", "location":"/guandun"}
+const GuansiFoodTestLinks ={ "grammar":"/grammar", "testVocab":"/GuansiFoodTest", "location":"/guansi"}
+const GuansiSightsTestLinks ={ "grammar":"/grammar", "testVocab":"/GuansiSightsTest", "location":"/guansi"}
 
 //ссылки для сайдбара
 //для тематического блока
@@ -163,13 +171,13 @@ const MapSidenav = [].concat(ThemesSidnav, [{"href":"/map", "src":"mapicon.png"}
 const ChanshaSidenav = [].concat(MapSidenav, [{"href":"/chansha", "text":"Хунань"}]);
 const ChanshaFoodSidenav = [].concat(ChanshaSidenav,[{"href":"/ChanshaFood", "text":"Слова"}])
 const ChanshaSightsSidenav = [].concat(ChanshaSidenav,[{"href":"/ChanshaSights", "text":"Слова"}])
-const ChanshaGrammarSidenav = [].concat(PreGrammarSidnav,[{"href":"/ChanshaGrammar", "text":"Путешестве- нник"}]);
+const GrammarSidenav = [].concat(PreGrammarSidnav,[{"href":"/grammar", "text":"Путешестве- нник"}]);
 
 //для гуйчжоу
 const GuizhouSidenav = [].concat(MapSidenav, [{"href":"/guizhou", "text":"Гуйчжоу"}]); 
 const GuizhouFoodSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouFood", "text":"Слова"}]);
 const GuizhouSightsSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouSights", "text":"Слова"}]);
-const GuizhouGrammarSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouGrammar", "text":"Грамматика"}])
+// const GuizhouGrammarSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouGrammar", "text":"Грамматика"}])
 
 //для гуандун
 const GuandunSidenav = [].concat(MapSidenav,[{"href":"/guandun", "text":"Гуандун"}]);
@@ -177,10 +185,10 @@ const GuandunFoodSidenav = [].concat(GuandunSidenav,[{"href":"/GuandunFood", "te
 const GuandunSightsSidenav = [].concat(GuandunSidenav,[{"href":"/GuandunSights", "text":"Слова"}]);
 
 const GuansiSidenav = [].concat(MapSidenav,[{"href":"/guansi", "text":"ГЧАР"}]);
-const GuansiFoodSidenav = [].concat(GuandunSidenav,[{"href":"/GuansiFood", "text":"Слова"}]);
-const GuansiSightsSidenav = [].concat(GuandunSidenav,[{"href":"/GuansiSights", "text":"Слова"}]);
+const GuansiFoodSidenav = [].concat(GuansiSidenav,[{"href":"/GuansiFood", "text":"Слова"}]);
+const GuansiSightsSidenav = [].concat(GuansiSidenav,[{"href":"/GuansiSights", "text":"Слова"}]);
 
-const dynamicSidebar = {"/chansha":ChanshaSidenav, "/map":MapSidenav, "/ChanshaFood":ChanshaFoodSidenav,"/ChanshaSights":ChanshaSightsSidenav,"/ChanshaGrammar":ChanshaGrammarSidenav, "/guizhou":GuizhouSidenav, "/GuizhouFood":GuizhouFoodSidenav,"/GuizhouSights":GuizhouSightsSidenav, "/GuizhouGrammar":GuizhouGrammarSidenav, "/guandun":GuandunSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/GuandunFood":GuandunFoodSidenav, "/GuandunSights":GuandunSightsSidenav, "/gamesMenu":GamesMenuSidnav, "/guansi": GuansiSidenav,"/GuansiFood":GuansiFoodSidenav, "/GuansiSights":GuansiSightsSidenav };
+const dynamicSidebar = {"/chansha":ChanshaSidenav, "/map":MapSidenav, "/ChanshaFood":ChanshaFoodSidenav,"/ChanshaSights":ChanshaSightsSidenav,"/grammar":GrammarSidenav, "/guizhou":GuizhouSidenav, "/GuizhouFood":GuizhouFoodSidenav,"/GuizhouSights":GuizhouSightsSidenav, "/guandun":GuandunSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/GuandunFood":GuandunFoodSidenav, "/GuandunSights":GuandunSightsSidenav, "/gamesMenu":GamesMenuSidnav, "/guansi": GuansiSidenav,"/GuansiFood":GuansiFoodSidenav, "/GuansiSights":GuansiSightsSidenav };
 
 //информация о провинциях
 const InfoChansha = () =>(
@@ -283,7 +291,7 @@ function Sidebar() {
             <Route exact path="/gamesMenu" element={<GamesMenu/>}/>
             <Route exact path="/game1" element={<Game1 list={game1Props}/>}/>
             <Route exact path="/game2" element={<Game2 list={game1Props}/>}/>
-
+            <Route exact path="/Grammar" element={<Grammar char={grammarChar} phen={grammar} trans={grammarTrans} links={grammarLinks}/>}/>
 
             <Route exact path="/chansha" element={<Location name={nameChansha} info={InfoChansha()} links={ChanshaLinks}/>}/>
             <Route exact path="/guizhou" element={<Location name={nameGuizhou} info={InfoGuizhou()} links={GuizhouLinks}/>}/>
@@ -294,8 +302,7 @@ function Sidebar() {
 
             <Route exact path="/ChanshaFood" element={<Vocabulary words={vocabFoodChansha} links={ChanshaFoodLinks}/>}/>
             <Route exact path="/ChanshaSights" element={<Vocabulary words={vocabSightsChansha} links={ChanshaSightsLinks}/>}/>
-            <Route exact path="/ChanshaGrammar" element={<Grammar char={ChanshaGrammarChar} phen={ChanshaGrammar} trans={ChanshaGrammarTrans} links={ChanshaGrammarLinks}/>}/>
-            <Route exact path="/GuizhouGrammar" element={<Grammar char={GuizhouGrammarChar} phen={GuizhouGrammar} trans={GuizhouGrammarTrans} links={GuizhouGrammarLinks}/>}/>
+            {/* <Route exact path="/GuizhouGrammar" element={<Grammar char={GuizhouGrammarChar} phen={GuizhouGrammar} trans={GuizhouGrammarTrans} links={GuizhouGrammarLinks}/>}/> */}
             <Route exact path="/GuandunFood" element={<Vocabulary words={vocabFoodGuandun} links={GuandunFoodLinks}/>}/>
             <Route exact path="/GuandunSights" element={<Vocabulary words={vocabSightsGuandun} links={GuandunSightsLinks}/>}/>
 
@@ -303,17 +310,22 @@ function Sidebar() {
             <Route exact path="/GuizhouFood" element={<Vocabulary words={vocabFoodGuizhou} links={GuizhouFoodLinks}/>}/>
             <Route exact path="/GuizhouSights" element={<Vocabulary words={vocabSightsGuizhou} links={GuizhouSightsLinks}/>}/>
 
-            <Route exact path="/GuansiFood" element={<Vocabulary words={vocabFoodGuansi} links={GuizhouFoodLinks}/>}/>
-            <Route exact path="/GuansiSights" element={<Vocabulary words={vocabSightsGuansi} links={GuizhouSightsLinks}/>}/>
+            <Route exact path="/GuansiFood" element={<Vocabulary words={vocabFoodGuansi} links={GuansiFoodLinks}/>}/>
+            <Route exact path="/GuansiSights" element={<Vocabulary words={vocabSightsGuansi} links={GuansiSightsLinks}/>}/>
 
 
             {/* <Route exact path="/ChanshaFoodTestSetting" element={<TestSetting links={ChanshaFoodTestSettingLinks}/>}/> */}
             <Route exact path="/ChanshaFoodTest" element={<TestVocab words={vocabFoodTestChansha} links={ChanshaFoodTestLinks}/>}/>
             <Route exact path="/ChanshaSightsTest" element={<TestVocab words={vocabSightsTestChansha} links={ChanshaSightsTestLinks}/>}/>
+
             <Route exact path="/GuizhouFoodTest" element={<TestVocab words={vocabFoodTestGuizhou} links={GuizhouFoodTestLinks}/>}/>
             <Route exact path="/GuizhouSightsTest" element={<TestVocab words={vocabSightsTestGuizhou} links={GuizhouSightsTestLinks}/>}/>
+
             <Route exact path="/GuandunFoodTest" element={<TestVocab words={vocabFoodTestGuandun} links={GuandunFoodTestLinks}/>}/>
             <Route exact path="/GuandunSightsTest" element={<TestVocab words={vocabSightsTestGuandun} links={GuandunSightsTestLinks}/>}/>
+
+            <Route exact path="/GuansiFoodTest" element={<TestVocab words={vocabFoodTestGuansi} links={GuansiFoodTestLinks}/>}/>
+            <Route exact path="/GuansiSightsTest" element={<TestVocab words={vocabSightsTestGuansi} links={GuansiSightsTestLinks}/>}/>
 
             {/* <Route exact path="/ChanshaFoodTestVocabWrite" element={<TestVocabWrite words={vocabFoodTestWriteChansha} links={ChanshaTestLinks}/>}/> */}
 

@@ -27,12 +27,12 @@ const words = [
   ];
   
   const DraggableWord = ({ word }) => {
-    const [{ isDragging }, drag] = useDrag(() => ({
+    const [, drag] = useDrag(() => ({
       type: ItemType,
       item: { id: word.id, chinese: word.chinese },
-      collect: (monitor) => ({
-        isDragging: !!monitor.isDragging(),
-      }),
+    //   collect: (monitor) => ({
+    //     isDragging: !!monitor.isDragging(),
+    //   }),
     }));
   
     return (
