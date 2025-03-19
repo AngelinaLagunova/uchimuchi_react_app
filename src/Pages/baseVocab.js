@@ -20,7 +20,7 @@ const BaseVocab = (props) => {
                 const data = await fetchWords();
                 setWords(data);
             } catch (error) {
-                setError('Не удалось загрузить слова');
+                setError('Технические неполадки на стороне сервера. Попробуйте перезагрузить страницу позже');
             } finally {
                 setLoading(false);
             }
@@ -29,8 +29,8 @@ const BaseVocab = (props) => {
     }, []);
 
 
-    if (loading) return <div>Загрузка...</div>;
-    if (error) return <div>{error}</div>;
+    if (loading) return <div className="page"> <h1>Базовый словарь 基础词 jīchǔ cí</h1><div style={{textAlign:"center", fontSize:"2vw", marginTop:"2vw"}}>Загрузка...</div> </div>;
+    if (error) return <div className="page"> <h1>Базовый словарь 基础词 jīchǔ cí</h1><div style={{textAlign:"center", fontSize:"2vw", marginTop:"2vw"}}>{error}</div></div>;
 
     const openModel = async (word) => {
         setSelectedWord(word);
