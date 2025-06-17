@@ -210,7 +210,7 @@ const Game1 = (props) => {
                 <div className="GameFrame">
                     <div>
                         <div onClick={Prev} className={Number(num)===0 ? "arrowLeftTest hidden" : "arrowLeftTest"}>
-                            <img src="arrowLeft.png" alt="arrow_left_button"/>
+                            <img src="/images/arrowLeft.png" alt="arrow_left_button"/>
                         </div>
                     </div>
                     <div className="Game1MainField">
@@ -248,7 +248,7 @@ const Game1 = (props) => {
 
                     <div>
                         <div onClick={Next} className="arrowRightTest">
-                            <img src="arrowRight.png" alt="arrow_right_button"/>
+                            <img src="/images/arrowRight.png" alt="arrow_right_button"/>
                         </div>
                     </div>
                     <div></div>

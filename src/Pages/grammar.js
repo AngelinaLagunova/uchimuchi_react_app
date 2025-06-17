@@ -66,7 +66,7 @@ const Grammar = (props) =>{
             <div className="grammarPage">
                 <div>
                     <div onClick={Prev} className={numOfGram===0 ? "arrowLeftTest hidden" : "arrowLeftTest"}>
-                        <img src="arrowLeft.png" alt="arrow_left_button"/>
+                        <img src="/images/arrowLeft.png" alt="arrow_left_button"/>
                     </div>
                 </div>
                 <div>
@@ -87,7 +87,7 @@ const Grammar = (props) =>{
                     </div>
                 <div>
                     <div onClick={Next} className="arrowRightTest">
-                        <img src="arrowRight.png" alt="arrow_right_button"/>
+                        <img src="/images/arrowRight.png" alt="arrow_right_button"/>
                     </div>
                     {/* <Link id="testButton" className="hidden grammTestButton" to={props.links.test}>
                         <button className="button">Пройти тест</button>

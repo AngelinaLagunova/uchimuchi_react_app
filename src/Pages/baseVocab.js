@@ -85,7 +85,7 @@ const BaseVocab = (props) => {
 
                 <div>
                     <div onClick={prevGif} className="miniarrowLeft hidden">
-                        <img src="arrowLeft.png" alt="arrow_left_button"/>
+                        <img src="/images/arrowLeft.png" alt="arrow_left_button"/>
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@ const BaseVocab = (props) => {
 
                 <div>
                     <div onClick={nextGif} className={props.gifs[num].length > 1 ? "miniarrowRight" : "hidden"}>
-                        <img src="arrowRight.png" alt="arrow_right_button"/>
+                        <img src="/images/arrowRight.png" alt="arrow_right_button"/>
                     </div>
                 </div>
 
@@ -109,9 +109,9 @@ const BaseVocab = (props) => {
           <div className="closeModal" onClick={closeModal}></div>
           <div>
             <div className="ModalCardImg">
-                <img src="sound.png" alt="sound"/>
+                <img src="/images/sound.png" alt="sound"/>
                 <div title="Пиньинь">{selectedWord?.phen}</div>
-                <img src="star2.png" alt="star"/>
+                <img src="/images/star2.png" alt="star"/>
             </div>
 
             {gifSet(selectedWord?.id - 1)}

@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 const TestSetting = (props) => {
 
 
-    const [firstType, setFirstType] = React.useState("checkTest.png");
-    const [secondType, setSecondType] = React.useState("uncheckTest.png");
+    const [firstType, setFirstType] = React.useState("/images/checkTest.png");
+    const [secondType, setSecondType] = React.useState("/images/uncheckTest.png");
 
     const ChangeTestType = (event) =>{
         let id = Number(event.target.id[0])
-        setFirstType(id === 0 ? "checkTest.png" : "uncheckTest.png");
-        setSecondType(id === 1 ? "checkTest.png" : "uncheckTest.png");
+        setFirstType(id === 0 ? "/images/checkTest.png" : "/images/uncheckTest.png");
+        setSecondType(id === 1 ? "/images/checkTest.png" : "/images/uncheckTest.png");
     }
 
     // const Setting =()=>(
@@ -57,7 +57,7 @@ const TestSetting = (props) => {
                         <p>выбор варианта ответа</p>
                     </div>
                     <div className="startTestButton">
-                        <Link to={(firstType==="checkTest.png") ? props.links.testVocabWrite : props.links.testVocab}>
+                        <Link to={(firstType==="/images/checkTest.png") ? props.links.testVocabWrite : props.links.testVocab}>
                             <button className="button">Начать тест</button>
                         </Link>
                     </div>

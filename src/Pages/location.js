@@ -18,7 +18,7 @@ const Location =(props) =>
                 
                 <article>
                     <div className="info"> 
-                        {props.info}
+                        <div dangerouslySetInnerHTML={{ __html: props.info }} />
                     </div>
                     <div> 
                         <div className="sectionName">Категории новых слов</div>

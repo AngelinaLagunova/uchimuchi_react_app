@@ -121,7 +121,7 @@ const TestVocabWrite =(props) =>{
             <div className="testVocabPage">
                 <div>
                     <div onClick={Prev} className={Number(numOfTest)===0 ? "arrowLeftTest hidden" : "arrowLeftTest"}>
-                        <img src="arrowLeft.png" alt="arrow_left_button"/>
+                        <img src="/images/arrowLeft.png" alt="arrow_left_button"/>
                     </div>
                 </div>
                 
@@ -148,7 +148,7 @@ const TestVocabWrite =(props) =>{
                     </div>
                 <div>
                     <div onClick={Next} className="arrowRightTest">
-                        <img src="arrowRight.png" alt="arrow_right_button"/>
+                        <img src="/images/arrowRight.png" alt="arrow_right_button"/>
                     </div>
                     <div className="grammTestButton hidden" id="endTest">
                         <button className="button" onClick={EndTest}>Завершить тест</button> 

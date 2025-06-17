@@ -1,0 +1,220 @@
+{
+    "chansha": {
+      "name": {
+        "province": "Провинция Хунань 湖南",
+        "city": "г. Чанша 长沙市"
+      },
+      "info": "<div><b>Хунань</b> – провинция на юге Китая, расположеная к югу от крупного озера Дунтин (Дунтинху). Это обстоятельство и повлияло на название региона, которое на русский переводится как «Провинция к Югу от Озера»., расположенна в горной местности. На северо-востоке этого региона в городе Шаошань в 1893 года родился Мао Цзэдун. <br/> </div><p>Город <b>Чанша</b> – административный центр провинции Хунань. Расположен он на реке Сянцзян, в гористой местности, между горной вершиной Юэлушань на западе и реками Люянхэ и Лаодаохэ на востоке. <br/> </p><p>Население Чанша составляет 6,529 человек, большинство жителей города – этнические китайцы.</p>",
+      "links": {
+        "pictmap":"/images/chansha.png", 
+        "food":"/province/chansha/food", 
+        "sights":"/province/chansha/sights"
+      },
+      "foodLinks" :{
+        "test":"/province/chansha/foodTest", 
+        "title":"Блюда 有名的美食", 
+        "title2":""
+      },
+      "sightsLinks":{
+          "test":"/province/chansha/sightsTest", 
+          "title":"Достопримечательности 名胜地方", 
+          "title2":""
+        },
+      "foodTestLinks":{ 
+        "grammar":"/grammar",
+        "testVocab":"/province/chansha/foodTest",
+        "location":"/province/chansha/location"
+      },
+      "sightsTestLinks":{ 
+        "grammar":"/grammar",
+        "testVocab":"/province/chansha/sightsTest",
+        "location":"/province/chansha/location"
+      },
+      "vocabFood": [
+        {"char":"臭豆腐", "phen":"chòudòufu", "trans":"Вонючий тофу", "pict":"/images/tofu.jpg"},
+        {"char":"毛氏红烧肉", "phen":"Máo shì hóngshāoròu", "trans":"Тушенное мясо по рецепту семьи Мао", "pict":"/images/meat.jpg"},
+        {"char":"东安子鸡", "phen":"dōng’ān zǐjī", "trans":"Курица Дунъань", "pict":"/images/chicken.jpg"},
+        {"char":"湘西酸肉", "phen":"xiāngxī suānròu", "trans":"Мясо в кислом соусе по-западнохунаньски", "pict":"/images/meat2.jpg"},
+        {"char":"剁椒鱼头", "phen":"duòjiāo yútóu", "trans":"Рыбья голова в хлопьях красного перца", "pict":"/images/fish.jpg"}
+      ],
+      "vocabSights": [
+        {"char":"张家界国家森林公园 ", "phen":"zhāng jiā jiè guó jiā sēn língōng yuán", "trans":"Чжанцзяцзе (природный парк)", "pict":"naturePark.png"}, 
+        {"char":"五一广场", "phen":"wǔ yī guǎng chǎng", "trans":"Площадь 'Уи'", "pict":"/images/square.png"},
+        {"char":"洞庭湖", "phen":"dòngtínghú", "trans":"Озеро Дунтинху", "pict":"/images/lake.png"},
+        {"char":"风凰县", "phen":"fēng huáng xiàn", "trans":"Фенхуан - город Феникc (древний город)", "pict":"/images/acientTown.png"},
+        {"char":"毛泽东故居", "phen":"máo zé dōng gù jū", "trans":"Чжанцзяцзе (природный парк)", "pict":"/images/musemMao.png"},
+        {"char":"马王堆", "phen":"mǎ wáng duī", "trans":"Мавадуй", "pict":"/images/Mavaduy.png"},
+        {"char":"南方长城", "phen":"nán fāng cháng chéng", "trans":"Южная Великая стена", "pict":"/images/wall.png"}
+      ],
+      "vocabFoodTest": [
+        {"char":"五一广场", "phen":"wǔ yī guǎng chǎng","pict":"/images/tofu.jpg", "var1":"Вонючий тофу", "var2":"Тушенное мясо по рецепту семьи Мао", "var3":"Курица Дунъань", "rightVar":"var1"},
+        {"char":"毛氏红烧肉", "phen":"Máo shì hóngshāoròu","pict":"/images/meat.jpg", "var1":"Вонючий тофу", "var2":"Тушенное мясо по рецепту семьи Мао", "var3":"Курица Дунъань", "rightVar":"var2"},
+        {"char":"东安子鸡", "phen":"dōng’ān zǐjī","pict":"/images/chicken.jpg", "var1":"Вонючий тофу", "var2":"Тушенное мясо по рецепту семьи Мао", "var3":"Курица Дунъань", "rightVar":"var3"}
+      ],
+      "vocabSightsTest": [
+        {"char":"臭豆腐", "phen":"zhāng jiā jiè guó jiā sēn língōng yuán","pict":"/images/square.png", "var1":"Площадь 'Уи'", "var2":"Дом-музей Мао ЦзеДуна", "var3":"Южная Великая стена", "rightVar":"var1"},
+        {"char":"洞庭湖", "phen":"dòngtínghú","pict":"/images/lake.png", "var1":"Фенхуан - город Феникc (древний город", "var2":"Мавадуй", "var3":"Озеро Дунтинху", "rightVar":"var3"},
+        {"char":"南方长城", "phen":"nán fāng cháng chéng", "pict":"/images/wall.png", "var1":"Южная Великая стена", "var2":"Мавадуй", "var3":"Чжанцзяцзе (природный парк)", "rightVar":"var1"}
+      ]
+    },
+    "guizhou": {
+      "name": {
+        "province": "Провинция Гуйчжоу 贵州 ", 
+        "city":"г. Гуйян 贵阳"
+      },
+      "info": "<div><b>Гуйчжоу</b> – горная многонациональная провинция на юго-западе Китая. Здесь проживает более 50 этнических групп, включая мяо, донг, буи и другие. Каждая группа имеет свои уникальные традиции, язык и культуру. Провинцию часто называют «китайской Швейцарией»: более 80% территории покрыто горами, лесами, руслами рек и водопадами. <br/>Гуйчжоу также славится своей кухней, которая включает острые блюда и использование местных ингредиентов.</div> <p><b>Гуйян</b> - Административный центр провинции. Это крупный городской центр, который играет важную роль в экономике и культуре региона. Гуйян известен своим красивыми парками и историческими достопримечательностями.<br/> В провинции субтропический и влажный климат. Зимой не холодно, летом - не жарко. Средняя температура года - 15 С.</p>",
+      "links": {
+        "pictmap":"/images/guizhou.png", 
+        "food":"/province/guizhou/food", 
+        "sights":"/province/guizhou/sights"
+      },
+      "foodLinks" :{
+        "test":"/province/guizhou/foodTest", 
+        "title":"Блюда 有名的美食", 
+        "title2":""
+      },
+      "sightsLinks":{
+          "test":"/province/guizhou/sightsTest", 
+          "title":"Достопримечательности 名胜地方", 
+          "title2":""
+        },
+      "foodTestLinks":{ 
+        "grammar":"/grammar",
+        "testVocab":"/province/guizhou/foodTest",
+        "location":"/province/guizhou/location"
+      },
+      "sightsTestLinks":{ 
+        "grammar":"/grammar",
+        "testVocab":"/province/guizhou/sightsTest",
+        "location":"/province/guizhou/location"
+      },
+      "vocabFood": [
+        {"char":"茅台酒", "phen":"máo tái jiǔ", "trans":"Маотай, высоко качественный китайский ликёр", "pict":"/images/liquor.png"}, 
+        {"char":"丝娃娃 ", "phen":"sī wá wá", "trans":"Сивава", "pict":"/images/sivava.png"},
+        {"char":"怪噜炒饭", "phen":"guài lū chǎo fàn", "trans":"Жареный рис Гуайлу", "pict":"/images/friedRice.png"}, 
+        {"char":"酸汤鱼", "phen":"suān tāng yú", "trans":"Рыба в кислом супе", "pict":"/images/sourFishSoup.png"}, 
+        {"char":"肠旺面", "phen":"cháng wáng miàn", "trans":"Лапша с свиными кишками", "pict":"/images/nodlesPorkIntestines.png"}
+      ],
+      "vocabSights": [
+        {"char":"黄果树瀑布", "phen":"huáng guǒ shù pù bù", "trans":"Водопады Хуангошу", "pict":"/images/waterFall.png"}, {"char":"梵净山", "phen":"fàn jìng shān", "trans":"Фаньцзиншань, горы Фаньцзин", "pict":"/images/mountains.png"},{"char":"毕节织金洞", "phen":"bì jié zhī jīn tóng", "trans":"Карстовые пещеры Чжицзинь в Бицзе", "pict":"/images/cave.png"}, {"char":"西江苗寨", "phen":"xī jiāng miáo zhài", "trans":"Деревня Мяо на реке Сицзян", "pict":"/images/village.png"}, {"char":"同仁大峡谷", "phen":"tóng rén dà xiá gǔ", "trans":"Гранд-Каньон Тунжэнь", "pict":"/images/canyon.png"}
+      ],
+      "vocabFoodTest": [
+        {"char":"茅台酒", "phen":"máo tái jiǔ","pict":"/images/liquor.png", "var1":"Сивава", "var2":"Маотай, высоко качественный китайский ликёр", "var3":"Рыба в кислом супе", "rightVar":"var2"}, {"char":"酸汤鱼", "phen":"sī wá wá","pict":"/images/sivava.png", "var1":"Сивава", "var2":"Рыба в кислом супе", "var3":"Маотай", "rightVar":"var1"}, {"char":"肠旺面", "phen":"cháng wáng miàn","pict":"/images/nodlesPorkIntestines.png", "var1":"Жареный рис Гуайлу", "var2":"Тушенное мясо по рецепту семьи Мао", "var3":"Лапша с свиными кишками", "rightVar":"var3"}
+      ],
+      "vocabSightsTest": [
+        {"char":"黄果树瀑布", "phen":"huáng guǒ shù pù bù","pict":"/images/waterFall.png", "var1":"Водопады Хуангошу", "var2":"Гранд-Каньон Тунжэнь", "var3":"Карстовые пещеры Чжицзинь в Бицзе", "rightVar":"var1"}, {"char":"西江苗寨", "phen":"xī jiāng miáo zhài","pict":"/images/village.png", "var1":"Фаньцзиншань, горы Фаньцзин", "var2":"Деревня Мяо на реке Сицзян", "var3":"Гранд-Каньон Тунжэнь", "rightVar":"var2"}, {"char":"同仁大峡谷", "phen":"tóng rén dà xiá gǔ","pict":"/images/canyon.png", "var1":"Фаньцзиншань, горы Фаньцзин", "var2":"Карстовые пещеры Чжицзинь в Бицзе", "var3":"Гранд-Каньон Тунжэнь", "rightVar":"var3"}
+      ]
+    },
+    "guandun": {
+      "name": {
+        "province": "Провинция Гуандун 广东 ", 
+        "city":"г. Гуанчжоу 广州"
+      },
+      "info": "<div><b>Гуандун</b> — это прибрежный регион на юге Китая, традиционно известный на Западе как Кантон, всегда занимал стратегически важное положение из-за доступа к Южно-Китайскому морю и близости к Гонконгу и Макао. Это одна из самых экономически развитых и плотно населённых провинций в Китае, и она играет важную роль как в национальной, так и в международной торговле.</div><p><b>Гуанчжоу</b> — столица и крупнейший город провинции Гуандун, который стал первым открытым китайским портом для европейцев. Гуанчжоу является крупным транспортным узлом, важным промышленным и коммерческим центром, где хорошо развиты автомобильная промышленность, электроника, нефтехимия, фармацевтическая, пищевая и текстильная промышленности. Кроме того, город знаменит торговыми выставками, включая Кантонскую ярмарку — одну из крупнейших и старейших международных торговых выставок в мире.</p>",
+      "links": {
+        "pictmap":"/images/guandun.png", 
+        "food":"/province/guandun/food", 
+        "sights":"/province/guandun/sights"
+      },
+      "foodLinks" :{
+        "test":"/province/guandun/foodTest", 
+        "title":"Блюда 有名的美食", 
+        "title2":""
+      },
+      "sightsLinks":{
+          "test":"/province/guandun/sightsTest", 
+          "title":"Достопримечательности 名胜地方", 
+          "title2":""
+        },
+      "foodTestLinks":{ 
+        "grammar":"/grammar",
+        "testVocab":"/province/guandun/foodTest",
+        "location":"/province/guandun/location"
+      },
+      "sightsTestLinks":{ 
+        "grammar":"/grammar",
+        "testVocab":"/province/guandun/sightsTest",
+        "location":"/province/guandun/location"
+      },
+      "vocabFood": [
+        {"char":"广东烧腊", "phen":"guǎngdōng shāo là", "trans":"Жаркое по-кантонски", "pict":"/images/guandunFood1.png"}, 
+        {"char":"石岐乳鸽", "phen":"shí qí rǔ gē", "trans":"Молодой голубь Шици", "pict":"/images/guandunFood2.png"},
+        {"char":"广式早茶点心", "phen":"guǎngshì zǎochá diǎnxin", "trans":"Десерты к чаю в кантонском стиле", "pict":"/images/guandunFood3.png"}, 
+        {"char":"叉烧包", "phen":"chāshāobāo", "trans":"Баоцзы с маринованной свининой", "pict":"/images/guandunFood4.png"}, 
+        {"char":"双皮奶", "phen":"shuāng pí nǎi", "trans":"Молоко с двойной пенкой", "pict":"/images/guandunFood5.png"}
+      ],
+      "vocabSights": [
+        {"char":"海上古堡 ", "phen":"hǎishàng gǔbǎo", "trans":"Старинный замок в море", "pict":"/images/guandunSights1.png"}, 
+        {"char":"逢简水乡", "phen":"féng jiǎn shuǐxiāng", "trans":"Деревня Фэнцзянь", "pict":"/images/guandunSights2.png"},
+        {"char":"深圳虹桥公园", "phen":"shēnzhèn hóngqiáo gōngyuán", "trans":"Парк «Красный мост» в Шэньчжэне", "pict":"/images/guandunSights3.png"},
+        {"char":"千年瑶寨", "phen":"qiānnián yáo zhài", "trans":"Тысячелетняя деревня ЯоЧжай", "pict":"/images/guandunSights4.png"},
+        {"char":"鼎湖山", "phen":"Dǐnghúshān", "trans":"Динхушань", "pict":"/images/guandunSights5.png"}
+      ],
+      "vocabFoodTest": [
+        {"char":"广东烧腊", "phen":"guǎngdōng shāo là","pict":"/images/guandunFood1.png", "var1":"Жаркое по-кантонски", "var2":"Рыба в кислом супе", "var3":"Курица Дунъань", "rightVar":"var1"}, 
+        {"char":"叉烧包", "phen":"chāshāobāo","pict":"/images/guandunFood4.png", "var1":"Вонючий тофу", "var2":"Тушенное мясо по рецепту семьи Мао", "var3":"Баоцзы с маринованной свининой", "rightVar":"var3"}, 
+        {"char":"石岐乳鸽", "phen":"shí qí rǔ gē","pict":"/images/guandunFood2.png", "var1":"Молодой голубь Шици", "var2":"Десерты к чаю в кантонском стиле", "var3":"Жареный рис Гуайлу", "rightVar":"var1"}
+      ],
+      "vocabSightsTest": [
+        {"char":"海上古堡", "phen":"hǎishàng gǔbǎo","pict":"/images/guandunSights1.png", "var1":"Деревня Фэнцзянь", "var2":"Старинный замок в море", "var3":"Парк «Красный мост» в Шэньчжэне", "rightVar":"var2"},
+        {"char":"千年瑶寨", "phen":"qiānnián yáo zhài","pict":"/images/guandunSights4.png", "var1":"Динхушань", "var2":"Тысячелетняя деревня ЯоЧжай", "var3":"Деревня Фэнцзянь", "rightVar":"var2"},
+        {"char":"鼎湖山", "phen":"Dǐnghúshān","pict":"/images/guandunSights5.png", "var1":"Старинный замок в море", "var2":"Тысячелетняя деревня ЯоЧжай", "var3":"Динхушань", "rightVar":"var3"}
+      ]
+    },
+    "guansi": {
+      "name": {
+        "province": "Гуанси-Чжуанский автономный район ",
+        "city":"广西壮族自治区"
+      },
+      "info": "<div><b>Гуанси-Чжуанский автономный район (ГЧАР)</b> расположен на юге Китая и относится к бассейну реки Чжуцзян, где преобладает субтропический муссонный климат. Его северная граница обозначена горным хребтом Улиншань, имеющим пять важных горных проходов, служащих историческими путями с севера на юг страны. </div><p>Несмотря на расположение в приморском регионе, ГЧАР является экономически наиболее отсталым, что обусловлено рядом факторов. Во-первых, его географическое положение далеко от основных экономических центров Китая, а гористый рельеф затрудняет транспортную доступность. Во-вторых, регион относительно поздно начал хозяйственное освоение. В-третьих, здесь наблюдаются низкие уровни урбанизации, жизни населения и качества трудовых ресурсов по сравнению с другими регионами страны. Экономика ГЧАР в основном специализируется на сельском хозяйстве (выращивание сахарного тростника и тропических фруктов), добыче полезных ископаемых и лесозаготовке, при этом лесов на территории автономного района немного. Несмотря на экономические трудности, в ГЧАР расположены несколько важных промышленных, энергетических и туристских объектов, что создает потенциал для будущего развития. Гуанси также является многонациональным регионом, что обогащает его культурное разнообразие.</p><p><b>Наньнин 南宁</b>- Административный центр и крупнейший город. располагается в южной части ГЧАР, в 160 километрах от границы с Вьетнамом. Символ города (цветок) — китайская роза, и (дерево) – миндаль. Оба растения широко распространены и используются для озеленения города.</p>",
+      "links": {
+        "pictmap":"/images/guansi.png", 
+        "food":"/province/guansi/food", 
+        "sights":"/province/guansi/sights"
+      },
+      "foodLinks" :{
+        "test":"/province/guansi/foodTest", 
+        "title":"Блюда 有名的美食", 
+        "title2":""
+      },
+      "sightsLinks":{
+          "test":"/province/guansi/sightsTest", 
+          "title":"Достопримечательности 名胜地方", 
+          "title2":""
+        },
+      "foodTestLinks":{ 
+        "grammar":"/grammar",
+        "testVocab":"/province/guansi/foodTest",
+        "location":"/province/guansi/location"
+      },
+      "sightsTestLinks":{ 
+        "grammar":"/grammar",
+        "testVocab":"/province/guansi/sightsTest",
+        "location":"/province/guansi/location"
+      },
+      "vocabFood": [
+        {"char":"桂林米粉", "phen":"guìlín mǐfěn", "trans":"рисовая лапша по-гуйлински", "pict":"/images/guansiFood1.png"},
+        {"char":"柳州螺蛳粉", "phen":"liǔzhōu luósīfěn", "trans":"улиточная лапша Лючжоу", "pict":"/images/guansiFood2.png"},
+        {"char":"横县鱼生", "phen":"héngxiàn yúshēng", "trans":"ломтики сырой рыбы из уезда Хэн", "pict":"/images/guansiFood3.png"},
+        {"char":"梧州龟苓膏", "phen":"wúzhōu guīlínggāo", "trans":"черепаховое желе из Учжоу", "pict":"/images/guansiFood4.png"},
+        {"char":"北海沙蟹汁", "phen":"běihǎi shāxiè zhī", "trans":"соус из песчаного краба Бэйхай", "pict":"/images/guansiFood5.png"}
+      ],
+      "vocabSights": [
+        {"char":"阳朔 ", "phen":"Yángshuò", "trans":"Яншо", "pict":"/images/guansiSights1.png"},
+        {"char":"乐业天坑群", "phen":"Lèyè tiān kēng qún", "trans":"группа пещер Тянькэн в районе Лей", "pict":"/images/guansiSights2.png"},
+        {"char":"德天瀑布", "phen":"détiān pùbù", "trans":"водопад Дэтянь", "pict":"/images/guansiSights5.png"},
+        {"char":"黄姚古镇", "phen":"Huáng yáo gǔzhèn", "trans":"Древний город Хуаняо", "pict":"/images/guansiSights6.png"},
+        {"char":"北海银滩", "phen":"Běihǎi yín tān", "trans":"Берег Бэйхай", "pict":"/images/guansiSights7.png"}
+      ],
+      "vocabFoodTest": [
+        {"char":"柳州螺蛳粉", "phen":"liǔzhōu luósīfěn","pict":"/images/guansiFood2.png", "var1":"улиточная лапша Лючжоу", "var2":"Рыба в кислом супе", "var3":"рисовая лапша по-гуйлински", "rightVar":"var1"}, 
+        {"char":"梧州龟苓膏", "phen":"wúzhōu guīlínggāo","pict":"/images/guansiFood4.png", "var1":"соус из песчаного краба Бэйхай", "var2":"ломтики сырой рыбы из уезда Хэн", "var3":"черепаховое желе из Учжоу", "rightVar":"var3"}, 
+        {"char":"横县鱼生", "phen":"héngxiàn yúshēng","pict":"/images/guansiFood3.png", "var1":"ломтики сырой рыбы из уезда Хэн", "var2":"рисовая лапша по-гуйлински", "var3":"Жареный рис Гуайлу", "rightVar":"var1"}
+      ],
+      "vocabSightsTest": [
+        {"char":"阳朔", "phen":"Yángshuò","pict":"/images/guansiSights1.png", "var1":"Деревня Фэнцзянь", "var2":"Яншо", "var3":"группа пещер Тянькэн в районе Лей", "rightVar":"var2"},
+        {"char":"黄姚古镇", "phen":"Huáng yáo gǔzhèn","pict":"/images/guansiSights6.png", "var1":"Динхушань", "var2":"Древний город Хуаняо", "var3":"водопад Дэтянь","rightVar":"var2"},
+        {"char":"德天瀑布", "phen":"détiān pùbù","pict":"/images/guansiSights5.png", "var1":"Старинный замок в море", "var2":"Тысячелетняя деревня ЯоЧжай", "var3":"водопад Дэтянь", "rightVar":"var3"}
+      ]
+    }
+  }

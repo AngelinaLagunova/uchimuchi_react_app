@@ -52,8 +52,8 @@ const Card = (props)=>{
             <>  
             {/* сторона с иероглифами */}
             <div className="cardHeader">
-                <div className="translate"><img src="translate.png" alt="translate_button"/></div>
-                <div className="star"><img src="star.png" alt="add_to_list_button"/></div>
+                <div className="translate"><img src="/images/translate.png" alt="translate_button"/></div>
+                <div className="star"><img src="/images/star.png" alt="add_to_list_button"/></div>
             </div>
                 <div>
                     <div className="rusTrans">{props.words[Number(props.num)].trans}</div>
@@ -68,11 +68,11 @@ const Card = (props)=>{
             <>
             {/* сторона с переводом */}
                 <div className="cardHeader">
-                    <div className="translate"><img src="translate.png" alt="translate_button"/></div>
-                    <div className="star"><img src="star.png" alt="add_to_list_button"/></div>
+                    <div className="translate"><img src="/images/translate.png" alt="translate_button"/></div>
+                    <div className="star"><img src="/images/star.png" alt="add_to_list_button"/></div>
                 </div>
                 <div className="char">{props.words[Number(props.num)].char}</div>
-                <div className="sound"><img src="sound.png" alt="sound_button"/></div>
+                <div className="sound"><img src="/images/sound.png" alt="sound_button"/></div>
                 <div className="rusTrans">{props.words[Number(props.num)].phen}</div>
                 <div></div>
                 <div className="count">{Number(props.num)+1}/{props.words.length}</div>
@@ -134,7 +134,7 @@ const Card = (props)=>{
             {/* BigCardGeneration */}
             <div>
                 <div onClick={prevCard} className="arrowLeft hidden">
-                    <img src="arrowLeft.png" alt="arrow_left_button"/>
+                    <img src="/images/arrowLeft.png" alt="arrow_left_button"/>
                 </div>
             </div>
 
@@ -144,7 +144,7 @@ const Card = (props)=>{
 
             <div>
                 <div onClick={nextCard} className="arrowRight">
-                    <img src="arrowRight.png" alt="arrow_right_button"/>
+                    <img src="/images/arrowRight.png" alt="arrow_right_button"/>
                 </div>
 
                 <Link id="testButton2" className="hidden testButton" to={props.links.test}>
