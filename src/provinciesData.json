@@ -216,5 +216,240 @@
         {"char":"黄姚古镇", "phen":"Huáng yáo gǔzhèn","pict":"/images/guansiSights6.png", "var1":"Динхушань", "var2":"Древний город Хуаняо", "var3":"водопад Дэтянь","rightVar":"var2"},
         {"char":"德天瀑布", "phen":"détiān pùbù","pict":"/images/guansiSights5.png", "var1":"Старинный замок в море", "var2":"Тысячелетняя деревня ЯоЧжай", "var3":"водопад Дэтянь", "rightVar":"var3"}
       ]
+    },
+    "yunnan": {
+      "name": {
+        "province": "Юньнань",
+        "city": "云南省"
+      },
+      "info": "<div><b>Юньнань</b> — расположена на юго-западе Китая и славится своим мягким климатом. В <b>Куньмине</b> царит <em>\"вечная весна\"</em> с умеренными температурами круглый год (<time datetime=\"2023-10-23\">средняя температура +15°C</time>). В провинции ярко выражены сезонные различия: сухой сезон (ноябрь-апрель) и влажный сезон (май-октябрь). </div><p>Это важный сельскохозяйственный регион, где выращивают <em>чай, табак, цветы</em>. Также развиты <b>туризм, горнодобывающая промышленность</b> (цинк, олово) и <b>гидроэнергетика<b>.</p><div>Провинция богата природными ресурсами. Здесь протекают реки <em>Меконг 湄公河</em> и <em>Янцзы 长江</em>, есть горные хребты и тропические леса.</div><p><b>Юньнань граничит с Мьянмой, Лаосом и Вьетнамом.</b></p><div>Здесь растут редкие растения, такие как рододендроны и древние деревья гинкго.</div><p><b>Юньнань была частью древнего Шелкового пути</b> и играла важную роль в торговле между Китаем и Юго-Восточной Азией. В провинции сохранились древние города, такие как <em>Лицзян 丽江</em>, и уникальная культура этнических меньшинств.</p><div><b>Куньмин (昆明)</b> — экономический и культурный центр провинции. Здесь развиты <em>туризм, торговля, образование и высокие технологии</em>. Город также является важным транспортным узлом, связывающим Китай с Юго-Восточной Азией.</div><p>В годы Второй мировой войны город был важной базой для союзников, а также центром сопротивления японским войскам.</p>",
+      "links": {
+        "pictmap": "/images/yunnan.png",
+        "food": "/province/yunnan/food",
+        "sights": "/province/yunnan/sights"
+      },
+      "foodLinks": {
+        "test": "/province/yunnan/foodTest",
+        "title": "Блюда 有名的美食",
+        "title2": ""
+      },
+      "sightsLinks": {
+        "test": "/province/yunnan/sightsTest",
+        "title": "Достопримечательности 名胜地方",
+        "title2": ""
+      },
+      "foodTestLinks": {
+        "grammar": "/grammar",
+        "testVocab": "/province/yunnan/foodTest",
+        "location": "/province/yunnan/location"
+      },
+      "sightsTestLinks": {
+        "grammar": "/grammar",
+        "testVocab": "/province/yunnan/sightsTest",
+        "location": "/province/yunnan/location"
+      },
+      "vocabFood": [
+        {"char": "云南汽锅鸡", "phen": "yúnnán qìguōjī", "trans": "паровая курятина в горшочке", "pict": "/images/yunnanFood1.png"},
+        {"char": "香竹饭", "phen": "xiāng zhú fàn", "trans": "клейкий рис, отваренный вместе с ростками бамбука", "pict": "/images/yunnanFood2.png"},
+        {"char": "腊排骨火锅", "phen": "làpáigǔ huǒguō", "trans": "хого с копчёными ребрышками", "pict": "/images/yunnanFood3.png"},
+        {"char": "小锅米线", "phen": "xiǎoguō mǐxiàn", "trans": "рисовая лапша в кастрюльке", "pict": "/images/yunnanFood4.png"},
+        {"char": "鲜花饼", "phen": "xiānhuā bǐng", "trans": "пирожное с засахаренными цветами", "pict": "/images/yunnanFood5.png"}
+      ],
+      "vocabSights": [
+        {"char": "松赞林寺", "phen": "sōng zàn lín sì", "trans": "Монастырь Сунцзаньлинь", "pict": "/images/yunnanSights1.png"},
+        {"char": "梅里雪山", "phen": "méi lǐ xuě shān", "trans": "Горы Мэйлисюэ", "pict": "/images/yunnanSights2.png"},
+        {"char": "虎跳峡", "phen": "hǔ tiào xiá", "trans": "Ущелье Прыгающего тигра", "pict": "/images/yunnanSights3.png"},
+        {"char": "西双版纳", "phen": "xī shuāng bǎn nà", "trans": "Сишуанбаньна-Дайский автономный округ", "pict": "/images/yunnanSights4.png"},
+        {"char": "玉龙雪山", "phen": "yù lóng xuě shān", "trans": "Снежная гора Нефритового дракона", "pict": "/images/yunnanSights5.png"}
+      ],
+      "vocabFoodTest": [
+        {"char": "云南汽锅鸡","phen": "yúnnán qìguōjī","pict": "/images/yunnanFood1.png","var1": "паровая курятина в горшочке","var2": "жареная курица с соусом","var3": "жаркое из курицы и овощей","rightVar": "var1"},
+        {"char": "香竹饭","phen": "xiāng zhú fàn","pict": "/images/yunnanFood2.png","var1": "рис с морскими продуктами","var2": "клейкий рис, отваренный вместе с ростками бамбука","var3": "рис с овощами и мясом","rightVar": "var2"},
+        {"char": "腊排骨火锅","phen": "làpáigǔ huǒguō","pict": "/images/yunnanFood3.png","var1": "хого с копчёными ребрышками","var2": "острый суп с морепродуктами","var3": "бульон из говядины и овощей","rightVar": "var1"},
+        {"char": "小锅米线","phen": "xiǎoguō mǐxiàn","pict": "/images/yunnanFood4.png","var1": "рисовая лапша в кастрюльке","var2": "жареная лапша с мясом и овощами","var3": "суп из рисовой лапши и курицы","rightVar": "var1"}
+      ],
+      "vocabSightsTest": [
+        {"char":"松赞林寺","phen":"sōng zàn lín sì","trans":"Монастырь Сунцзаньлинь","pict":"/images/yunnanSights1.png","var1":"Древний храм в городе Лицзян","var2":"Монастырь Сунцзаньлинь","var3":"Пагода на вершине горы","rightVar":"var2"},
+        {"char":"梅里雪山","phen":"méi lǐ xuě shān","trans":"Горы Мэйлисюэ","pict":"/images/yunnanSights2.png","var1":"Ледник на вершине горы","var2":"Горы Мэйлисюэ","var3":"Долина цветов","rightVar":"var2"},
+        {"char":"虎跳峡","phen":"hǔ tiào xiá","trans":"Ущелье Прыгающего тигра","pict":"/images/yunnanSights3.png","var1":"Каньон с водопадами и скалами","var2":"Ущелье Прыгающего тигра","var3":"Парк с редкими животными","rightVar":"var2"},
+        {"char":"西双版纳","phen":"xī shuāng bǎn nà","trans":"Сишуанбаньна-Дайский автономный округ","pict":"/images/yunnanSights4.png","var1":"Область с тропическими лесами и народными деревнями","var2":"Сишуанбаньна-Дайский автономный округ","var3":"Горный массив с пещерами","rightVar":"var2"},
+        {"char":"玉龙雪山","phen":"yù lóng xuě shān","trans":"Снежная гора Нефритового дракона","pict":"/images/yunnanSights5.png","var1":"Гора с ледниками и лыжными курортами","var2":"Снежная гора Нефритового дракона","var3":"Пик с древними храмами","rightVar":"var2"}
+      ]
+  
+    },
+    "fuijan": {
+      "name": {
+        "province": "Фуцзянь",
+        "city": "福建省"
+      },
+      "info": "<p>Субтропический муссонный климат с мягкой зимой (<strong>+10-15°C</strong>) и жарким влажным летом (<strong>+28-35°C</strong>). Частые дожди в сезон тайфунов (июль-сентябрь).</p><p>Один из самых развитых регионов Китая. Специализация: электроника (<strong>Huawei, Foxconn</strong>), рыболовство, чайная промышленность (<strong>улун 乌龙茶</strong>), международная торговля (исторический центр морского Шелкового пути).</p><p>Омывается Восточно-Китайским морем (<strong>东海</strong>), горы Уи (<strong>武夷山</strong>) на севере, множество рек (<strong>Миньцзян 闽江</strong> — крупнейшая). Богатые лесные ресурсы.</p><p>Здесь вы сможете посетить тропические леса, бамбуковые рощи, чайные плантации, а также есть уникальные виды: фуцзянский кипарис (<strong>福建柏</strong>) и редкие орхидеи.</p><p>Родина народа хакка (<strong>客家人</strong>), центр древнего царства Минь (<strong>闽国</strong>). Здесь сохранились тулоу (<strong>土楼</strong>) — глинобитные дома-крепости ЮНЕСКО.</p><h2>Фучжоу 福州</h2<p>— город провинциального подчинения в провинции Фуцзянь и её административный центр. Является ключевым на юго-восточном побережье Китая, историческим и культурным центром, а также крупным центром обмена через пролив.</p><p>Известен как <em>'город банььянов'</em> (<strong>榕城</strong>) из-за древних деревьев.</p><p>Расположен в дельте реки Миньцзян (<strong>闽江</strong>), окружен холмами. В черте города — горячие источники (<strong>温泉</strong>).<br>Здесь растут пальмы, магнолии, баньяны. В парках (например, <em>西湖公园</em>) сохранились многовековые деревья.</p><p>Основан в 202 г. до н.э., был центром судостроения династии Тан. Родина писателя Линь Шу (<strong>林纾</strong>) и чайной культуры гунфу-ча (<strong>功夫茶</strong>.</p>",
+      "links": {
+        "pictmap": "/images/fuijan.png",
+        "food": "/province/fuijan/food",
+        "sights": "/province/fuijan/sights"
+      },
+      "foodLinks": {
+        "test": "/province/fuijan/foodTest",
+        "title": "Блюда 有名的美食",
+        "title2": ""
+      },
+      "sightsLinks": {
+        "test": "/province/fuijan/sightsTest",
+        "title": "Достопримечательности 名胜地方",
+        "title2": ""
+      },
+      "foodTestLinks": {
+        "grammar": "/grammar",
+        "testVocab": "/province/fuijan/foodTest",
+        "location": "/province/fuijan/location"
+      },
+      "sightsTestLinks": {
+        "grammar": "/grammar",
+        "testVocab": "/province/fuijan/sightsTest",
+        "location": "/province/fuijan/location"
+      },
+      "vocabFood": [
+        {"char": "佛跳墙", "phen": "Fó tiào qiáng", "trans": "«Будда прыгает через стену»", "pict": "/images/fuijanFood1.png"},
+        {"char": "海蛎煎", "phen": "Hǎi lì jiān", "trans": "«Устричный омлет»", "pict": "/images/fuijanFood2.png"},
+        {"char": "荔枝肉", "phen": "Lìzhī ròu", "trans": "«Личи мясо»", "pict": "/images/fuijanFood3.png"},
+        {"char": "沙茶面", "phen": "Shā chá miàn", "trans": "«Лапша Шача»", "pict": "/images/fuijanFood4.png"},
+        {"char": "姜母鸭", "phen": "Jiāng mǔ yā", "trans": "«Утка в имбире»", "pict": "/images/fuijanFood5.png"}
+      ],
+      "vocabSights": [
+        {"char": "泰宁大金湖", "phen": "Tàiníng Dàjīnhú", "trans": "«Озеро Дацзиньху в Тайнине»", "pict": "/images/fuijanSights1.png"},
+        {"char": "南靖土楼", "phen": "Nán jìng tǔlóu", "trans": "«Тяньлуокэн»", "pict": "/images/fuijanSights2.png"},
+        {"char": "开元寺", "phen": "Kāiyuán Sì", "trans": "«Храм Кайюань (Цюаньчжоу)»", "pict": "/images/fuijanSights3.png"},
+        {"char": "平潭岛", "phen": "Píngtán Dǎo", "trans": "Остров Пинтан", "pict": "/images/fuijanSights4.png"},
+        {"char": "晋江梧材传统村落", "phen": "Jìnjiāng Wúcái", "trans": "Традиционная деревня Уцай (Цзиньцзян)", "pict": "/images/fuijanSights5.png"},
+        {"char": "合掌岩", "phen": "Hézhǎng Yán", "trans": "Скала Сложенных Ладоней (Наньпин)", "pict": "/images/fuijanSights6.png"}
+      ],
+      "vocabFoodTest": [
+        {"char": "佛跳墙", "phen": "Fó tiào qiáng", "pict": "/images/fuijanFood1.png", "var1": "«Будда прыгает через стену»", "var2": "«Устричный омлет»", "var3": "«Личи мясо»", "rightVar": "var1"},
+        {"char": "海蛎煎", "phen": "Hǎi lì jiān", "pict": "/images/fuijanFood2.png", "var1": "«Лапша Шача»", "var2": "«Устричный омлет»", "var3": "«Личи мясо»", "rightVar": "var2"},
+        {"char": "荔枝肉", "phen": "Lìzhī ròu", "pict": "/images/fuijanFood3.png", "var1": "«Личи мясо»", "var2": "«Будда прыгает через стену»", "var3": "Устричный омлет", "rightVar": "var1"},
+        {"char": "沙茶面", "phen": "Shā chá miàn", "pict": "/images/fuijanFood4.png", "var1": "Устричный омлет", "var2": "Личи мясо", "var3": "Традиционная деревня Уцай (Цзиньцзян)", "rightVar": "var1"},
+        {"char": "姜母鸭", "phen": "Jiāng mǔ yā", "pict": "/images/fuijanFood5.png", "var1": "Утка в имбире", "var2": "'Личи мясо'", "var3": "Устричный омлет", "rightVar": "var1"}
+      ],
+      "vocabSightsTest": [
+        {"char":"泰宁大金湖","phen":"Tàiníng Dàjīnhú","trans":"«Озеро Дацзиньху в Тайнине»","pict":"/images/fuijanSights1.png","var1":"Красивое озеро с кристально чистой водой и природными пейзажами.","var2":"Озеро Дацзиньху, известное своей природной красотой.","var3":"","rightVar":"var2"},
+        {"char":"南靖土楼","phen":"Nán jìng tǔlóu","trans":"«Тяньлуокэн»","pict":"/images/fuijanSights2.png","var1":"","var2":"","var3":"","rightVar":""},
+        {"char":"开元寺","phen":"Kāiyuán Sì","trans":"'Храм Кайюань (Цюаньчжоу)' ","pict":"/images/fuijanSights3.png ","var1":"","var2":"","var3":"","rightVar":""},
+        {"char":"'平潭岛' ","phen":"'Píngtán Dǎo' ","trans":"'Остров Пинтан' ","pict":"/images/fuijanSights4.png ","var1":"","var2":"","var3":"","rightVar":""},
+        {"char":"'晋江梧材传统村落' ","phen":"'Jìnjiāng Wúcái' ","trans":"'Традиционная деревня Уцай (Цзиньцзян)' ","pict":"/images/fuijanSights5.png ","var1":"","var2":"","var3":"","rightVar":""},
+        {"char":"'合掌岩' ","phen":"'Hézhǎng Yán' ","trans":"'Скала Сложенных Ладоней (Наньпин)' ","pict":"/images/fuijanSights6.png ","var1":"","var2":"","var3":"","rightVar":""}
+      ]
+    },
+    "jiangxi": {
+      "name": {
+        "province": "Цзянси ",
+        "city": "江西省"
+      },
+      "info": "<p>Субтропический муссонный климат с четким разделением сезонов. <strong>Жаркое влажное лето (+28-35°C), мягкая зима (+5-10°C)<strong>. Обильные осадки весной и ранним летом.</p><p><strong>Крупнейший производитель риса (稻米) в Китае</strong>, чайные плантации (особенно сорт \"Лушань Юньу\" 庐山云雾茶).</p><p>Здесь происходит добыча вольфрама и меди, <strong>керамическое производство</strong>.</p><p>Внутренняя провинция без выхода к морю. <strong>Главная река — Ганьцзян (赣江)</strong>, также вы сможете посетить озеро Поянху (鄱阳湖) — крупнейшее пресноводное озеро Китая. Увидеть горы Лушань (庐山) и Цзинганшань (井冈山).</p><p><strong>Провинция богата бамбуковыми лесами, чайными плантациями, уникальными видами магнолий.</strong> В районе озера Поянху — важный ареал перелетных птиц.</p><h2>История:</h2><ul><li>Родина революционной базы коммунистов (<strong>Цзинганшань</strong>)</li><li>Место создания неоконфуцианства (<strong>Чжу Си 朱熹</strong>)</li><li>Древние деревни с хуэйчжоуской архитектурой (например, <strong>Уюань 婺源</strong>)</li></ul><h2>Столица: Нанчан 南昌</h2><p>Расположен на реке Ганьцзян (赣江). В черте города — озеро Циншаньху (青山湖), много парков с традиционными китайскими садами, аллеями сакуры.</p><h3>История:</h3><ul><li><strong>Место \"Наньчанского восстания\" 1927 года</strong> — начало создания Красной армии Китая.</li><li><strong>Башня Тэнванге (滕王阁)</strong> — один из трех великих павильонов Китая (построен в 653 г.).</li><li><strong>Древний культурный центр с 2000-летней историей</strong>.</li></ul>",
+      "links": {
+        "pictmap": "/images/jiangxi.png",
+        "food": "/province/jiangxi/food",
+        "sights": "/province/jiangxi/sights"
+      },
+      "foodLinks": {
+        "test": "/province/jiangxi/foodTest",
+        "title": "Блюда 有名的美食",
+        "title2": ""
+      },
+      "sightsLinks": {
+        "test": "/province/jiangxi/sightsTest",
+        "title": "Достопримечательности 名胜地方",
+        "title2": ""
+      },
+      "foodTestLinks": {
+        "grammar": "/grammar",
+        "testVocab": "/province/jiangxi/foodTest",
+        "location": "/province/jiangxi/location"
+      },
+      "sightsTestLinks": {
+        "grammar": "/grammar",
+        "testVocab": "/province/jiangxi/sightsTest",
+        "location": "/province/jiangxi/location"
+      },
+      "vocabFood": [
+        {"char": "三杯鸡", "phen": "sān bēi jī", "trans": "Цыплёнок трёх чашек", "pict": "/images/jiangxiFood1.png"},
+        {"char": "莲花血鸭", "phen": "liánhuā xuè yā", "trans": "Пряная утка с кровью из Ляньхуа", "pict": "/images/jiangxiFood2.png"},
+        {"char": "鄱湖胖鱼头", "phen": "pó hú pàng yú tóu", "trans": "Толстолобик из озера Поян", "pict": "/images/jiangxiFood3.png"},
+        {"char": "藜蒿炒腊肉", "phen": "lí hāo chǎo là ròu", "trans": "Жаренная полынь со свининой", "pict": "/images/jiangxiFood4.png"},
+        {"char": "南昌炒米粉", "phen": "nánchāng chǎo mǐfěn", "trans": "Жареная рисовая лапша по-наньчански", "pict": "/images/jiangxiFood5.png"}
+      ],
+      "vocabSights": [
+        {"char": "龙虎山", "phen": "Lónghǔ Shān", "trans": "Горы Дракона и Тигра", "pict": "/images/jiangxiSights1.png"},
+        {"char": "三清山", "phen": "Sānqīng Shān", "trans": "Горы Саньцин", "pict": "/images/jiangxiSights2.png"},
+        {"char": "井冈山", "phen": "Jǐnggāng Shān", "trans": "Горы Цзинган", "pict": "/images/jiangxiSights3.png"},
+        {"char": "滕王阁", "phen": "Téngwáng Gé", "trans": "Павильон Тэнвана", "pict": "/images/jiangxiSights4.png"},
+        {"char": "望仙谷", "phen": "Wàngxiān Gǔ", "trans": "Долина Бессмертных / Вансянь", "pict": "/images/jiangxiSights5.png"},
+        {"char": "景德镇", "phen": "Jǐngdézhèn", "trans": "Фарфоровая столица Китая", "pict": "/images/jiangxiSights6.png"}
+      ],
+      "vocabFoodTest": [
+        {"char":"柳州螺蛳粉", "phen":"liǔzhōu luósīfěn","pict":"/images/guansiFood2.png", "var1":"улиточная лапша Лючжоу", "var2":"Рыба в кислом супе", "var3":"рисовая лапша по-гуйлински", "rightVar":"var1"}, 
+        {"char":"梧州龟苓膏", "phen":"wúzhōu guīlínggāo","pict":"/images/guansiFood4.png", "var1":"соус из песчаного краба Бэйхай", "var2":"ломтики сырой рыбы из уезда Хэн", "var3":"черепаховое желе из Учжоу", "rightVar":"var3"}, 
+        {"char":"横县鱼生", "phen":"héngxiàn yúshēng","pict":"/images/guansiFood3.png", "var1":"ломтики сырой рыбы из уезда Хэн", "var2":"рисовая лапша по-гуйлински", "var3":"Жареный рис Гуайлу", "rightVar":"var1"}
+        ],
+      "vocabSightsTest": [
+        {"char":"阳朔", "phen":"Yángshuò","pict":"/images/guansiSights1.png", "var1":"Деревня Фэнцзянь", "var2":"Яншо", "var3":"группа пещер Тянькэн в районе Лей", "rightVar":"var2"},
+        {"char":"黄姚古镇", "phen":"Huáng yáo gǔzhèn","pict":"/images/guansiSights6.png", "var1":"Динхушань", "var2":"Древний город Хуаняо", "var3":"водопад Дэтянь","rightVar":"var2"},
+        {"char":"德天瀑布", "phen":"détiān pùbù","pict":"/images/guansiSights5.png", "var1":"Старинный замок в море", "var2":"Тысячелетняя деревня ЯоЧжай", "var3":"водопад Дэтянь", "rightVar":"var3"}
+      ]
+    },
+    "hainan": {
+      "name": {
+        "province": "Хайнань",
+        "city": "海南省"
+      },
+      "info": "",
+      "links": {
+        "pictmap": "/images/hainan.png",
+        "food": "/province/hainan/food",
+        "sights": "/province/hainan/sights"
+      },
+      "foodLinks": {
+        "test": "/province/hainan/foodTest",
+        "title": "Блюда 有名的美食",
+        "title2": ""
+      },
+      "sightsLinks": {
+        "test": "/province/hainan/sightsTest",
+        "title": "Достопримечательности 名胜地方",
+        "title2": ""
+      },
+      "foodTestLinks": {
+        "grammar": "/grammar",
+        "testVocab": "/province/hainan/foodTest",
+        "location": "/province/hainan/location"
+      },
+      "sightsTestLinks": {
+        "grammar": "/grammar",
+        "testVocab": "/province/hainan/sightsTest",
+        "location": "/province/hainan/location"
+      },
+      "vocabFood": [
+        {"char": "海南鸡饭", "phen": "Hǎinán jī fàn", "trans": "Хайнаньский куриный рис", "pict": "/images/hainanFood1.png"},
+        {"char": "椰子饭", "phen": "Yēzi fàn", "trans": "Кокосовый рис", "pict": "/images/hainanFood2.png"},
+        {"char": "东山羊", "phen": "Dōngshān yáng", "trans": "Дуншаньская козлятина", "pict": "/images/hainanFood3.png"},
+        {"char": "加积鸭", "phen": "Jiājí yā", "trans": "Утка Цзяцзи", "pict": "/images/hainanFood4.png"},
+        {"char": "和东蟹", "phen": "Hé Lè xiè", "trans": "Краб Хэлэ", "pict": "/images/hainanFood5.png"}
+      ],
+      "vocabSights": [
+        {"char": "洋浦千年古盐田", "phen": "Yángpǔ qiānnián gǔ yántián", "trans": "\"Древние соляные копи Янпу\"", "pict": "/images/hainanSights1.png"},
+        {"char": "乐东莺歌海盐场", "phen": "Lèdōng Yīnggēhǎi Yánchǎng", "trans": "\"Соляные поля Ингехай\"", "pict": "/images/hainanSights2.png"},
+        {"char": "万宁日月湾", "phen": "Wànníng Rìyuè Wān", "trans": "\"Залив Солнца и Луны\"", "pict": "/images/hainanSights3.png"},
+        {"char": "文南老街", "phen": "Wénnán Lǎojiē", "trans": "- Старая улица Вэньнань", "pict": "/images/hainanSights4.png"},
+        {"char": "五指山", "phen": "Wǔzhǐ Shān", "trans": "Гора Пяти Пальцев", "pict": "/images/hainanSights5.png"}
+      ],
+      "vocabFoodTest": [
+        {"char":"柳州螺蛳粉", "phen":"liǔzhōu luósīfěn","pict":"/images/guansiFood2.png", "var1":"улиточная лапша Лючжоу", "var2":"Рыба в кислом супе", "var3":"рисовая лапша по-гуйлински", "rightVar":"var1"}, 
+        {"char":"梧州龟苓膏", "phen":"wúzhōu guīlínggāo","pict":"/images/guansiFood4.png", "var1":"соус из песчаного краба Бэйхай", "var2":"ломтики сырой рыбы из уезда Хэн", "var3":"черепаховое желе из Учжоу", "rightVar":"var3"}, 
+        {"char":"横县鱼生", "phen":"héngxiàn yúshēng","pict":"/images/guansiFood3.png", "var1":"ломтики сырой рыбы из уезда Хэн", "var2":"рисовая лапша по-гуйлински", "var3":"Жареный рис Гуайлу", "rightVar":"var1"}
+        ],
+      "vocabSightsTest": [
+        {"char":"阳朔", "phen":"Yángshuò","pict":"/images/guansiSights1.png", "var1":"Деревня Фэнцзянь", "var2":"Яншо", "var3":"группа пещер Тянькэн в районе Лей", "rightVar":"var2"},
+        {"char":"黄姚古镇", "phen":"Huáng yáo gǔzhèn","pict":"/images/guansiSights6.png", "var1":"Динхушань", "var2":"Древний город Хуаняо", "var3":"водопад Дэтянь","rightVar":"var2"},
+        {"char":"德天瀑布", "phen":"détiān pùbù","pict":"/images/guansiSights5.png", "var1":"Старинный замок в море", "var2":"Тысячелетняя деревня ЯоЧжай", "var3":"водопад Дэтянь", "rightVar":"var3"}
+      ]
     }
   }

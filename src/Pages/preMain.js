@@ -6,7 +6,7 @@ function PreMain() {
     <>
       <div className="page">
         <div className="mainHeader">
-          Учи Мучи
+          Учи Выучи
         </div>
         <div className="main">
           <div className="wrap"><Link to="/gamesMenu">
