@@ -90,7 +90,7 @@ const BaseVocab = (props) => {
                 </div>
 
                     <div className="Gifs">
-                        <img src={props.gifs[num][numOfGif]} key={numOfGif} alt="animation_of_hieroglyph" />
+                        <img src={"/images/" + props.gifs[num][numOfGif]} key={numOfGif} alt="animation_of_hieroglyph" />
                     </div>
 
                 <div>
