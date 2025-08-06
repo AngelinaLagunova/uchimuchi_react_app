@@ -1,11 +1,20 @@
 import "./location.css";
-import React from 'react';
 import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 
 
 
 const Location =(props) =>
 {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const maxChars = 458
+
+    const truncatedText = props.info.length > maxChars ? props.info.slice(0, maxChars) + '...' : props.info;
+
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded);
+    };
     
     return(
         <>
@@ -18,7 +27,18 @@ const Location =(props) =>
                 
                 <article>
                     <div className="info"> 
-                        <div dangerouslySetInnerHTML={{ __html: props.info }} />
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: isExpanded ? props.info : truncatedText,
+                            }}
+                        />
+                        {props.info.length > maxChars && (
+                            <div className="reaadMoreButton">
+                                <button className="button" onClick={toggleExpand}>
+                                {isExpanded ? 'Свернуть' : 'Читать далее'}
+                                </button>
+                            </div>
+                        )}
                     </div>
                     <div> 
                         <div className="sectionName">Категории новых слов</div>
@@ -35,3 +55,4 @@ const Location =(props) =>
 
 
 export default Location
+
