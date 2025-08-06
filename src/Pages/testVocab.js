@@ -9,9 +9,6 @@ const TestVocab =(props) =>{
 
     const [ testState, setTestState ] = React.useState(true);
 
-    const EndTest = (event) =>{
-        setTestState(false)
-    }
 
     const [numOfTest, setTestNum] = React.useState(0);
 
@@ -24,10 +21,11 @@ const TestVocab =(props) =>{
 
 
         }
+        else if (numOfTest === props.words.length){
+            setTestNum(numOfTest + 1);
+        }
         else {
-            document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
-            document.getElementById("endTest").classList.remove("hidden");
-
+            setTestState(false)
         }
         document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
         document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
@@ -49,7 +47,6 @@ const TestVocab =(props) =>{
         }
         if (numOfTest === props.words.length - 1){
             document.getElementsByClassName("arrowRightTest")[0].classList.remove("hidden");
-            document.getElementById("endTest").classList.add("hidden");
         }
         document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
         document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
@@ -161,9 +158,6 @@ const TestVocab =(props) =>{
                 <div>
                     <div onClick={Next} className="arrowRightTest">
                         <img src="/images/arrowRight.png" alt="arrow_right_button"/>
-                    </div>
-                    <div className="grammar2TestButton hidden" id="endTest">
-                        <button className="button" onClick={EndTest}>Завершить тест</button> 
                     </div>
                 </div>
 
