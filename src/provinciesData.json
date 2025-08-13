@@ -624,10 +624,10 @@
         {"char": "九寨沟", "phen": "Jiǔzhàigōu", "trans": "Цзючжайгоу", "pict": "/images/sichuanSights3.png"},
         {"char": "黄龙", "phen": "Huánglóng", "trans": "Хуанлун", "pict": "/images/sichuanSights4.png"},
         {"char": "峨眉山", "phen": "Éméi Shān", "trans": "Гора Эмэйшань", "pict": "/images/sichuanSights5.png"},
-        {"char": "乐山大佛", "phen": "Lèshān Dàfó", "trans": "Лэшаньский гигантский Будда", "pict": "/images/sichuanSights4.png"},
-        {"char": "都江堰", "phen": "Dūjiāngyàn", "trans": "Дуцзянъянь", "pict": "/images/sichuanSights4.png"},
-        {"char": "色达", "phen": "sèdá", "trans": "Сертар", "pict": "/images/sichuanSights4.png"},
-        {"char": "三星堆", "phen": "sānxīngduī", "trans": "Музей Саньсиндуя", "pict": "/images/sichuanSights4.png"}
+        {"char": "乐山大佛", "phen": "Lèshān Dàfó", "trans": "Лэшаньский гигантский Будда", "pict": "/images/sichuanSights6.png"},
+        {"char": "都江堰", "phen": "Dūjiāngyàn", "trans": "Дуцзянъянь", "pict": "/images/sichuanSights7.png"},
+        {"char": "色达", "phen": "sèdá", "trans": "Сертар", "pict": "/images/sichuanSights8.png"},
+        {"char": "三星堆", "phen": "sānxīngduī", "trans": "Музей Саньсиндуя", "pict": "/images/sichuanSights9.png"}
       ],
       "vocabFoodTest": [
         {"char":"麻婆豆腐","phen":"mápó dòufu","pict":"/images/sichuanFood1.png","var1":"Курица с перцем по-сычуаньски","var2":"Кусочки отварной свинины в остром соусе по-сычуаньски","var3":"Мапо тофу","rightVar":"var3"},
@@ -637,15 +637,15 @@
         {"char":"辣子鸡","phen":"làzǐjī","pict":"/images/sichuanFood5.png","var1":"Курица с перцем по-сычуаньски","var2":"Кусочки отварной свинины в остром соусе по-сычуаньски","var3":"Хуэйгожоу / «Свинина двойного приготовления»","rightVar":"var1"}
       ],
       "vocabSightsTest": [
-        {"char":"大熊猫繁育研究基地","phen":"Dàxióngmāo Fányù Yánjiū Jīdì","pict":"/images/sichuanSights1.png","var1":"Заповедник больших панд","var2":"Музей Саньсиндуя","var3":"Дуцзянъянь","rightVar":"var1"},
-        {"char":"武侯祠","phen":"Wǔhóu Cí","pict":"/images/sichuanSights2.png","var1":"Хуанлун","var2":"Цзючжайгоу","var3":"Храм Ухоуцы","rightVar":"var3"},
-        {"char":"九寨沟","phen":"Jiǔzhàigōu","pict":"/images/sichuanSights3.png","var1":"Цзючжайгоу","var2":"Музей Саньсиндуя","var3":"Храм Ухоуцы","rightVar":"var1"},
-        {"char":"黄龙","phen":"Huánglóng","pict":"/images/sichuanSights4.png","var1":"Гора Эмэйшань","var2":"Сертар","var3":"Хуанлун","rightVar":"var3"},
-        {"char":"峨眉山","phen":"Éméi Shān","pict":"/images/sichuanSights5.png","var1":"Хуанлун","var2":"Гора Эмэйшань","var3":"Заповедник больших панд","rightVar":"var2"},
-        {"char":"乐山大佛","phen":"Lèshān Dàfó","pict":"/images/sichuanSights4.png","var1":"Дуцзянъянь","var2":"Лэшаньский гигантский Будда","var3":"Заповедник больших панд","rightVar":"var2"},
-        {"char":"都江堰","phen":"Dūjiāngyàn","pict":"/images/sichuanSights4.png","var1":"Дуцзянъянь","var2":"Музей Саньсиндуя","var3":"Гора Эмэйшань","rightVar":"var1"},
-        {"char":"色达","phen":"sèdá","pict":"/images/sichuanSights4.png","var1":"Лэшаньский гигантский Будда","var2":"Сертар","var3":"Заповедник больших панд","rightVar":"var2"},
-        {"char":"三星堆","phen":"sānxīngduī","pict":"/images/sichuanSights4.png","var1":"Лэшаньский гигантский Будда","var2":"Музей Саньсиндуя","var3":"Дуцзянъянь","rightVar":"var2"}
+        {"char":"大熊猫繁育研究基地","phen":"Dàxióngmāo Fányù Yánjiū Jīdì","pict":"/images/sichuanSights1.png","var1":"Лэшаньский гигантский Будда","var2":"Храм Ухоуцы","var3":"Заповедник больших панд","rightVar":"var3"},
+        {"char":"武侯祠","phen":"Wǔhóu Cí","pict":"/images/sichuanSights2.png","var1":"Заповедник больших панд","var2":"Храм Ухоуцы","var3":"Лэшаньский гигантский Будда","rightVar":"var2"},
+        {"char":"九寨沟","phen":"Jiǔzhàigōu","pict":"/images/sichuanSights3.png","var1":"Лэшаньский гигантский Будда","var2":"Музей Саньсиндуя","var3":"Цзючжайгоу","rightVar":"var3"},
+        {"char":"黄龙","phen":"Huánglóng","pict":"/images/sichuanSights4.png","var1":"Гора Эмэйшань","var2":"Хуанлун","var3":"Дуцзянъянь","rightVar":"var2"},
+        {"char":"峨眉山","phen":"Éméi Shān","pict":"/images/sichuanSights5.png","var1":"Гора Эмэйшань","var2":"Дуцзянъянь","var3":"Хуанлун","rightVar":"var1"},
+        {"char":"乐山大佛","phen":"Lèshān Dàfó","pict":"/images/sichuanSights6.png","var1":"Заповедник больших панд","var2":"Цзючжайгоу","var3":"Лэшаньский гигантский Будда","rightVar":"var3"},
+        {"char":"都江堰","phen":"Dūjiāngyàn","pict":"/images/sichuanSights7.png","var1":"Заповедник больших панд","var2":"Музей Саньсиндуя","var3":"Дуцзянъянь","rightVar":"var3"},
+        {"char":"色达","phen":"sèdá","pict":"/images/sichuanSights8.png","var1":"Дуцзянъянь","var2":"Сертар","var3":"Заповедник больших панд","rightVar":"var2"},
+        {"char":"三星堆","phen":"sānxīngduī","pict":"/images/sichuanSights9.png","var1":"Музей Саньсиндуя","var2":"Хуанлун","var3":"Гора Эмэйшань","rightVar":"var1"}
       ]
     },
     "chongqing": {
