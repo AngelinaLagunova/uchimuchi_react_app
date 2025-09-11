@@ -52,6 +52,10 @@ function ProvincePage() {
   }
 }
 
+const nameData = Object.fromEntries(
+  Object.entries(provinciesData).map(([key, value]) => [key, value.name])
+);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const game1Props = [[["那个饭馆","不","做东安子鸡"],"那个饭馆不做东安子鸡", "Тот ресторан не готовит курицу Дунъань."],
@@ -84,13 +88,16 @@ const grammar = ["zhè gè cài shì chòudòufu.","zuótiān tā/tā diǎn le m
 const grammarLinks = {"test":"/grammar", "title": "Путешественник"};
 
 //провинции
-const nameChansha = {"province": "Провинция Хунань 湖南", "city": "г. Чанша 长沙市"};
-const nameGuizhou = { "province": "Провинция Гуйчжоу 贵州 ", "city":"г. Гуйян 贵阳"};
-const nameGuandun = {"province": "Провинция Гуандун 广东 ", "city":"г. Гуанчжоу 广州"};
-const nameGuansi = {"province": "Гуанси-Чжуанский автономный район ", "city":"广西壮族自治区"};
+// const nameChansha = {"province": "Провинция Хунань 湖南", "city": "г. Чанша 长沙市"};
+// const nameGuizhou = { "province": "Провинция Гуйчжоу 贵州 ", "city":"г. Гуйян 贵阳"};
+// const nameGuandun = {"province": "Провинция Гуандун 广东 ", "city":"г. Гуанчжоу 广州"};
+// const nameGuansi = {"province": "Гуанси-Чжуанский автономный район ", "city":"广西壮族自治区"};
+// const nameYunnan = {"province": "Юньнань ", "city":"云南省"};
+// const nameFuijan = {"province": "Фуцзянь ", "city":"福建省"};
 
 
-const namesForMap = {'chansha': nameChansha, 'guizhou': nameGuizhou, 'guandun': nameGuandun, 'guansi':nameGuansi};
+
+// const namesForMap = {'chansha': nameChansha, 'guizhou': nameGuizhou, 'guandun': nameGuandun, 'guansi':nameGuansi, 'yunnan':nameYunnan, 'fuijan':nameFuijan};
 
 //ссылки для сайдбара
 //для тематического блока
@@ -186,7 +193,7 @@ function Sidebar() {
             <Route exact path="/" element={<PreMain/>}/>
             <Route exact path="/lk" element={<Lk/>}/>
             <Route exact path="/vocabList" element={<VocabList/>}/>
-            <Route exact path="/map" element={<Map list={namesForMap}/>}/>
+            <Route exact path="/map" element={<Map list={nameData}/>}/>
             <Route exact path="/baseVocab" element={<BaseVocab gifs={BaseGifs}/>}/>
             <Route exact path="/preGrammar" element={<PreGrammar/>}/>
             <Route exact path="/gamesMenu" element={<GamesMenu/>}/>

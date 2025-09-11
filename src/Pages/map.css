@@ -20,3 +20,14 @@ div .pict{
     position: absolute;
 }
 
+.highlightable {
+  stroke: #944278fe; /* цвет при наведении, например, красный */
+; /* первоначальный цвет */
+  transition: stroke 0.3s;
+  fill:#ffceeeff;
+}
+
+.highlightable:hover {
+  stroke: #efffbbfe; /* цвет при наведении, например, красный */
+  stroke-width: 0.1vw;
+}
