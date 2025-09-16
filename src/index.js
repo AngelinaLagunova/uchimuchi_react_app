@@ -25,6 +25,42 @@ import Game2 from "./Pages/game2.js";
 import GamesMenu from "./Pages/gamesMenu.js";
 
 
+function shuffleArray(arr) {
+        let array = arr.slice();
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+        }
+
+function generateQuizItems(data) {
+    const allTranslations = data.map(item => item.trans);
+
+    return data.map(item => {
+        const correct = item.trans;
+        // Получаем два случайных неправильных ответа
+        const incorrect = shuffleArray(allTranslations.filter(t => t !== correct)).slice(0, 2);
+        // Формируем массив из 3-х вариантов
+        const options = shuffleArray([correct, ...incorrect]);
+
+        // Определяем где правильный вариант (var1/var2/var3)
+        const rightVar = `var${options.indexOf(correct) + 1}`;
+
+        // Собираем элемент
+        return {
+        char: item.char,
+        phen: item.phen,
+        pict: item.pict,
+        var1: options[0],
+        var2: options[1],
+        var3: options[2],
+        rightVar: rightVar
+        };
+    });
+    }
+
+
 function ProvincePage() {
   const { provinceName, section } = useParams();
 
@@ -43,9 +79,9 @@ function ProvincePage() {
     case 'sights':
       return <Vocabulary words={provincData.vocabSights} links={provincData.sightsLinks} />;
     case 'foodTest':
-      return <TestVocab words={provincData.vocabFoodTest} links={provincData.foodTestLinks} />;
+      return <TestVocab words={generateQuizItems(provincData.vocabFood)} links={provincData.foodTestLinks} />;
     case 'sightsTest':
-      return <TestVocab words={provincData.vocabSightsTest} links={provincData.sightsTestLinks} />;
+      return <TestVocab words={generateQuizItems(provincData.vocabSights)} links={provincData.sightsTestLinks} />;
     default:
       // Можно сделать редирект или показать список разделов
       return <div>Данные не найдены</div>;
