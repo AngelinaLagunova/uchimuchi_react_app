@@ -23,6 +23,8 @@ import PreGrammar from "./Pages/preGramma.js";
 import Game1 from "./Pages/game1.js";
 import Game2 from "./Pages/game2.js";
 import GamesMenu from "./Pages/gamesMenu.js";
+import AboutUs from "./Pages/aboutUs.js";
+
 
 
 function shuffleArray(arr) {
@@ -216,6 +218,7 @@ function Sidebar() {
     return(
       <>
       <div className="sidenav">
+        <Link to="/aboutUs" key="aboutUs" title="О проекте">УчиВыучи</Link>
         {SideImages}
         <hr/>
         <SideDynanic/>
@@ -227,6 +230,7 @@ function Sidebar() {
             <Route exact path="/home" element={<PreMain/>}/>
             <Route exact path="/main" element={<MainMenu/>}/>
             <Route exact path="/" element={<PreMain/>}/>
+            <Route exact path="/aboutUs" element={<AboutUs/>}/>
             <Route exact path="/lk" element={<Lk/>}/>
             <Route exact path="/vocabList" element={<VocabList/>}/>
             <Route exact path="/map" element={<Map list={nameData}/>}/>
