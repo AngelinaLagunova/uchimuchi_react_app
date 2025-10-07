@@ -144,32 +144,114 @@ const BaseVocabSidnav = [{"href":"/baseVocab", "text":"Базовый слова
 const PreGrammarSidnav = [{"href":"/preGrammar", "text":"Грамматика"}];
 const GamesMenuSidnav = [{"href":"/gamesMenu", "text":"Игры"}];
 
-
 //для карты
 const MapSidenav = [].concat(ThemesSidnav, [{"href":"/map", "src":"mapicon.png"}]);
-
-//для хунани
-const ChanshaSidenav = [].concat(MapSidenav, [{"href":"/province/chansha/location", "text":"Хунань"}]);
-const ChanshaFoodSidenav = [].concat(ChanshaSidenav,[{"href":"/province/chansha/food", "text":"Слова"}])
-const ChanshaSightsSidenav = [].concat(ChanshaSidenav,[{"href":"/province/chansha/sights", "text":"Слова"}])
 const GrammarSidenav = [].concat(PreGrammarSidnav,[{"href":"/grammar", "text":"Путешестве- нник"}]);
 
+
+function createProvinceSidenavs(provinceKey, provinceData) {
+  const name = provinceData.name.name;       // "Guizhou"
+  const nameRu = provinceData.name.nameRu;   // "Гуйчжоу"
+  const slug = provinceKey;                    // "guizhou"
+
+  // Обязательно должны быть ссылки внутри provinceData для удобства
+  const links = provinceData.links || {};
+  const foodLinks = provinceData.foodLinks || {};
+  const sightsLinks = provinceData.sightsLinks || {};
+  const locationLink = provinceData.foodTestLinks.location || {};
+
+  // Главный меню — добавляем ссылку на локацию
+  const provinceSidenav = [].concat(
+    MapSidenav,
+    [{ href: locationLink || `/province/${slug}/location`, text: nameRu }]
+  );
+
+  // Меню для еды (food)
+  const provinceFoodSidenav = [].concat(
+    provinceSidenav,
+    [{ href: links.food || `/province/${slug}/food`, text: "Блюда" }]
+  );
+
+  // Меню для достопримечательностей (sights)
+  const provinceSightsSidenav = [].concat(
+    provinceSidenav,
+    [{ href: links.sights || `/province/${slug}/sights`, text: "Достоприме- чательности" }]
+  );
+
+  // Тестовые меню
+  const provinceTestFoodSidenav = [].concat(
+    provinceFoodSidenav,
+    [{ href: foodLinks.test || `/province/${slug}/foodTest`, text: "Тест" }]
+  );
+
+  const provinceTestSightsSidenav = [].concat(
+    provinceSightsSidenav,
+    [{ href: sightsLinks.test || `/province/${slug}/sightsTest`, text: "Тест" }]
+  );
+
+  // Возвращаем объект с этими массивами
+  console.log(provinceSidenav)
+  return {
+    [`${name}Sidenav`]: provinceSidenav,
+    [`${name}FoodSidenav`]: provinceFoodSidenav,
+    [`${name}SightsSidenav`]: provinceSightsSidenav,
+    [`${name}TestFoodSidenav`]: provinceTestFoodSidenav,
+    [`${name}TestSightsSidenav`]: provinceTestSightsSidenav,
+  };
+}
+
+// Создадим все sidenav-объекты для всех провинций и dynamicSidebar
+const allSidenavs = {};
+const dynamicSidebar = {"/map":MapSidenav, "/grammar":GrammarSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/gamesMenu":GamesMenuSidnav};
+
+for (const provinceKey in provinciesData) {
+  if (!provinciesData.hasOwnProperty(provinceKey)) continue;
+
+  const provinceData = provinciesData[provinceKey];
+  const navs = createProvinceSidenavs(provinceKey, provinceData);
+
+  Object.assign(allSidenavs, navs);
+
+  // Заполняем dynamicSidebar
+  const name = provinceData.name.name; // "Guizhou"
+  const locationLink = provinceData.foodTestLinks.location || {};
+  const links = provinceData.links || {};
+  const foodLinks = provinceData.foodLinks || {};
+  const sightsLinks = provinceData.sightsLinks || {};
+
+  // Добавляем ключи — маршрут => массив меню
+  if (locationLink) dynamicSidebar[locationLink] = navs[`${name}Sidenav`];
+  if (links.food) dynamicSidebar[links.food] = navs[`${name}FoodSidenav`];
+  if (links.sights) dynamicSidebar[links.sights] = navs[`${name}SightsSidenav`];
+  if (foodLinks.test) dynamicSidebar[foodLinks.test] = navs[`${name}TestFoodSidenav`];
+  if (sightsLinks.test) dynamicSidebar[sightsLinks.test] = navs[`${name}TestSightsSidenav`];
+}
+
+//для хунани
+// const ChanshaSidenav = [].concat(MapSidenav, [{"href":"/province/chansha/location", "text":"Хунань"}]);
+// const ChanshaFoodSidenav = [].concat(ChanshaSidenav,[{"href":"/province/chansha/food", "text":"Слова"}])
+// const ChanshaSightsSidenav = [].concat(ChanshaSidenav,[{"href":"/province/chansha/sights", "text":"Слова"}])
+
+
 //для гуйчжоу
-const GuizhouSidenav = [].concat(MapSidenav, [{"href":"/province/guizhou/location", "text":"Гуйчжоу"}]); 
-const GuizhouFoodSidenav = [].concat(GuizhouSidenav,[{"href":"/province/guizhou/food", "text":"Слова"}]);
-const GuizhouSightsSidenav = [].concat(GuizhouSidenav,[{"href":"/province/guizhou/sights", "text":"Слова"}]);
+// const GuizhouSidenav = [].concat(MapSidenav, [{"href":"/province/guizhou/location", "text":"Гуйчжоу"}]); 
+// const GuizhouFoodSidenav = [].concat(GuizhouSidenav,[{"href":"/province/guizhou/food", "text":"Слова"}]);
+// const GuizhouSightsSidenav = [].concat(GuizhouSidenav,[{"href":"/province/guizhou/sights", "text":"Слова"}]);
+// const GuizhouTestFoodSidenav = [].concat(GuizhouFoodSidenav,[{"href":"/province/guizhou/foodTest", "text":"Тест"}]);
+// const GuizhouTestSightsSidenav = [].concat(GuizhouSightsSidenav,[{"href":"/province/guizhou/sightsTest", "text":"Тест"}]);
+
 // const GuizhouGrammarSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouGrammar", "text":"Грамматика"}])
 
 //для гуандун
-const GuandunSidenav = [].concat(MapSidenav,[{"href":"/province/guandun/location", "text":"Гуандун"}]);
-const GuandunFoodSidenav = [].concat(GuandunSidenav,[{"href":"/province/guandun/food", "text":"Слова"}]);
-const GuandunSightsSidenav = [].concat(GuandunSidenav,[{"href":"/province/guandun/sights", "text":"Слова"}]);
+// const GuandunSidenav = [].concat(MapSidenav,[{"href":"/province/guandun/location", "text":"Гуандун"}]);
+// const GuandunFoodSidenav = [].concat(GuandunSidenav,[{"href":"/province/guandun/food", "text":"Слова"}]);
+// const GuandunSightsSidenav = [].concat(GuandunSidenav,[{"href":"/province/guandun/sights", "text":"Слова"}]);
 
-const GuansiSidenav = [].concat(MapSidenav,[{"href":"/province/guansi/location", "text":"ГЧАР"}]);
-const GuansiFoodSidenav = [].concat(GuansiSidenav,[{"href":"/province/guansi/food", "text":"Слова"}]);
-const GuansiSightsSidenav = [].concat(GuansiSidenav,[{"href":"/province/guansi/sights", "text":"Слова"}]);
+// const GuansiSidenav = [].concat(MapSidenav,[{"href":"/province/guansi/location", "text":"ГЧАР"}]);
+// const GuansiFoodSidenav = [].concat(GuansiSidenav,[{"href":"/province/guansi/food", "text":"Слова"}]);
+// const GuansiSightsSidenav = [].concat(GuansiSidenav,[{"href":"/province/guansi/sights", "text":"Слова"}]);
 
-const dynamicSidebar = {"/province/chansha/location":ChanshaSidenav, "/map":MapSidenav, "/province/chansha/food":ChanshaFoodSidenav,"/province/chansha/sights":ChanshaSightsSidenav,"/grammar":GrammarSidenav, "/province/guizhou/location":GuizhouSidenav, "/province/guizhou/food":GuizhouFoodSidenav,"/province/guizhou/sights":GuizhouSightsSidenav, "/province/guandun/location":GuandunSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/province/guandun/food":GuandunFoodSidenav, "/province/guandun/sights":GuandunSightsSidenav, "/gamesMenu":GamesMenuSidnav, "/province/guansi/location": GuansiSidenav,"/province/guansi/food":GuansiFoodSidenav, "/province/guansi/sights":GuansiSightsSidenav };
+// const dynamicSidebar = {"/province/chansha/location":ChanshaSidenav, "/map":MapSidenav, "/province/chansha/food":ChanshaFoodSidenav,"/province/chansha/sights":ChanshaSightsSidenav,"/grammar":GrammarSidenav, "/province/guizhou/location":GuizhouSidenav, "/province/guizhou/food":GuizhouFoodSidenav,"/province/guizhou/sights":GuizhouSightsSidenav, "/province/guandun/location":GuandunSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/province/guandun/food":GuandunFoodSidenav, "/province/guandun/sights":GuandunSightsSidenav, "/gamesMenu":GamesMenuSidnav, "/province/guansi/location": GuansiSidenav,"/province/guansi/food":GuansiFoodSidenav, "/province/guansi/sights":GuansiSightsSidenav };
 
 //информация о провинциях
 
