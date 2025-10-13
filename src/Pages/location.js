@@ -21,7 +21,7 @@ const Location =(props) =>
             <div className="page">
 
                 <div className="locationHeader"> 
-                    <img src={props.links.pictmap} alt="chansha_map_picture"/>
+                    <img src={props.links.pictmap} alt="map_picture"/>
                     <h1>{props.name.province} <br/> {props.name.city}</h1>
                 </div>
                 

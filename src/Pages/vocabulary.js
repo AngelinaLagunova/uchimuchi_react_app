@@ -57,7 +57,7 @@ const Card = (props)=>{
             </div>
                 <div>
                     <div className="rusTrans">{props.words[Number(props.num)].trans}</div>
-                    <div className="pictWord"> <img src={props.words[Number(props.num)].pict} className="zoom-effect" alt={props.num + "chansha_words_picture"}/></div>
+                    <div className="pictWord"> <img src={props.words[Number(props.num)].pict} className="zoom-effect" alt={props.num + "words_picture"}/></div>
                 </div>
                 <div></div>
                 <div className="count">{Number(props.num)+1}/{props.words.length}</div> 

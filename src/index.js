@@ -41,15 +41,11 @@ function generateQuizItems(data) {
 
     return data.map(item => {
         const correct = item.trans;
-        // Получаем два случайных неправильных ответа
         const incorrect = shuffleArray(allTranslations.filter(t => t !== correct)).slice(0, 2);
-        // Формируем массив из 3-х вариантов
         const options = shuffleArray([correct, ...incorrect]);
 
-        // Определяем где правильный вариант (var1/var2/var3)
         const rightVar = `var${options.indexOf(correct) + 1}`;
 
-        // Собираем элемент
         return {
         char: item.char,
         phen: item.phen,
@@ -72,7 +68,6 @@ function ProvincePage() {
     return <div>Данные не найдены</div>;
   }
 
-  // В зависимости от section показываем разные компоненты
   switch (section) {
     case 'location':
       return <Location name={provincData.name} info={provincData.info} links={provincData.links}/>
@@ -85,7 +80,6 @@ function ProvincePage() {
     case 'sightsTest':
       return <TestVocab words={generateQuizItems(provincData.vocabSights)} links={provincData.sightsTestLinks} />;
     default:
-      // Можно сделать редирект или показать список разделов
       return <div>Данные не найдены</div>;
   }
 }
@@ -125,60 +119,47 @@ const grammar = ["zhè gè cài shì chòudòufu.","zuótiān tā/tā diǎn le m
 
 const grammarLinks = {"test":"/grammar", "title": "Путешественник"};
 
-//провинции
-// const nameChansha = {"province": "Провинция Хунань 湖南", "city": "г. Чанша 长沙市"};
-// const nameGuizhou = { "province": "Провинция Гуйчжоу 贵州 ", "city":"г. Гуйян 贵阳"};
-// const nameGuandun = {"province": "Провинция Гуандун 广东 ", "city":"г. Гуанчжоу 广州"};
-// const nameGuansi = {"province": "Гуанси-Чжуанский автономный район ", "city":"广西壮族自治区"};
-// const nameYunnan = {"province": "Юньнань ", "city":"云南省"};
-// const nameFuijan = {"province": "Фуцзянь ", "city":"福建省"};
-
-
-
-// const namesForMap = {'chansha': nameChansha, 'guizhou': nameGuizhou, 'guandun': nameGuandun, 'guansi':nameGuansi, 'yunnan':nameYunnan, 'fuijan':nameFuijan};
 
 //ссылки для сайдбара
-//для тематического блока
 const ThemesSidnav = [{"href":"/main", "text":"Лексика"}];
 const BaseVocabSidnav = [{"href":"/baseVocab", "text":"Базовый словарь"}];
 const PreGrammarSidnav = [{"href":"/preGrammar", "text":"Грамматика"}];
 const GamesMenuSidnav = [{"href":"/gamesMenu", "text":"Игры"}];
-
-//для карты
+const AboutUsSidnav = [{"href":"/aboutUs", "text":"О проекте"}];
+const HomeSidnav = [{"href":"/home", "text":"Главна"}];
+const LkSidnav = [{"href":"/lk", "text":"Личный кабинет"}];
+const VocabListSidnav = [{"href":"/vocabList", "text":"Словарь"}];
 const MapSidenav = [].concat(ThemesSidnav, [{"href":"/map", "src":"mapicon.png"}]);
 const GrammarSidenav = [].concat(PreGrammarSidnav,[{"href":"/grammar", "text":"Путешестве- нник"}]);
+const Game1Sidenav = [].concat(GamesMenuSidnav, [{"href":"/game1", "text":"Составь предложения"}])
+const Game2Sidenav = [].concat(GamesMenuSidnav, [{"href":"/game2", "text":"Найди перевод слова"}])
 
 
 function createProvinceSidenavs(provinceKey, provinceData) {
-  const name = provinceData.name.name;       // "Guizhou"
-  const nameRu = provinceData.name.nameRu;   // "Гуйчжоу"
-  const slug = provinceKey;                    // "guizhou"
+  const name = provinceData.name.name;
+  const nameRu = provinceData.name.nameRu;
+  const slug = provinceKey;
 
-  // Обязательно должны быть ссылки внутри provinceData для удобства
   const links = provinceData.links || {};
   const foodLinks = provinceData.foodLinks || {};
   const sightsLinks = provinceData.sightsLinks || {};
   const locationLink = provinceData.foodTestLinks.location || {};
 
-  // Главный меню — добавляем ссылку на локацию
   const provinceSidenav = [].concat(
     MapSidenav,
     [{ href: locationLink || `/province/${slug}/location`, text: nameRu }]
   );
 
-  // Меню для еды (food)
   const provinceFoodSidenav = [].concat(
     provinceSidenav,
     [{ href: links.food || `/province/${slug}/food`, text: "Блюда" }]
   );
 
-  // Меню для достопримечательностей (sights)
   const provinceSightsSidenav = [].concat(
     provinceSidenav,
     [{ href: links.sights || `/province/${slug}/sights`, text: "Достоприме- чательности" }]
   );
 
-  // Тестовые меню
   const provinceTestFoodSidenav = [].concat(
     provinceFoodSidenav,
     [{ href: foodLinks.test || `/province/${slug}/foodTest`, text: "Тест" }]
@@ -189,7 +170,6 @@ function createProvinceSidenavs(provinceKey, provinceData) {
     [{ href: sightsLinks.test || `/province/${slug}/sightsTest`, text: "Тест" }]
   );
 
-  // Возвращаем объект с этими массивами
   console.log(provinceSidenav)
   return {
     [`${name}Sidenav`]: provinceSidenav,
@@ -200,9 +180,8 @@ function createProvinceSidenavs(provinceKey, provinceData) {
   };
 }
 
-// Создадим все sidenav-объекты для всех провинций и dynamicSidebar
 const allSidenavs = {};
-const dynamicSidebar = {"/map":MapSidenav, "/grammar":GrammarSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/gamesMenu":GamesMenuSidnav};
+const dynamicSidebar = {"/map":MapSidenav, "/grammar":GrammarSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/gamesMenu":GamesMenuSidnav,"/aboutUs":AboutUsSidnav, "/game1": Game1Sidenav, "/game2":Game2Sidenav, "/home": HomeSidnav, "/lk": LkSidnav, "/vocabList":VocabListSidnav};
 
 for (const provinceKey in provinciesData) {
   if (!provinciesData.hasOwnProperty(provinceKey)) continue;
@@ -212,14 +191,12 @@ for (const provinceKey in provinciesData) {
 
   Object.assign(allSidenavs, navs);
 
-  // Заполняем dynamicSidebar
-  const name = provinceData.name.name; // "Guizhou"
+  const name = provinceData.name.name;
   const locationLink = provinceData.foodTestLinks.location || {};
   const links = provinceData.links || {};
   const foodLinks = provinceData.foodLinks || {};
   const sightsLinks = provinceData.sightsLinks || {};
 
-  // Добавляем ключи — маршрут => массив меню
   if (locationLink) dynamicSidebar[locationLink] = navs[`${name}Sidenav`];
   if (links.food) dynamicSidebar[links.food] = navs[`${name}FoodSidenav`];
   if (links.sights) dynamicSidebar[links.sights] = navs[`${name}SightsSidenav`];
@@ -227,40 +204,12 @@ for (const provinceKey in provinciesData) {
   if (sightsLinks.test) dynamicSidebar[sightsLinks.test] = navs[`${name}TestSightsSidenav`];
 }
 
-//для хунани
-// const ChanshaSidenav = [].concat(MapSidenav, [{"href":"/province/chansha/location", "text":"Хунань"}]);
-// const ChanshaFoodSidenav = [].concat(ChanshaSidenav,[{"href":"/province/chansha/food", "text":"Слова"}])
-// const ChanshaSightsSidenav = [].concat(ChanshaSidenav,[{"href":"/province/chansha/sights", "text":"Слова"}])
-
-
-//для гуйчжоу
-// const GuizhouSidenav = [].concat(MapSidenav, [{"href":"/province/guizhou/location", "text":"Гуйчжоу"}]); 
-// const GuizhouFoodSidenav = [].concat(GuizhouSidenav,[{"href":"/province/guizhou/food", "text":"Слова"}]);
-// const GuizhouSightsSidenav = [].concat(GuizhouSidenav,[{"href":"/province/guizhou/sights", "text":"Слова"}]);
-// const GuizhouTestFoodSidenav = [].concat(GuizhouFoodSidenav,[{"href":"/province/guizhou/foodTest", "text":"Тест"}]);
-// const GuizhouTestSightsSidenav = [].concat(GuizhouSightsSidenav,[{"href":"/province/guizhou/sightsTest", "text":"Тест"}]);
-
-// const GuizhouGrammarSidenav = [].concat(GuizhouSidenav,[{"href":"/GuizhouGrammar", "text":"Грамматика"}])
-
-//для гуандун
-// const GuandunSidenav = [].concat(MapSidenav,[{"href":"/province/guandun/location", "text":"Гуандун"}]);
-// const GuandunFoodSidenav = [].concat(GuandunSidenav,[{"href":"/province/guandun/food", "text":"Слова"}]);
-// const GuandunSightsSidenav = [].concat(GuandunSidenav,[{"href":"/province/guandun/sights", "text":"Слова"}]);
-
-// const GuansiSidenav = [].concat(MapSidenav,[{"href":"/province/guansi/location", "text":"ГЧАР"}]);
-// const GuansiFoodSidenav = [].concat(GuansiSidenav,[{"href":"/province/guansi/food", "text":"Слова"}]);
-// const GuansiSightsSidenav = [].concat(GuansiSidenav,[{"href":"/province/guansi/sights", "text":"Слова"}]);
-
-// const dynamicSidebar = {"/province/chansha/location":ChanshaSidenav, "/map":MapSidenav, "/province/chansha/food":ChanshaFoodSidenav,"/province/chansha/sights":ChanshaSightsSidenav,"/grammar":GrammarSidenav, "/province/guizhou/location":GuizhouSidenav, "/province/guizhou/food":GuizhouFoodSidenav,"/province/guizhou/sights":GuizhouSightsSidenav, "/province/guandun/location":GuandunSidenav, "/main":ThemesSidnav, "/baseVocab":BaseVocabSidnav, "/preGrammar":PreGrammarSidnav, "/province/guandun/food":GuandunFoodSidenav, "/province/guandun/sights":GuandunSightsSidenav, "/gamesMenu":GamesMenuSidnav, "/province/guansi/location": GuansiSidenav,"/province/guansi/food":GuansiFoodSidenav, "/province/guansi/sights":GuansiSightsSidenav };
-
 //информация о провинциях
 
 function Sidebar() {
   
-
     const listImg = ["home", "lk", "vocabList"];
     const listImgHints = ["Главная", "Личный кабинет", "Словарь"];
-
 
     const SideImages =listImg.map((img, index) =>
       <Link to={"/"+img} key={index}><img key={index} src={"/images/" + img +".png"} title={listImgHints[index]} alt="icon_picture"/></Link>
@@ -279,7 +228,6 @@ function Sidebar() {
       )
     };
 
-    
   const location = useLocation();
   const transitions = useTransition(location,{key:location => location.pathname,
     
@@ -345,12 +293,6 @@ function Content() {
 } 
 
 root.render(<Content />)
-
-
-
-
-
-
 
 
 

@@ -21,13 +21,34 @@ div .pict{
 }
 
 .highlightable {
-  stroke: #944278fe; /* цвет при наведении, например, красный */
-; /* первоначальный цвет */
-  transition: stroke 0.3s;
+  stroke: #944278fe;
+  transition: stroke 0.1s;
   fill:#ffceeeff;
 }
 
 .highlightable:hover {
   fill:#944278fe;
+  stroke-width: 0.1vw;
+}
+
+.highlightable_mini {
+  stroke: #42ABA5;
+  transition: stroke 0.1s;
+  fill:#ffceeeff;
+}
+
+.highlightable_mini:hover {
+  fill:#42ABA5;
+  stroke-width: 0.3vw;
+}
+
+.highlightable_off {
+  stroke: #944278fe;
+  transition: stroke 0.1s;
+  fill:#ffceeeff;
+}
+
+.highlightable_off:hover {
+  fill:#e394c9fe;
   stroke-width: 0.1vw;
 }
