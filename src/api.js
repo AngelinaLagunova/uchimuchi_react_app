@@ -1,4 +1,3 @@
-// src/api.js
 import axios from 'axios';
 
 const API_URL = 'http://учивыучи.рф:8000/api/v1/basevocabs/';
@@ -15,13 +14,14 @@ export const fetchWords = async () => {
     }
 };
 
-// Функция для получения слова по pk
 export const fetchWordById = async (id) => {
     try {
-        const response = await axios.get(`${API_URL}${id}/`);  // Используем `${API_URL}${id}/` для конкретного слова
+        const response = await axios.get(`${API_URL}${id}/`);
         return response.data;
     } catch (error) {
         console.error('Ошибка при получении слова:', error);
         throw error;
     }
 };
+
+

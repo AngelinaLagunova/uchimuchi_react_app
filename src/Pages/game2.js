@@ -5,11 +5,7 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { Link } from "react-router-dom";
 
 
-// Тип для перетаскиваемого элемента
 const ItemType = 'WORD';
-
-// Список слов
-
 
 const words = [
     { id: 1, russian: 'оно', chinese: '它' },
@@ -30,9 +26,6 @@ const words = [
     const [, drag] = useDrag(() => ({
       type: ItemType,
       item: { id: word.id, chinese: word.chinese },
-    //   collect: (monitor) => ({
-    //     isDragging: !!monitor.isDragging(),
-    //   }),
     }));
   
     return (
@@ -59,9 +52,7 @@ const words = [
     collect: (monitor) => ({ isOver: !!monitor.isOver() }),
     }));
 
-  
     const isCorrect = checkResult[russianWord];
-
   
     let backgroundColor = checkPressed === true
         ? isCorrect === true
@@ -103,10 +94,6 @@ const words = [
   };
 
   
-
-  
-
-// Основной компонент игры
 const Game2 = () => {
     const [droppedWords, setDroppedWords] = useState({});
     const [checkResult, setCheckResult] = useState({});
@@ -120,16 +107,9 @@ const Game2 = () => {
         if (numOfTest <words.length/4 - 1){
             setCheckPressed(false);
             setDropItems(words.slice((numOfTest + 1)*4, (numOfTest + 2)*4).sort(() => Math.random() - 0.5));
-            // setDroppedItems([]);
-            // let DropZone = document.getElementById("DropZone");
-            // DropZone.classList.remove("wrongDrop");
-            // DropZone.innerHTML = "Перетаскивайте блоки сюда"
             setTestNum(numOfTest + 1);
-            // document.getElementById("submitButton").classList.remove("wrongAnswer");
-            // document.getElementById("submitButton").classList.remove("rightAnswer");
         }
         else if(numOfTest === words.length/4) {
-            // document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
             console.log("hi");
             setDropItems(words.slice((numOfTest + 1)*4, (numOfTest + 2)*4).sort(() => Math.random() - 0.5));
             setTestNum(numOfTest + 1);
@@ -137,30 +117,15 @@ const Game2 = () => {
         }
         else {
             setTestState(false)
-            // document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
-            // document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
             console.log("nehi");
 
         }
-        // document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
-        // document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
-        // setRightAnswer(false);
-
-        
     }
     
     const Prev =(event)=>{
         if (numOfTest > 0) {
             setDropItems(words.slice((numOfTest - 1)*4, (numOfTest)*4).sort(() => Math.random() - 0.5));
-
             setTestNum((numOfTest - 1));
-            
-            // setDroppedItems([]);
-            // let DropZone = document.getElementById("DropZone");
-            // DropZone.classList.remove("wrongDrop");
-            // DropZone.innerHTML = "Перетаскивайте блоки сюда"
-            // document.getElementById("submitButton").classList.remove("wrongAnswer");
-            // document.getElementById("submitButton").classList.remove("rightAnswer");
             setCheckPressed(false);
 
         }
@@ -173,12 +138,6 @@ const Game2 = () => {
             document.getElementsByClassName("arrowRightTest")[0].classList.remove("hidden");
             
         }
-        // document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
-        // document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
-        // document.getElementById("submitButton").classList.remove("hidden");
-        // document.getElementById("endButton").classList.add("hidden");
-        // setRightAnswer(false);
-
     }
 
 
@@ -211,15 +170,11 @@ const Game2 = () => {
         results[word.russian] = lastDroppedWord === word.chinese ? true : false;
       });
       setCheckResult(results);
-    //   console.log(results);
       setCheckPressed(true);
 
     };
 
-
     const GameField = (num) => {
-        // const randomWords = words.slice(num * 4, (num + 1) * 4).sort(() => Math.random() - 0.5);
-
         return(
             <div className="GameFrame2">
                 <div>
@@ -266,7 +221,6 @@ const Game2 = () => {
                 <div></div>
 
                 <div style={{textAlign: 'center', fontSize: '2vw'}}>
-                    {/* <h3>Перетащите слово в соответствующее место</h3> */}
                     <br/>
                     <div className="DropListGame2">
                     {dropItems.map((word) => (
@@ -324,8 +278,5 @@ const Game2 = () => {
         </div>
   );
 };
-
-
-
 
 export default Game2;

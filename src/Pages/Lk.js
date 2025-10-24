@@ -1,5 +1,3 @@
-// import './lk.css';
-
 const Lk = () => {
     return(
         <div className="page">

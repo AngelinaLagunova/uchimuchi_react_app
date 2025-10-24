@@ -35,8 +35,6 @@ const DragItem = ({ name }) => {
         collect: (monitor) => {
             const item = monitor.getItem();
             if (item) {
-                // Выводим элемент в консоль во время перетаскивания
-                // console.log('Currently dragging:', item);
             }
             return {
                 isDragging: monitor.isDragging(),
@@ -59,11 +57,8 @@ const Game1 = (props) => {
     const [rightAnswer, setRightAnswer] = React.useState(false);
 
     const handleDrop = (item) => {
-        // console.log(item);
-
         setDroppedItems((prevItems) => {
             if (prevItems.some((droppedItem) => droppedItem.name === item.name)) {
-                // console.log('Этот элемент уже был добавлен:', item);
                 let DropZone = document.getElementById("DropZone");
                 DropZone.classList.add("wrongDrop");
                 DropZone.innerHTML = "Элемент уже добавлен"
@@ -73,9 +68,7 @@ const Game1 = (props) => {
             let DropZone = document.getElementById("DropZone");
             DropZone.classList.remove("wrongDrop");
             DropZone.innerHTML = "Перетаскивайте блоки сюда"
-    
             const newItems = [...prevItems, item];
-            // console.log(newItems);
             return newItems;
         });
     };
@@ -84,7 +77,6 @@ const Game1 = (props) => {
         const updatedItems = [...droppedItems];
         updatedItems.splice(index, 1);
         setDroppedItems(updatedItems);
-        // console.log(updatedItems);
     };
 
     const [numOfTest, setTestNum] = React.useState(0);
@@ -101,7 +93,6 @@ const Game1 = (props) => {
             document.getElementById("submitButton").classList.remove("rightAnswer");
         }
         else if(numOfTest === props.list.length) {
-            // document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
             console.log("hi");
             setTestNum(numOfTest + 1);
         }
@@ -137,17 +128,10 @@ const Game1 = (props) => {
         }
         document.getElementsByClassName("page")[0].classList.remove("rightAnswerBg");
         document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
-        // document.getElementById("submitButton").classList.remove("hidden");
-        // document.getElementById("endButton").classList.add("hidden");
         setRightAnswer(false);
 
 
     }
-
-    // useEffect(() => {
-    //     console.log('Current level index (num):', numOfTest);
-    //     console.log('Current list items:', props.list[numOfTest][0]);
-    // }, [numOfTest]); 
 
     useEffect(() => {
         setDroppedItems([]);
@@ -164,12 +148,6 @@ const Game1 = (props) => {
             document.getElementById("submitButton").classList.remove("wrongAnswer");
             document.getElementsByClassName("page")[0].classList.remove("wrongAnswerBg");
             document.getElementsByClassName("page")[0].classList.add("rightAnswerBg");
-            // let drops = document.getElementsByClassName("DropElement");
-            // for(let i=0; i<drops.length; i++){
-            //     drops[i].classList.add("DropElementAfter");
-            //     drops[i].classList.add("DropElementAfter");
-    
-            // }
             setRightAnswer(true);
 
             if (!(numOfTest in answers)) {
@@ -200,10 +178,6 @@ const Game1 = (props) => {
         }
 
     }
-
-    // const EndTest = (event) =>{
-    //     setTestState(false)
-    // }
 
     const GameField = (num) => {
         return(
@@ -255,9 +229,6 @@ const Game1 = (props) => {
                     <div id="submitButton" className="game1SubmitButton">
                         <button className="button" onClick={checkResult}>Ответить</button> 
                     </div>
-                    {/* <div id="endButton" className="game1SubmitButton hidden">
-                        <button className="button2" onClick={EndTest}>Завершить</button> 
-                    </div> */}
                     <div></div>
 
                 </div>
@@ -299,14 +270,6 @@ const Game1 = (props) => {
                 Вы набрали <Results/> баллов! <Link to="/game1"> <span onClick = "window.location.reload()" > Пройти еще раз? </span> </Link>
 
             </div>
-            {/* <div className="testResults">
-            <Link to={props.links.grammar}><button className="button" >Перейти к изучению грамматики</button> </Link>
-            </div>
-            <div className="testResults">
-            <Link to={props.links.location}><button className="button" >Вернуться к категориям слов</button> </Link>
-            </div> */}
-            
-
         </div>
     )
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-// import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import provinciesData from './provinciesData.json';
 import ReactDOM from 'react-dom/client';
@@ -13,10 +12,8 @@ import PreMain from "./Pages/preMain.js";
 import Map from "./Pages/map.js";
 import Location from "./Pages/location.js";
 import Vocabulary from "./Pages/vocabulary.js";
-// import TestSetting from "./Pages/testSetting.js"
 import VocabList from "./Pages/vocabList.js";
 import TestVocab from "./Pages/testVocab.js";
-// import TestVocabWrite from "./Pages/testVocabWrite.js";
 import Grammar from "./Pages/grammar.js";
 import BaseVocab from "./Pages/baseVocab.js";
 import PreGrammar from "./Pages/preGramma.js";
@@ -96,9 +93,7 @@ const game1Props = [[["那个饭馆","不","做东安子鸡"],"那个饭馆不�
 ]
 
 const BaseGifs = [["gif1.gif"], ["gif2.gif"], ["gif3.gif"], ["gif1.gif", "gif4.gif"], ["gif5.gif"], ["gif6.gif"],["gif5.gif", "gif4.gif"], ["gif7.gif"], ["gif7.gif", "gif4.gif"], ["gif8.gif", "gif9.gif"], ["gif10.gif", "gif9.gif"], ["gif11.gif", "gif9.gif"], ["gif12.gif", "gif9.gif"], ["gif13.gif", "gif9.gif"], ["gif14.gif", "gif15.gif"], ["gif16.gif", "gif15.gif"], ["gif17.gif", "gif15.gif"], ["gif18.gif", "gif19.gif"], ["gif20.gif"], ["gif21.gif"], ["gif22.gif"], ["gif23.gif"], ["gif24.gif"], ["gif25.gif"], ["gif26.gif"], ["gif27.gif"], ["gif28.gif"], ["gif29.gif"], ["gif30.gif"], ["gif31.gif"], ["gif32.gif", "gif33.gif"], ["gif34.gif", "gif35.gif"], ["gif36.gif", "gif37.gif"], ["gif38.gif", "gif39.gif"], ["gif40.gif", "gif41.gif"]]
-//слова 
 
-//грамматика
 const grammarChar = [[{"char":"这个菜", "color":"white"},{"char":"是", "color":"grey"},{"char":"臭豆腐","color":"white"}], 
 [{"char":"昨天", "color":"grey"},{"char":"他/她点了毛氏红烧肉", "color":"white"}], 
 [{"char":"那个饭馆", "color":"white"},{"char":"不", "color":"grey"},{"char":"做东安子鸡","color":"white"}],
@@ -119,8 +114,6 @@ const grammar = ["zhè gè cài shì chòudòufu.","zuótiān tā/tā diǎn le m
 
 const grammarLinks = {"test":"/grammar", "title": "Путешественник"};
 
-
-//ссылки для сайдбара
 const ThemesSidnav = [{"href":"/main", "text":"Лексика"}];
 const BaseVocabSidnav = [{"href":"/baseVocab", "text":"Базовый словарь"}];
 const PreGrammarSidnav = [{"href":"/preGrammar", "text":"Грамматика"}];
@@ -204,8 +197,6 @@ for (const provinceKey in provinciesData) {
   if (sightsLinks.test) dynamicSidebar[sightsLinks.test] = navs[`${name}TestSightsSidenav`];
 }
 
-//информация о провинциях
-
 function Sidebar() {
   
     const listImg = ["home", "lk", "vocabList"];
@@ -255,7 +246,6 @@ function Sidebar() {
       </div>
       {transitions((props, location)=>(
         <animated.div style={props}>
-          {/* <div style={{position:'absolute',width:'100%'}}> */}
         <Routes location={location}>
             <Route exact path="/home" element={<PreMain/>}/>
             <Route exact path="/main" element={<MainMenu/>}/>
@@ -293,13 +283,3 @@ function Content() {
 } 
 
 root.render(<Content />)
-
-
-
-// root.render(
-//   <React.StrictMode>
-//     <Content />
-//   </React.StrictMode>
-// );
-
-// reportWebVitals();

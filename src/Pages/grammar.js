@@ -2,9 +2,6 @@
 import "./grammar.css";
 import React from "react";
 
-// import { Link } from "react-router-dom";
-
-
 const Grammar = (props) =>{
 
         
@@ -18,7 +15,6 @@ const Grammar = (props) =>{
         else if (numOfGram === props.phen.length - 2){
             setTestNum(numOfGram + 1);
             document.getElementsByClassName("arrowRightTest")[0].classList.add("hidden");
-            // document.getElementById("testButton").classList.remove("hidden");
         }
 
     }
@@ -33,12 +29,9 @@ const Grammar = (props) =>{
         }
         if (numOfGram === props.phen.length - 1){
             document.getElementsByClassName("arrowRightTest")[0].classList.remove("hidden");
-            // document.getElementById("testButton").classList.add("hidden");
         }
 
-    }
-    // const colorClases = ["blue", "green","orange","pink","yellow","violet"];
-    
+    }    
 
     const CharSet = props.char[numOfGram].map((item, index) =>
         <span className={item.color}>
@@ -53,16 +46,7 @@ const Grammar = (props) =>{
 
     return(
         <div className="page">
-            {/* <div className="GrammarHeader"> */}
                 <h1>Грамматика {props.links.title}</h1> 
-                {/* <div></div> */}
-                {/* <div className="wordsButton"> */}
-                    {/* <Link to={props.links.test}>
-                        <button className="button">Пройти тест</button>
-                    </Link> */}
-                {/* </div> */}
-                
-            {/* </div> */}
             <div className="grammarPage">
                 <div>
                     <div onClick={Prev} className={numOfGram===0 ? "arrowLeftTest hidden" : "arrowLeftTest"}>
@@ -89,9 +73,6 @@ const Grammar = (props) =>{
                     <div onClick={Next} className="arrowRightTest">
                         <img src="/images/arrowRight.png" alt="arrow_right_button"/>
                     </div>
-                    {/* <Link id="testButton" className="hidden grammTestButton" to={props.links.test}>
-                        <button className="button">Пройти тест</button>
-                    </Link> */}
                 </div>
 
             </div>

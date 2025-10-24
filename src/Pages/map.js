@@ -1,16 +1,11 @@
 import './map.css';
-// import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 
-function Map(props) {
-   //  const [showTooltip, setShowTooltip] = useState(false);
-    
+function Map(props) {    
 
     return (
         <>
         <div className="page">
-            {/* <div className="map"> */}
-
             <div className="pict">
             <h1>Путешествие 旅行</h1>
 
